@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 
 const Contack: NextPage = () => {
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center border border-red-500 bg-gray-800 p-10">
+    <div className="flex h-full w-full max-w-7xl flex-col items-center justify-center border  border-red-500 p-10">
       <h1 className="text-white">contack Me!</h1>
       <form>
         <div>

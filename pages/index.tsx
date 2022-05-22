@@ -32,12 +32,13 @@ const Home: NextPage = () => {
   );
 
   return (
-    <div className="col-auto flex ">
-      <div className="flex h-screen w-1/12 flex-col items-center justify-between bg-gray-700 p-5 text-lg">
+    <div className="col-auto flex">
+      <div className="flex w-[7%] flex-col items-center justify-between bg-gray-700 p-5 md:h-screen">
         <div className="mb-10 text-center">
           <Image
             src={j}
             alt="j"
+            layout="fixed"
             width={45}
             height={45}
             className="rounded-md"
@@ -76,7 +77,9 @@ const Home: NextPage = () => {
           </li>
         </ul>
       </div>
-      <div className="w-11/12 ">{components[tab]}</div>
+      <div className="flex w-[93%] items-center justify-center bg-gray-800">
+        {components[tab]}
+      </div>
     </div>
   );
 };
