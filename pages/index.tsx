@@ -1,17 +1,18 @@
 import type { NextPage } from "next";
-import About from "../components/about";
+import About from "../components/skills";
 import Image from "next/image";
-import img1 from "../image/AREmoji_20220111_135801_52.gif";
-import { AiFillHome, AiFillGithub } from "react-icons/ai";
+import j from "../image/letter-j.png";
+import { AiFillGithub } from "react-icons/ai";
 import { GrMail } from "react-icons/gr";
 import { IoPersonSharp } from "react-icons/io5";
 import { ImVimeo2 } from "react-icons/im";
-import { FaFileMedicalAlt } from "react-icons/fa";
+import { IoDocumentText } from "react-icons/io5";
+import { DiJavascript } from "react-icons/di";
 import { useState } from "react";
 import Career from "../components/career";
 import Contack from "../components/contack";
 import Link from "next/link";
-import Main from "../components/main";
+import Main from "../components/about";
 
 interface Icomponents {
   [elemName: number]: JSX.Element;
@@ -33,12 +34,12 @@ const Home: NextPage = () => {
   return (
     <div className="col-auto flex ">
       <div className="flex h-screen w-1/12 flex-col items-center justify-between bg-gray-700 p-5 text-lg">
-        <div className="mb-10">
+        <div className="mb-10 text-center">
           <Image
-            src={img1}
-            alt="test"
-            width={50}
-            height={50}
+            src={j}
+            alt="j"
+            width={45}
+            height={45}
             className="rounded-md"
           />
         </div>
@@ -51,10 +52,10 @@ const Home: NextPage = () => {
               onClick={() => setTab(e)}
               key={index}
             >
-              {e === 0 && <AiFillHome size={32} />}
-              {e === 1 && <IoPersonSharp size={32} />}
-              {e === 2 && <FaFileMedicalAlt size={32} />}
-              {e === 3 && <GrMail size={32} />}
+              {e === 0 && <IoPersonSharp size={40} />}
+              {e === 1 && <DiJavascript size={40} />}
+              {e === 2 && <IoDocumentText size={40} />}
+              {e === 3 && <GrMail size={40} />}
             </li>
           ))}
         </ul>
@@ -62,22 +63,20 @@ const Home: NextPage = () => {
           <li className="hover:cursor-pointer hover:text-blue-300">
             <Link href="https://github.com/whljm1003">
               <a>
-                <AiFillGithub size={26} />
+                <AiFillGithub size={30} />
               </a>
             </Link>
           </li>
           <li className="hover:cursor-pointer hover:text-blue-300">
             <Link href="https://velog.io/@whljm1003">
               <a>
-                <ImVimeo2 size={26} />
+                <ImVimeo2 size={30} />
               </a>
             </Link>
           </li>
         </ul>
       </div>
-      <div className="w-11/12 ">
-        <div className="h-10 w-10">{components[tab]}</div>
-      </div>
+      <div className="w-11/12 ">{components[tab]}</div>
     </div>
   );
 };
