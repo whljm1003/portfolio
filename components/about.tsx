@@ -1,27 +1,43 @@
 import type { NextPage } from "next";
-import Image from "next/image";
-import img1 from "../image/AREmoji_20220111_135801_52.gif";
+import { BsFillPersonFill } from "react-icons/bs";
+import { AiFillPhone, AiFillGithub } from "react-icons/ai";
+import { IoMdMail } from "react-icons/io";
 
 const About: NextPage = () => {
   return (
-    <div className="mt-10 flex w-full flex-col justify-center ">
-      <div className="flex justify-center">
-        <Image className=" rounded-full" src={img1} width={200} height={200} />
-      </div>
-      <div className="flex flex-col items-center justify-center">
-        <h1 className="my-8 text-xl text-gray-100 md:text-5xl">
-          Hello, I'm an Front-end Developer.
-        </h1>
-        <p className="p-2 text-center text-base text-gray-100 md:text-lg">
-          안녕하세요. 프론트엔드 개발자 이정민입니다. <br />
-          배포를 통한 사용자 피드백과 비즈니스적 관점에서 고객 UI/UX에 대해 한번
-          더 생각하는 개발자입니다. <br />
-          원티드 프리온보딩 프론트엔드를 하며 팀과제8개와 개인과제1개를
-          하였습니다. <br />
-          이러한 경험을 통해서 설계와 협업에 대해 배울 수 있었습니다. <br />
-          서비스에 대해 생각하고 몰입하며 웹 표준과 접근성을 고려하며
-          개발합니다. <br />
-        </p>
+    <div className="justify-centerpy-5 m-auto mt-16 flex w-full max-w-5xl flex-col items-center">
+      <h1 className="mb-5 border-b-2 border-black text-4xl font-bold leading-[1.5]">
+        ABOUT ME
+      </h1>
+      <div className="flex w-full flex-wrap justify-between space-y-3">
+        <div className="flex w-1/2 items-center justify-center space-x-5">
+          <BsFillPersonFill size={40} />
+          <div className="w-1/2 space-y-2">
+            <div className="text-2xl font-bold">이름</div>
+            <div className="text-base">이정민</div>
+          </div>
+        </div>
+        <div className="flex w-1/2 items-center justify-center space-x-5">
+          <AiFillPhone size={40} />
+          <div className="w-1/2 space-y-2">
+            <div className="text-2xl font-bold">연락처</div>
+            <div className="text-base">010-4998-8965</div>
+          </div>
+        </div>
+        <div className="flex w-1/2 items-center justify-center space-x-5">
+          <IoMdMail size={40} />
+          <div className="w-1/2 space-y-2">
+            <div className="text-2xl font-bold">이메일</div>
+            <div className="text-base">whljm1003@gmail.com</div>
+          </div>
+        </div>
+        <div className="flex w-1/2 items-center justify-center space-x-5">
+          <AiFillGithub size={40} />
+          <div className="w-1/2 space-y-2">
+            <div className="text-2xl font-bold">Github</div>
+            <div className="text-base">whljm1003@github</div>
+          </div>
+        </div>
       </div>
     </div>
   );

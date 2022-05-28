@@ -1,13 +1,13 @@
 import type { NextPage } from "next";
 
-const About: NextPage = () => {
+const Project: NextPage = () => {
   return (
     <div className="justify-centerpy-5 m-auto mt-16 flex w-full max-w-5xl flex-col items-center">
       <h1 className="mb-5 border-b-2 border-black text-4xl font-bold leading-[1.5]">
-        SKILLS
+        PROJECTS
       </h1>
     </div>
   );
 };
 
-export default About;
+export default Project;
