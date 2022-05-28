@@ -1,12 +1,12 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import img1 from "../image/AREmoji_20220111_135801_52.gif";
+import Img from "../assets/image/img.gif";
 
 const Main: NextPage = () => {
   return (
     <div className="m-auto flex w-full max-w-5xl flex-col justify-center pt-20 pb-10">
       <div className="flex justify-center">
-        <Image className=" rounded-full" src={img1} width={200} height={200} />
+        <Image className=" rounded-full" src={Img} width={200} height={200} />
       </div>
       <div className="flex flex-col items-center justify-center">
         <h1 className="my-8 text-xl text-gray-100 md:text-5xl">

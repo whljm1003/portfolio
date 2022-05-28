@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   return (
     <div className="">
       <Header />
-      <div className="flex w-full flex-col items-center justify-center bg-gray-100">
+      <div className="flex w-full flex-col items-center justify-center bg-gray-100 text-gray-700">
         <section className="w-full bg-blue-400">
           <Main />
         </section>

@@ -5,11 +5,11 @@ import { IoMdMail } from "react-icons/io";
 
 const About: NextPage = () => {
   return (
-    <div className="justify-centerpy-5 m-auto mt-16 flex w-full max-w-5xl flex-col items-center">
+    <div className="justify-centerpy-5 m-auto my-16 flex w-full max-w-5xl flex-col items-center">
       <h1 className="mb-5 border-b-2 border-black text-4xl font-bold leading-[1.5]">
         ABOUT ME
       </h1>
-      <div className="flex w-full flex-wrap justify-between space-y-3">
+      <div className="flex w-full flex-wrap items-center space-y-3">
         <div className="flex w-1/2 items-center justify-center space-x-5">
           <BsFillPersonFill size={40} />
           <div className="w-1/2 space-y-2">

@@ -1,14 +1,11 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import j from "../image/letter-j.png";
 
 const Header: NextPage = () => {
   return (
     <header className=" bg-gray-700">
       <div className="m-auto flex max-w-5xl items-center justify-between px-5 py-2 font-bold text-gray-300">
-        <div className="text-center">
-          <Image src={j} alt="logo" width={45} height={45} />
-        </div>
+        <div className="text-center">logo</div>
         <ul className="flex space-x-9 ">
           <li className="cursor-pointer hover:text-gray-100">About</li>
           <li className="cursor-pointer hover:text-gray-100">Skills</li>
