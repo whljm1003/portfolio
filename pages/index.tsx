@@ -6,15 +6,16 @@ import Projects from "../components/projects";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import Main from "../components/main";
-import { useRef } from "react";
+import React, { useRef } from "react";
 
 const Home: NextPage = () => {
   const tabRef = useRef<Array<number>>([]);
+  const mainRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="">
-      <Header tabRef={tabRef} />
-      <div className="flex w-full flex-col items-center justify-center bg-gray-100 pt-12 text-gray-700">
+    <div ref={mainRef}>
+      <Header tabRef={tabRef} mainRef={mainRef} />
+      <div className="flex w-full flex-col items-center justify-center bg-gray-100 text-gray-700">
         <Main tabRef={tabRef} />
         <About tabRef={tabRef} />
         <Skills tabRef={tabRef} />

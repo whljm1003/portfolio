@@ -1,7 +1,7 @@
-import type { NextPage } from "next";
 import { BsFillPersonFill } from "react-icons/bs";
 import { AiFillPhone, AiFillGithub } from "react-icons/ai";
 import { IoMdMail } from "react-icons/io";
+import Link from "next/link";
 
 const About: React.FC<any> = ({ tabRef }) => {
   return (
@@ -34,9 +34,11 @@ const About: React.FC<any> = ({ tabRef }) => {
           </div>
           <div className="flex w-full items-center justify-center space-x-5 lg:w-1/2 ">
             <AiFillGithub size={40} />
-            <div className="w-1/3 space-y-2">
-              <div className="text-2xl font-bold">Github</div>
-              <div className="text-base">whljm1003@github</div>
+            <div className="w-1/3">
+              <div className="mb-2 text-2xl font-bold">Github</div>
+              <Link href="https://github.com/whljm1003">
+                <a className="text-base">https://github.com/whljm1003</a>
+              </Link>
             </div>
           </div>
         </div>

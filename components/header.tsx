@@ -1,9 +1,23 @@
-import type { NextPage } from "next";
-import Link from "next/link";
-const Header: React.FC<any> = ({ tabRef }) => {
-  const variousMenu = ["About", "Skills", "Career", "Project"];
+import { useEffect, useState } from "react";
+
+const variousMenu = ["About", "Skills", "Career", "Project"];
+
+const Header: React.FC<any> = ({ tabRef, mainRef }) => {
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    window.scrollY === 0 ? setScroll(true) : setScroll(false);
+  };
+
   return (
-    <header className="fixed z-10 h-12 w-full bg-gray-700">
+    <header className={`fixed z-10 h-12 w-full ${!scroll && "bg-[#222]"}`}>
       <div className="m-auto flex max-w-5xl justify-between px-5 py-2 font-bold text-gray-300">
         <div
           className="cursor-pointer hover:animate-pulse "
@@ -11,7 +25,7 @@ const Header: React.FC<any> = ({ tabRef }) => {
             tabRef.current[0].scrollIntoView({ behavior: "smooth" })
           }
         >
-          LJM's Portfolio
+          JM's Portfolio
         </div>
         <ul className="relative flex space-x-9">
           {variousMenu.map((menu, index) => (

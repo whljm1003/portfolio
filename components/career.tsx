@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import Image from "next/image";
 import wanted from "../assets/image/icons/wanted.png";
 import { wantedData } from "../assets/wantedData";
