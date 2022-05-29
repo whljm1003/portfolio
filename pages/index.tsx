@@ -14,16 +14,16 @@ const Home: NextPage = () => {
         <section className="w-full bg-blue-400">
           <Main />
         </section>
-        <section className="w-full bg-gray-100">
+        <section className="w-full">
           <About />
         </section>
-        <section className="w-full bg-yellow-400">
+        <section className="w-full bg-[#f9c51d]">
           <Skills />
         </section>
-        <section className="w-full bg-teal-400">
+        <section className="w-full">
           <Career />
         </section>
-        <section className="w-full bg-orange-400">
+        <section className="w-full bg-[#1d809f]">
           <Projects />
         </section>
       </div>

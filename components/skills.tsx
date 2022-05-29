@@ -1,6 +1,9 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 
+import { FaRegSmileWink, FaRegSmileBeam } from "react-icons/fa";
+import { BsEmojiSmileUpsideDown } from "react-icons/bs";
+
 import { MainSkills, SubSkills, InterestedSkills } from "../assets/skillsData";
 
 const About: NextPage = () => {
@@ -11,7 +14,10 @@ const About: NextPage = () => {
       </h1>
       <div className="space-y-10">
         <div className="space-y-6">
-          <h2 className="text-2xl font-bold">😃기술 스택</h2>
+          <h2 className="flex items-center space-x-3 text-2xl font-bold">
+            <FaRegSmileBeam />
+            <span>기술 스택</span>
+          </h2>
           <div className="flex w-full flex-wrap justify-around gap-4">
             {MainSkills.map((skill) => (
               <div
@@ -31,7 +37,10 @@ const About: NextPage = () => {
           </div>
         </div>
         <div className="space-y-6">
-          <h2 className="text-2xl font-bold">😃사용해본 기술 스택</h2>
+          <h2 className="flex items-center space-x-3 text-2xl font-bold">
+            <FaRegSmileWink />
+            <span>사용해본 기술 스택</span>
+          </h2>
           <div className="flex w-full flex-wrap justify-around gap-4">
             {SubSkills.map((skill) => (
               <div
@@ -51,7 +60,10 @@ const About: NextPage = () => {
           </div>
         </div>
         <div className="space-y-6">
-          <h2 className="text-2xl font-bold">😃관심있는 기술 스택</h2>
+          <h2 className="flex items-center space-x-3 text-2xl font-bold">
+            <BsEmojiSmileUpsideDown />
+            <span>관심있는 기술 스택</span>
+          </h2>
           <div className="flex w-full flex-wrap justify-around gap-4">
             {InterestedSkills.map((skill) => (
               <div
