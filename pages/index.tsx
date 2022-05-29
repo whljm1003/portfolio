@@ -5,27 +5,21 @@ import Career from "../components/career";
 import Projects from "../components/projects";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import Main from "../components/intro";
+import Main from "../components/main";
+import { useRef } from "react";
+
 const Home: NextPage = () => {
+  const tabRef = useRef<Array<number>>([]);
+
   return (
     <div className="">
-      <Header />
-      <div className="flex w-full flex-col items-center justify-center bg-gray-100 text-gray-700">
-        <section className="w-full bg-blue-400">
-          <Main />
-        </section>
-        <section className="w-full">
-          <About />
-        </section>
-        <section className="w-full bg-[#f9c51d]">
-          <Skills />
-        </section>
-        <section className="w-full">
-          <Career />
-        </section>
-        <section className="w-full bg-[#1d809f]">
-          <Projects />
-        </section>
+      <Header tabRef={tabRef} />
+      <div className="flex w-full flex-col items-center justify-center bg-gray-100 pt-12 text-gray-700">
+        <Main tabRef={tabRef} />
+        <About tabRef={tabRef} />
+        <Skills tabRef={tabRef} />
+        <Career tabRef={tabRef} />
+        <Projects tabRef={tabRef} />
       </div>
       <Footer />
     </div>
