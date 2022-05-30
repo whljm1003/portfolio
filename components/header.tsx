@@ -35,7 +35,7 @@ const Header: React.FC<any> = ({ tabRef }) => {
             tabRef.current[0].scrollIntoView({ behavior: "smooth" })
           }
         >
-          JM's Portfolio
+          JM&apos;s Portfolio
         </div>
         <ul
           className={`relative mt-4 flex-col space-y-2 lg:mt-0 lg:flex lg:flex-row lg:space-y-0 lg:space-x-9 ${
