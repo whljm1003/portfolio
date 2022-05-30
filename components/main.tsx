@@ -16,11 +16,11 @@ const Main: React.FC<any> = ({ tabRef }) => {
               height={200}
             />
           </div>
-          <div className="flex flex-col items-center justify-center">
+          <div className="z-10 flex flex-col items-center justify-center">
             <h1 className="my-8 text-xl text-gray-100 lg:text-5xl">
               Hello, I'm an Front-end Developer.
             </h1>
-            <p className="z-30 p-2 text-center text-base font-extrabold text-white lg:text-lg">
+            <p className="p-2 text-center text-base font-extrabold text-white lg:text-lg">
               안녕하세요. 프론트엔드 개발자 이정민입니다. <br />
               배포를 통한 사용자 피드백과 비즈니스적 관점에서 고객 UI/UX에 대해
               한번 더 생각하는 개발자입니다. <br />
