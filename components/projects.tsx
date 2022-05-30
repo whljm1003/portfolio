@@ -51,7 +51,7 @@ const Project: React.FC<any> = ({ tabRef }) => {
                       <SwiperSlide key={img.id}>
                         <div
                           key={img.id}
-                          className="relative m-auto h-[90%] w-[90%] "
+                          className="relative m-auto h-[90%] lg:w-[90%] "
                         >
                           <Image
                             priority={true}
