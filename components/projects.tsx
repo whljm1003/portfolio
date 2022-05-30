@@ -46,17 +46,22 @@ const Project: React.FC<any> = ({ tabRef }) => {
                     pagination={{
                       clickable: true,
                     }}
-                    navigation={true}
+                    // navigation={true}
                     modules={[Pagination, Navigation]}
                     className="h-full w-full"
                   >
                     {project.imgs.map((img) => (
-                      <SwiperSlide>
+                      <SwiperSlide key={img.id}>
                         <div
                           key={img.id}
                           className="relative m-auto h-full w-[90%] "
                         >
-                          <Image src={img.url} alt={img.name} layout="fill" />
+                          <Image
+                            priority={true}
+                            src={img.url}
+                            alt={img.name}
+                            layout="fill"
+                          />
                         </div>
                       </SwiperSlide>
                     ))}

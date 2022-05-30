@@ -57,17 +57,17 @@ export const projects = [
       },
       { id: 4, contents: "(공통) AWS 기반 https 배포" },
       {
-        id: 1,
+        id: 5,
         contents: "(개인) 마이페이지,템플릿,그림그리기 페이지 HTML/CSS",
       },
-      { id: 2, contents: "(개인) 마이페이지 회원정보 수정 기능" },
+      { id: 6, contents: "(개인) 마이페이지 회원정보 수정 기능" },
       {
-        id: 3,
+        id: 7,
         contents:
           "(개인) Multer s3를 활용한 그림 일기의 그림 및 프로필 사진 업로드",
       },
-      { id: 4, contents: "(개인) 토큰 로그인, 댓글 CRUD , 좋아요 기능" },
-      { id: 5, contents: "(개인) canvas 그림 그리기 구현" },
+      { id: 8, contents: "(개인) 토큰 로그인, 댓글 CRUD , 좋아요 기능" },
+      { id: 9, contents: "(개인) canvas 그림 그리기 구현" },
     ],
     skills: [
       { id: 1, name: "JavaScirpt, HTML/CSS" },
@@ -186,7 +186,7 @@ export const projects = [
     ],
     link: {
       github: "https://github.com/whljm1003/portfolio",
-      deploy: "",
+      deploy: "https://github.com/whljm1003/portfolio",
     },
   },
 ];

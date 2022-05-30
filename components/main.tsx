@@ -6,7 +6,12 @@ const Main: React.FC<any> = ({ tabRef }) => {
   return (
     <div ref={(el) => (tabRef.current[0] = el)} className="w-full">
       <div className="relative">
-        <Image src={bg} className="opacity-80 blur-sm" layout="fill" />
+        <Image
+          priority={true}
+          src={bg}
+          className="opacity-80 blur-sm"
+          layout="fill"
+        />
         <div className="justify-cente m-auto flex w-full max-w-5xl flex-col pt-24 pb-10">
           <div className="flex justify-center">
             <Image
