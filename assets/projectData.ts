@@ -189,7 +189,7 @@ export const projects = [
     ],
     link: {
       github: "https://github.com/whljm1003/portfolio",
-      deploy: "https://github.com/whljm1003/portfolio",
+      deploy: "https://portfolio-whljm1003.vercel.app",
     },
   },
 ];
