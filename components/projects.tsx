@@ -72,8 +72,8 @@ const Project: React.FC<any> = ({ tabRef }) => {
                     {project.description}
                   </p>
 
-                  <div className="flex w-full flex-wrap items-center justify-between ">
-                    <div className="w-1/2">
+                  <div className="flex w-full flex-wrap justify-between">
+                    <div className="w-full lg:w-1/2">
                       <h3 className="mb-3 flex items-center text-2xl font-bold">
                         <MdPeopleAlt />
                         <span className="pl-2">역할</span>
@@ -84,7 +84,7 @@ const Project: React.FC<any> = ({ tabRef }) => {
                         ))}
                       </ul>
                     </div>
-                    <div className="w-1/2">
+                    <div className="mt-10 w-full lg:mt-0 lg:w-1/2">
                       <h3 className="mb-3 flex items-center text-2xl font-bold">
                         <FaTools />
                         <span className="pl-2">기술 스택</span>

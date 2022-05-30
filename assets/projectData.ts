@@ -8,6 +8,10 @@ import PicaNote_DETAIL from "./image/picaNote/PicaNote-Detail.png";
 import PicaNote_TEMPLETE from "./image/picaNote/PicaNote-Templete.png";
 import PicaNote_WRITE from "./image/picaNote/PicaNote-Write.png";
 import PicaNote_PICTURE from "./image/picaNote/PicaNote-Picture.png";
+import Portfolio_MAIN from "./image/portfolio/portfolio-Main.png";
+import Portfolio_SKILLS from "./image/portfolio/portfolio-Skills.png";
+import Portfolio_CAREER from "./image/portfolio/portfolio-Career.png";
+import Portfolio_PROJECT from "./image/portfolio/portfolio-Project.png";
 
 export const projects = [
   {
@@ -43,7 +47,7 @@ export const projects = [
       },
     ],
     description:
-      "어린 시절의 일기장을 회상하여 뉴트로 일기장을 만들었습니다. 일기장에는 글읽기와 그림일기가 작성이 가능하며, 공개/비공개를 통해 다른 유저들에게 나의 일기를 공유 할 수있습니다. 한 권의 일기를 친구들과 같이 사용할 수 있는 그룹 일기장 기능이 있습니다.",
+      "어린 시절의 일기장을 회상하여 뉴트로 일기장을 만들었습니다. 일기장에는 글 일기와 그림 일기를 활용해 원하는 일기장을 작성할 수 있습니다. 공개/비공개를 통해 다른 유저들에게 나의 일기를 공유 할 수있으며 좋아요 기능을 이용해 하트를 많이 받은 일기는 TOP 일기로 선정될 수 있습니다. 뿐만 아니라 한 권의 일기를 친구들과 같이 사용할 수 있는 그룹 일기장 기능이 있어 가족 친구 또는 지인들과 일기장을 통해 서로의 비밀을 공유할 수 있습니다.",
     methods: [
       { id: 1, contents: "(공통) Figma를 통한 UI 구성" },
       { id: 2, contents: "(공통) Miro를 이용한 Flow chart 작성" },
@@ -109,7 +113,7 @@ export const projects = [
       },
     ],
     description:
-      "오모오모는 '오늘은 모하지?(What Should I Do Today?)'의 앞글자에서 따온 이름으로무언가 해야되는데 어떤 걸 할지 선택이 어려운 이들을 위해 개발한 서비스이다. 하고 싶은 일들을 적고 단순히 룰렛을 돌리는 것만으로도 오늘 할 일을 쉽게 정할 수 있다. 오늘 할 일은 물론이고 음식, 여행지, 게임 등 다양한 분야에서 선택의 기로에 놓였을 때 활용 가능하다.",
+      "오모오모는 '오늘은 모하지?(What Should I Do Today?)'의 앞글자에서 따온 이름으로무언가 해야되는데 어떤 걸 할지 선택이 어려운 이들을 위해 개발한 서비스입니다. 하고 싶은 일들을 적고 단순히 룰렛을 돌리는 것만으로도 오늘 할 일을 쉽게 정할 수 있습니다. 오늘 할 일은 물론이고 음식, 여행지, 게임 등 다양한 분야에서 선택의 기로에 놓였을 때 활용 가능합니다.",
     methods: [
       { id: 1, contents: "(공통) Wire frame, Firebase 스키마 작성" },
       {
@@ -147,12 +151,33 @@ export const projects = [
     imgs: [
       {
         id: 1,
-        url: OMOMO_HOME,
-        name: "home",
+        url: Portfolio_MAIN,
+        name: "main",
+      },
+      {
+        id: 2,
+        url: Portfolio_SKILLS,
+        name: "skills",
+      },
+      {
+        id: 3,
+        url: Portfolio_CAREER,
+        name: "career",
+      },
+      {
+        id: 4,
+        url: Portfolio_PROJECT,
+        name: "project",
       },
     ],
-    description: "프트폴리오",
-    methods: [{ id: 1, contents: "" }],
+    description:
+      "프트폴리오 용도로 제작한 웹사이트입니다. 사이트 용도에 맞게 저에 대한 이력이 나타나 있으며 기존에 사용하는 스택이 아닌 tailwind와 next.js를 활용하여 반응형과 서버사이드 렌더링에 대해 조금 더 학습할 수 있었습니다.",
+    methods: [
+      { id: 1, contents: "tailwind를 사용한 전체 레이아웃 및 반응형 구현" },
+      { id: 2, contents: "next.js를 활용한 서버 사이드 렌더링 " },
+      { id: 3, contents: "swiper를 활용한 슬라이드 기능 구현" },
+      { id: 4, contents: "vercel를 활용한 배포" },
+    ],
     skills: [
       { id: 1, name: "TypeScript, NextJs" },
       { id: 2, name: "React, Swiper" },

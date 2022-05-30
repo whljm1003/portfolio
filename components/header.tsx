@@ -17,7 +17,11 @@ const Header: React.FC<any> = ({ tabRef, mainRef }) => {
   };
 
   return (
-    <header className={`fixed z-10 h-12 w-full ${!scroll && "bg-[#222]"}`}>
+    <header
+      className={`fixed z-40 h-12 w-full drop-shadow-2xl ${
+        !scroll && "bg-[#222]"
+      }`}
+    >
       <div className="m-auto flex max-w-5xl justify-between px-5 py-2 font-bold text-gray-300">
         <div
           className="cursor-pointer hover:animate-pulse "

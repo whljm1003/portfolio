@@ -21,9 +21,11 @@ const Main: React.FC<any> = ({ tabRef }) => {
               Hello, I'm an Front-end Developer.
             </h1>
             <p className="p-2 text-center text-base font-extrabold text-white lg:text-lg">
-              안녕하세요. 프론트엔드 개발자 이정민입니다. <br />
-              배포를 통한 사용자 피드백과 비즈니스적 관점에서 고객 UI/UX에 대해
-              한번 더 생각하는 개발자입니다. <br />
+              안녕하세요. <br />
+              포기하지 않고 끈기 있게 도전하는 개발자 이정민입니다.
+              <br />
+              웹 서비스로 사용자들에게 편리함을 더해주고, <br />
+              고객 UI/UX에 대해 한번 더 생각하는 개발자가 되고싶습니다. <br />
             </p>
           </div>
           <button
