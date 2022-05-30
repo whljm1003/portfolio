@@ -30,31 +30,28 @@ const Project: React.FC<any> = ({ tabRef }) => {
               className="my-10 flex w-full flex-col items-center space-y-3 rounded-xl bg-slate-50 py-5"
             >
               <h1 className="text-4xl font-extrabold">{project.title}</h1>
+              <h2 className="text-2xl font-extrabold">{project.subTitle}</h2>
               <p className="text-gray-400">
                 {`${project.turm} (${project.member}인)`}
               </p>
               <section className="w-full">
                 <div className="h-[30rem] w-full">
                   <Swiper
-                    style={{
-                      "--swiper-pagination-color": "black",
-                      "--swiper-navigation-color": "black",
-                    }}
                     slidesPerView={1}
                     spaceBetween={30}
                     loop={true}
                     pagination={{
-                      clickable: true,
+                      type: "fraction",
                     }}
-                    // navigation={true}
+                    navigation={true}
                     modules={[Pagination, Navigation]}
-                    className="h-full w-full"
+                    className="swiper h-full w-full"
                   >
                     {project.imgs.map((img) => (
                       <SwiperSlide key={img.id}>
                         <div
                           key={img.id}
-                          className="relative m-auto h-full w-[90%] "
+                          className="relative m-auto h-[90%] w-[90%] "
                         >
                           <Image
                             priority={true}

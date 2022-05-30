@@ -32,25 +32,24 @@ const Career: React.FC<any> = ({ tabRef }) => {
           </div>
 
           <div className=" overflow-hidden lg:overflow-visible lg:border-l-2 lg:pl-12">
-            <h1 className="py-2 text-2xl font-bold">
+            <h1 className="py-2 px-5 text-2xl font-bold lg:px-0">
               프리온보딩 프론트엔드 코스
             </h1>
-            <h3 className="text-sm leading-6">2022.02 ~ 2022.04</h3>
-            <p className="py-4 font-semibold">
+            <h3 className="px-5 text-sm leading-6 lg:px-0">
+              2022.02 ~ 2022.04
+            </h3>
+            <p className="py-4 px-5 font-semibold lg:px-0">
               다양한 기술 스택을 사용하여 8개의 프로젝트를 진행하였습니다.
             </p>
 
             <Swiper
-              style={{
-                "--swiper-pagination-color": "black",
-              }}
               effect={"cards"}
               grabCursor={true}
               pagination={{
                 dynamicBullets: true,
               }}
               modules={[EffectCards, Pagination, Navigation]}
-              className="h-[35rem] w-[20rem] lg:w-[30rem]"
+              className="h-[35rem] w-[20rem]  lg:w-[30rem]"
             >
               {wantedData.map((data) => (
                 <SwiperSlide

@@ -16,7 +16,8 @@ import Portfolio_PROJECT from "./image/portfolio/portfolio-Project.png";
 export const projects = [
   {
     id: 1,
-    title: "Pic, a note (일기장을 만들어 공유하는 웹서비스)",
+    title: "Pic, a note",
+    subTitle: "일기장을 만들어 공유하는 웹서비스",
     turm: "2021.05 - 2021.07",
     member: 4,
     imgs: [
@@ -82,7 +83,8 @@ export const projects = [
   },
   {
     id: 2,
-    title: "OMOMO (룰렛을 활용한 투두리스트)",
+    title: "OMOMO",
+    subTitle: "룰렛을 활용한 투두리스트",
     turm: "2021.09 - 2021.11",
     member: 2,
     imgs: [
@@ -146,6 +148,7 @@ export const projects = [
   {
     id: 3,
     title: "포트 폴리오",
+    subTitle: "",
     turm: "2022.05 - 2022.05",
     member: 1,
     imgs: [
