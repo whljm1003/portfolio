@@ -1,6 +1,7 @@
 import Image from "next/image";
 import wanted from "../assets/image/icons/wanted.png";
 import { wantedData } from "../assets/wantedData";
+import { GiRollingDices } from "react-icons/gi";
 // import Swiper core and required modules
 import { EffectCards, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,9 +17,12 @@ const Career: React.FC<any> = ({ tabRef }) => {
   return (
     <section ref={(el) => (tabRef.current[3] = el)} className="w-full">
       <div className="justify-centerpy-5 m-auto my-16 flex w-full max-w-5xl flex-col items-center">
-        <h1 className="mb-5 border-b-2 border-black text-4xl font-bold leading-[1.5]">
-          CAREER
-        </h1>
+        <div className="flex items-center justify-center">
+          <GiRollingDices size={34} />
+          <h1 className="mb-10 border-b-2 border-black text-4xl font-bold leading-[1.5]">
+            ABOUT ME
+          </h1>
+        </div>
         <section className="flex flex-col items-center lg:flex-row lg:items-start">
           <div className="h-full lg:w-1/3 lg:pr-12">
             <div className="border-1 rounded-ful relative my-10 h-48 w-48 lg:my-0">

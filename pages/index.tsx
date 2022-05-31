@@ -10,11 +10,10 @@ import React, { useRef } from "react";
 
 const Home: NextPage = () => {
   const tabRef = useRef<Array<number>>([]);
-  const mainRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div ref={mainRef}>
-      <Header tabRef={tabRef} mainRef={mainRef} />
+    <div>
+      <Header tabRef={tabRef} />
       <div className="flex w-full flex-col items-center justify-center bg-gray-100 text-gray-700">
         <Main tabRef={tabRef} />
         <About tabRef={tabRef} />

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Img from "../assets/image/img.gif";
 import bg from "../assets/image/developer_background.jpeg";
+import TypeIt from "typeit-react";
 
 const Main: React.FC<any> = ({ tabRef }) => {
   return (
@@ -23,7 +24,13 @@ const Main: React.FC<any> = ({ tabRef }) => {
           </div>
           <div className="z-10 flex flex-col items-center justify-center">
             <h1 className="my-8 text-xl text-gray-100 lg:text-5xl">
-              Hello, I&apos;m an Front-end Developer.
+              <TypeIt
+                options={{
+                  strings: ["Hello, I&apos;m an Front-end Developer."],
+                  speed: 80,
+                  waitUntilVisible: true,
+                }}
+              />
             </h1>
             <p className="p-2 text-center text-base font-extrabold text-white lg:text-lg">
               안녕하세요. <br />

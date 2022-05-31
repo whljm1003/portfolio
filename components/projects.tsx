@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Link from "next/link";
+import { GiRollingDices } from "react-icons/gi";
 
 const Project: React.FC<any> = ({ tabRef }) => {
   return (
@@ -18,9 +19,12 @@ const Project: React.FC<any> = ({ tabRef }) => {
       className="w-full bg-[#1d809f]"
     >
       <div className="justify-centerpy-5 m-auto my-16 flex w-full max-w-5xl flex-col items-center">
-        <h1 className="mb-5 border-b-2 text-4xl font-bold leading-[1.5] text-zinc-100">
-          PROJECTS
-        </h1>
+        <div className="flex items-center justify-center text-zinc-100">
+          <GiRollingDices size={34} />
+          <h1 className="mb-10 border-b-2 text-4xl font-bold leading-[1.5]">
+            PROJECTS
+          </h1>
+        </div>
         {projects
           .slice(0)
           .reverse()

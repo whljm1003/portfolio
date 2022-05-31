@@ -16,3 +16,10 @@
   color: black !important;
   fill: black 0.5 !important;
 }
+
+@media (max-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+}

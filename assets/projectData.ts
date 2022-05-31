@@ -174,10 +174,9 @@ export const projects = [
       },
     ],
     description:
-      "프트폴리오 용도로 제작한 웹사이트입니다. 사이트 용도에 맞게 저에 대한 이력이 나타나 있으며 기존에 사용하는 스택이 아닌 tailwind와 next.js를 활용하여 반응형과 서버사이드 렌더링에 대해 조금 더 학습할 수 있었습니다.",
+      "프트폴리오 용도로 제작한 웹사이트입니다. 사이트 용도에 맞게 저에 대한 이력이 나타나 있으며 tailwind와 next.js에 대해 학습할 수 있었습니다.",
     methods: [
       { id: 1, contents: "tailwind를 사용한 전체 레이아웃 및 반응형 구현" },
-      { id: 2, contents: "next.js를 활용한 서버 사이드 렌더링 " },
       { id: 3, contents: "swiper를 활용한 슬라이드 기능 구현" },
       { id: 4, contents: "vercel를 활용한 배포" },
     ],

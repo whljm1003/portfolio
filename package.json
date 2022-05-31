@@ -10,12 +10,12 @@
   },
   "dependencies": {
     "@types/swiper": "^6.0.0",
-    "lodash": "^4.17.21",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.3.1",
-    "swiper": "^8.1.6"
+    "swiper": "^8.1.6",
+    "typeit-react": "^2.4.4"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.182",
