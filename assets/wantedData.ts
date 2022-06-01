@@ -2,6 +2,7 @@ export const wantedData = [
   {
     id: 1,
     title: "</> 리뷰 조회, 등록 모바일 반응형 웹페이지",
+    remark: "개인 프로젝트",
     methods: [
       { id: 1, contents: "무한스크롤: Intersection Observer" },
       { id: 2, contents: "정렬, 리뷰 목록I(그리드 리스트)" },
@@ -22,6 +23,7 @@ export const wantedData = [
   {
     id: 2,
     title: "</> 간병인 신청하기 모바일 웹페이지",
+    remark: "팀 프로젝트 7명",
     methods: [
       { id: 1, contents: "돌봄 신청하기 페이지 구현" },
       { id: 2, contents: "주소 검색 모달창 구현" },
@@ -42,6 +44,7 @@ export const wantedData = [
   {
     id: 3,
     title: "</> 쇼핑몰 의류 검색, 조회 웹페이지",
+    remark: "팀 프로젝트 6명",
     methods: [
       { id: 1, contents: "뷰어 페이지 UI 작업" },
       { id: 2, contents: "검색결과 로딩처리" },
@@ -61,6 +64,7 @@ export const wantedData = [
   {
     id: 4,
     title: "</> 게임 전적 웹페이지",
+    remark: "팀 프로젝트 6명",
     methods: [
       { id: 1, contents: "랭크 페이지 UI 작업" },
       { id: 2, contents: "랭크 페이지 - 가이드 모달창 만들기" },
@@ -81,6 +85,7 @@ export const wantedData = [
   {
     id: 5,
     title: "</> 진단 검사 결과 페이지",
+    remark: "팀 프로젝트 6명",
     methods: [{ id: 1, contents: "하단 bar chart 의 레이아웃 구현" }],
     skills: [
       { id: 1, name: "vue, vue-chart.js" },
@@ -96,6 +101,7 @@ export const wantedData = [
   {
     id: 6,
     title: "</> 병명 검색 추천 페이지",
+    remark: "팀 프로젝트 2명",
     methods: [
       { id: 1, contents: "search UI 및 반응형 구현" },
       { id: 2, contents: "키보드 DropDown 기능 구현" },
@@ -115,6 +121,7 @@ export const wantedData = [
   {
     id: 7,
     title: "</> 휴양림 조회/저장 웹페이지",
+    remark: "팀 프로젝트 6명",
     methods: [
       { id: 1, contents: "휴앙림 저장 폼(모달창)을 구현" },
       { id: 2, contents: "모달 저장,수정,삭제 기능" },
@@ -134,6 +141,7 @@ export const wantedData = [
   {
     id: 8,
     title: "</> todoList 듀얼 셀렉터",
+    remark: "팀 프로젝트 6명",
     methods: [{ id: 1, contents: "Drag and drop 기능 구현" }],
     skills: [
       { id: 1, name: "react, recoil" },

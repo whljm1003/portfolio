@@ -21,7 +21,7 @@ const Project: React.FC<any> = ({ tabRef }) => {
       <div className="justify-centerpy-5 m-auto my-16 flex w-full max-w-5xl flex-col items-center">
         <div className="flex items-center justify-center text-zinc-100">
           <GiRollingDices size={34} />
-          <h1 className="mb-10 border-b-2 text-4xl font-bold leading-[1.5]">
+          <h1 className="mr-9 mb-10 border-b-2 text-4xl font-bold leading-[1.5]">
             PROJECTS
           </h1>
         </div>

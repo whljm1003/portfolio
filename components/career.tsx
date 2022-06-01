@@ -19,8 +19,8 @@ const Career: React.FC<any> = ({ tabRef }) => {
       <div className="justify-centerpy-5 m-auto my-16 flex w-full max-w-5xl flex-col items-center">
         <div className="flex items-center justify-center">
           <GiRollingDices size={34} />
-          <h1 className="mb-10 border-b-2 border-black text-4xl font-bold leading-[1.5]">
-            ABOUT ME
+          <h1 className="mr-9 mb-10 border-b-2 border-black text-4xl font-bold leading-[1.5]">
+            CAREER
           </h1>
         </div>
         <section className="flex flex-col items-center lg:flex-row lg:items-start">
@@ -58,26 +58,34 @@ const Career: React.FC<any> = ({ tabRef }) => {
               {wantedData.map((data) => (
                 <SwiperSlide
                   key={data.id}
-                  className="flex items-center rounded-2xl bg-white p-4 odd:bg-[#ffffff] even:bg-[#5352ed] even:text-slate-200"
+                  className="flex items-center rounded-2xl bg-white p-4 odd:bg-[#ffffff] even:bg-[#5352ed] even:text-slate-100"
                 >
                   <div>
-                    <h2 className="py-3 text-2xl font-bold">{data.title}</h2>
-
-                    <h3 className="mt-5 text-xl font-bold">구현기능/역할</h3>
-                    <ul className="mt-2 list-square pl-4">
+                    <h2 className="py-3 text-2xl font-bold group-odd:text-gray-600 group-even:text-white">
+                      {data.title}
+                    </h2>
+                    <h3 className="list-square opacity-80">{`# ${data.remark}`}</h3>
+                    <h3 className="mt-5 text-xl font-bold group-odd:text-gray-600 group-even:text-white">
+                      구현기능/역할
+                    </h3>
+                    <ul className="mt-2 list-square pl-4 opacity-80">
                       {data.methods.map((method) => (
                         <li key={method.id}>{method.contents}</li>
                       ))}
                     </ul>
 
-                    <h3 className="mt-5 text-xl font-bold">기술 스택</h3>
-                    <ul className="mt-2 list-square pl-4">
+                    <h3 className="mt-5 text-xl font-bold group-odd:text-gray-600 group-even:text-white">
+                      기술 스택
+                    </h3>
+                    <ul className="mt-2 list-square pl-4 opacity-80">
                       {data.skills.map((skill) => (
                         <li key={skill.id}>{skill.name}</li>
                       ))}
                     </ul>
-                    <h3 className="mt-5 text-xl font-bold">관련 링크</h3>
-                    <ul className="mt-2 list-square pl-4">
+                    <h3 className="mt-5 text-xl font-bold group-odd:text-gray-600 group-even:text-white ">
+                      관련 링크
+                    </h3>
+                    <ul className="mt-2 list-square pl-4 opacity-80">
                       <li className="hover:opacity-60">
                         <Link href={data.link.github}>
                           <a className="border-b-2"> Github</a>
@@ -85,7 +93,7 @@ const Career: React.FC<any> = ({ tabRef }) => {
                       </li>
                       <li className="hover:opacity-60">
                         <Link href={data.link.deploy}>
-                          <a className="border-b-2"> 배포링크</a>
+                          <a className="border-b-2 "> 배포링크</a>
                         </Link>
                       </li>
                     </ul>

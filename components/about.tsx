@@ -21,7 +21,7 @@ const About: React.FC<any> = ({ tabRef }) => {
       <div className="m-auto my-16 flex w-full max-w-5xl flex-col items-center">
         <div className="flex items-center justify-center">
           <GiRollingDices size={34} />
-          <h1 className="mb-10 border-b-2 border-black text-4xl font-bold leading-[1.5]">
+          <h1 className="mb-10 mr-9 border-b-2 border-black text-4xl font-bold leading-[1.5]">
             ABOUT ME
           </h1>
         </div>

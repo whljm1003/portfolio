@@ -13,7 +13,7 @@ const About: React.FC<any> = ({ tabRef }) => {
       <div className="justify-centerpy-5 m-auto my-16 flex w-full max-w-5xl flex-col items-center px-5 lg:px-0">
         <div className="flex items-center justify-center">
           <GiRollingDices size={34} />
-          <h1 className="mb-10 border-b-2 border-black text-4xl font-bold leading-[1.5]">
+          <h1 className="mr-9 mb-10 border-b-2 border-black text-4xl font-bold leading-[1.5]">
             SKILLS
           </h1>
         </div>
