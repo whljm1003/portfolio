@@ -5,20 +5,27 @@ import { GiRollingDices } from "react-icons/gi";
 import { IoCopy } from "react-icons/io5";
 import Link from "next/link";
 import { RefObject, useRef } from "react";
+// frmaer-motion
+import { motion } from "framer-motion";
+import { initialScreen } from "./motion";
 
 const About: React.FC<any> = ({ tabRef }) => {
   const phoneInput = useRef<HTMLInputElement>(null);
   const emailInput = useRef<HTMLInputElement>(null);
 
   const copy = (target: RefObject<HTMLInputElement>) => {
-    console.log(target);
     target.current?.select();
     document.execCommand("copy");
   };
 
   return (
     <section ref={(el) => (tabRef.current[1] = el)} className="w-full">
-      <div className="m-auto my-16 flex w-full max-w-5xl flex-col items-center">
+      <motion.div
+        variants={initialScreen}
+        initial="start"
+        animate="end"
+        className="m-auto my-16 flex w-full max-w-5xl flex-col items-center"
+      >
         <div className="flex items-center justify-center">
           <GiRollingDices size={34} />
           <h1 className="mb-10 mr-9 border-b-2 border-black text-4xl font-bold leading-[1.5]">
@@ -85,7 +92,7 @@ const About: React.FC<any> = ({ tabRef }) => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

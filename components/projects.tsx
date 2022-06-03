@@ -2,6 +2,9 @@ import Image from "next/image";
 import { FaLink, FaTools } from "react-icons/fa";
 import { MdPeopleAlt, MdDescription } from "react-icons/md";
 import { projects } from "../assets/projectData";
+// frmaer-motion
+import { motion } from "framer-motion";
+import { variants, sliceUp } from "./motion";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
@@ -18,7 +21,13 @@ const Project: React.FC<any> = ({ tabRef }) => {
       ref={(el) => (tabRef.current[4] = el)}
       className="w-full bg-[#1d809f]"
     >
-      <div className="justify-centerpy-5 m-auto my-16 flex w-full max-w-5xl flex-col items-center">
+      <motion.div
+        variants={variants}
+        initial="start"
+        whileInView="end"
+        viewport={{ once: true, amount: 0.1 }}
+        className="justify-centerpy-5 m-auto my-16 flex w-full max-w-5xl flex-col items-center"
+      >
         <div className="flex items-center justify-center text-zinc-100">
           <GiRollingDices size={34} />
           <h1 className="mr-9 mb-10 border-b-2 text-4xl font-bold leading-[1.5]">
@@ -29,7 +38,11 @@ const Project: React.FC<any> = ({ tabRef }) => {
           .slice(0)
           .reverse()
           .map((project) => (
-            <div
+            <motion.div
+              variants={sliceUp}
+              initial="start"
+              whileInView="end"
+              viewport={{ once: true, amount: 0.2 }}
               key={project.id}
               className="my-10 flex w-full flex-col items-center space-y-3 rounded-xl bg-slate-50 py-5"
             >
@@ -127,9 +140,9 @@ const Project: React.FC<any> = ({ tabRef }) => {
                   </div>
                 </div>
               </section>
-            </div>
+            </motion.div>
           ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

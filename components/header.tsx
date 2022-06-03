@@ -1,31 +1,26 @@
 import { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { motion, useViewportScroll } from "framer-motion";
 
 const variousMenu = ["About", "Skills", "Career", "Project"];
 
 const Header: React.FC<any> = ({ tabRef }) => {
+  const [yProgress, setYProgress] = useState(0);
   const [isHambugger, setIsHambugger] = useState(false);
-  const [scroll, setScroll] = useState(false);
 
-  const hambuggerHandler = () => {
-    setIsHambugger((prev) => !prev);
-  };
+  const hambuggerHandler = () => setIsHambugger((prev) => !prev);
+  //  Hook for scroll y
+  const { scrollYProgress } = useViewportScroll();
 
+  /* trigger when scroll is updated */
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const handleScroll = () => {
-    window.scrollY === 0 ? setScroll(true) : setScroll(false);
-  };
+    return scrollYProgress.onChange((p) => setYProgress(p));
+  }, [scrollYProgress]);
 
   return (
     <header
       className={`fixed z-40 w-full bg-[#222] drop-shadow-2xl lg:h-12 lg:bg-inherit ${
-        !scroll && "lg:bg-[#222]"
+        yProgress !== 0 && "lg:bg-[#222]"
       }`}
     >
       <div className="m-auto flex max-w-5xl flex-col justify-between px-5 py-2 font-bold text-gray-300 lg:flex-row">
@@ -61,6 +56,12 @@ const Header: React.FC<any> = ({ tabRef }) => {
           <GiHamburgerMenu size={24} />
         </button>
       </div>
+      <motion.div
+        className="absolute bottom-0 left-0 h-1 w-full origin-[0_0] bg-[#f9c51d]"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: yProgress }}
+        transition={{ duration: 0.2 }}
+      />
     </header>
   );
 };

@@ -2,6 +2,9 @@ import Image from "next/image";
 import Img from "../assets/image/img.gif";
 import bg from "../assets/image/developer_background.jpeg";
 import TypeIt from "typeit-react";
+// frmaer-motion
+import { motion } from "framer-motion";
+import { initialScreen } from "./motion";
 
 const Main: React.FC<any> = ({ tabRef }) => {
   return (
@@ -13,7 +16,12 @@ const Main: React.FC<any> = ({ tabRef }) => {
           className="opacity-80 blur-sm"
           layout="fill"
         />
-        <div className="justify-cente m-auto flex w-full max-w-5xl flex-col pt-24 pb-10">
+        <motion.div
+          variants={initialScreen}
+          initial="start"
+          animate="end"
+          className="justify-cente m-auto flex w-full max-w-5xl flex-col pt-24 pb-10"
+        >
           <div className="flex justify-center">
             <Image
               className=" rounded-full"
@@ -48,7 +56,7 @@ const Main: React.FC<any> = ({ tabRef }) => {
           >
             더 알아보기
           </button>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
