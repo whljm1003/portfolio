@@ -5,7 +5,7 @@ import { ImVimeo2 } from "react-icons/im";
 
 const Footer: NextPage = () => {
   return (
-    <footer className="bg-[#222] text-[#f9c51d]">
+    <footer className="overflow-hidden bg-[#222] text-[#f9c51d]">
       <div className="h-34 flex flex-col items-center justify-center py-6">
         <div className="mb-3 flex space-x-5">
           <span className="hover:cursor-pointer">

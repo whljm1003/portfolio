@@ -19,7 +19,10 @@ const About: React.FC<any> = ({ tabRef }) => {
   };
 
   return (
-    <section ref={(el) => (tabRef.current[1] = el)} className="w-full">
+    <section
+      ref={(el) => (tabRef.current[1] = el)}
+      className="w-full overflow-hidden"
+    >
       <motion.div
         variants={initialScreen}
         initial="start"

@@ -8,7 +8,10 @@ import { initialScreen } from "./motion";
 
 const Main: React.FC<any> = ({ tabRef }) => {
   return (
-    <div ref={(el) => (tabRef.current[0] = el)} className="w-full">
+    <div
+      ref={(el) => (tabRef.current[0] = el)}
+      className="w-full overflow-hidden"
+    >
       <div className="relative">
         <Image
           priority={true}

@@ -18,7 +18,10 @@ import React from "react";
 
 const Career: React.FC<any> = ({ tabRef }) => {
   return (
-    <section ref={(el) => (tabRef.current[3] = el)} className="w-full">
+    <section
+      ref={(el) => (tabRef.current[3] = el)}
+      className="w-full overflow-hidden"
+    >
       <motion.div
         variants={variants}
         initial="start"

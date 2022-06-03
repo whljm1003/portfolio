@@ -19,7 +19,7 @@ const Header: React.FC<any> = ({ tabRef }) => {
 
   return (
     <header
-      className={`fixed z-40 w-full bg-[#222] drop-shadow-2xl lg:h-12 lg:bg-inherit ${
+      className={`fixed z-40 w-full overflow-hidden bg-[#222] drop-shadow-2xl lg:h-12 lg:bg-inherit ${
         yProgress !== 0 && "lg:bg-[#222]"
       }`}
     >
@@ -60,7 +60,7 @@ const Header: React.FC<any> = ({ tabRef }) => {
         className="absolute bottom-0 left-0 h-1 w-full origin-[0_0] bg-[#f9c51d]"
         initial={{ scaleX: 0 }}
         animate={{ scaleX: yProgress }}
-        transition={{ duration: 0.2 }}
+        transition={{ ease: "easeOut", duration: 0.2 }}
       />
     </header>
   );

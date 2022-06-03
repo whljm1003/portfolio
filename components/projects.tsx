@@ -19,7 +19,7 @@ const Project: React.FC<any> = ({ tabRef }) => {
   return (
     <section
       ref={(el) => (tabRef.current[4] = el)}
-      className="w-full bg-[#1d809f]"
+      className="w-full overflow-hidden bg-[#1d809f]"
     >
       <motion.div
         variants={variants}
