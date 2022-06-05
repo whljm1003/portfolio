@@ -1,28 +1,21 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { motion, useViewportScroll } from "framer-motion";
+import { motion } from "framer-motion";
 
 const variousMenu = ["About", "Skills", "Career", "Project"];
 
 export interface ItabRef {
   tabRef: Icurrent;
+  yProgress?: number;
 }
 interface Icurrent {
   current: Array<HTMLElement>;
 }
 
-const Header: FC<ItabRef> = ({ tabRef }) => {
-  const [yProgress, setYProgress] = useState(0);
+const Header: FC<ItabRef> = ({ tabRef, yProgress }) => {
   const [isHambugger, setIsHambugger] = useState(false);
 
   const hambuggerHandler = () => setIsHambugger((prev) => !prev);
-  //  Hook for scroll y
-  const { scrollYProgress } = useViewportScroll();
-
-  /* trigger when scroll is updated */
-  useEffect(() => {
-    return scrollYProgress.onChange((p) => setYProgress(p));
-  }, [scrollYProgress]);
 
   return (
     <header
