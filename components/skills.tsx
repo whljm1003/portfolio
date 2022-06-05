@@ -6,11 +6,14 @@ import { GiRollingDices } from "react-icons/gi";
 // frmaer-motion
 import { motion } from "framer-motion";
 import { variants, sliceLeft, sliceRight } from "./motion";
+import { ItabRef } from "./header";
 
-const About: React.FC<any> = ({ tabRef }) => {
+const About: React.FC<ItabRef> = ({ tabRef }) => {
   return (
     <section
-      ref={(el) => (tabRef.current[2] = el)}
+      ref={(el) => {
+        if (el) tabRef.current[2] = el;
+      }}
       className="w-full overflow-hidden bg-[#f9c51d]"
     >
       <motion.div

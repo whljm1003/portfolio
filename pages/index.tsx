@@ -6,10 +6,10 @@ import Projects from "../components/projects";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import Main from "../components/main";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 
 const Home: NextPage = () => {
-  const tabRef = useRef<Array<number>>([]);
+  const tabRef = useRef<Array<HTMLElement>>([]);
 
   return (
     <div>

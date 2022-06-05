@@ -1,10 +1,17 @@
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { motion, useViewportScroll } from "framer-motion";
 
 const variousMenu = ["About", "Skills", "Career", "Project"];
 
-const Header: React.FC<any> = ({ tabRef }) => {
+export interface ItabRef {
+  tabRef: Icurrent;
+}
+interface Icurrent {
+  current: Array<HTMLElement>;
+}
+
+const Header: FC<ItabRef> = ({ tabRef }) => {
   const [yProgress, setYProgress] = useState(0);
   const [isHambugger, setIsHambugger] = useState(false);
 

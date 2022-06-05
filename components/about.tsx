@@ -8,8 +8,9 @@ import { RefObject, useRef } from "react";
 // frmaer-motion
 import { motion } from "framer-motion";
 import { initialScreen } from "./motion";
+import { ItabRef } from "./header";
 
-const About: React.FC<any> = ({ tabRef }) => {
+const About: React.FC<ItabRef> = ({ tabRef }) => {
   const phoneInput = useRef<HTMLInputElement>(null);
   const emailInput = useRef<HTMLInputElement>(null);
 
@@ -20,7 +21,9 @@ const About: React.FC<any> = ({ tabRef }) => {
 
   return (
     <section
-      ref={(el) => (tabRef.current[1] = el)}
+      ref={(el) => {
+        if (el) tabRef.current[1] = el;
+      }}
       className="w-full overflow-hidden"
     >
       <motion.div
