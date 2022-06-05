@@ -1,23 +1,28 @@
+import { useEffect } from "react";
 import { BsFillPersonFill } from "react-icons/bs";
 import { AiFillPhone, AiFillGithub } from "react-icons/ai";
 import { IoMdMail } from "react-icons/io";
 import { GiRollingDices } from "react-icons/gi";
 import { IoCopy } from "react-icons/io5";
 import Link from "next/link";
-import { RefObject, useRef } from "react";
 // frmaer-motion
 import { motion } from "framer-motion";
 import { initialScreen } from "./motion";
 import { ItabRef } from "./header";
+// ClipBoard && toast
+import useCopyClipBoard from "../hooks/useCopyClipBoard";
+import Toast from "./toast";
 
 const About: React.FC<ItabRef> = ({ tabRef }) => {
-  const phoneInput = useRef<HTMLInputElement>(null);
-  const emailInput = useRef<HTMLInputElement>(null);
+  const [isCopy, setIsCopy, onCopy] = useCopyClipBoard();
 
-  const copy = (target: RefObject<HTMLInputElement>) => {
-    target.current?.select();
-    document.execCommand("copy");
-  };
+  const handleCopyClipBoard = (text: string) => onCopy(text);
+  // 클립보드 복사 후 Toast가 발생하면 1초 후 자동 닫기
+  useEffect(() => {
+    if (isCopy) {
+      setTimeout(() => setIsCopy(false), 1000);
+    }
+  }, [isCopy]);
 
   return (
     <section
@@ -26,6 +31,7 @@ const About: React.FC<ItabRef> = ({ tabRef }) => {
       }}
       className="w-full overflow-hidden"
     >
+      {isCopy && <Toast msg="🎉&nbsp;복사 성공!!" />}
       <motion.div
         variants={initialScreen}
         initial="start"
@@ -50,17 +56,11 @@ const About: React.FC<ItabRef> = ({ tabRef }) => {
             <AiFillPhone size={40} />
             <div className="w-1/3 space-y-2">
               <div className="text-2xl font-bold">연락처</div>
-              <div className="flex items-center">
-                <input
-                  className="w-32 bg-inherit outline-none"
-                  value="010-4998-8965"
-                  readOnly
-                  type="text"
-                  ref={phoneInput}
-                />
+              <div className="flex items-center space-x-2">
+                <span className="text-base">010-4998-8965</span>
                 <span>
                   <IoCopy
-                    onClick={() => copy(phoneInput)}
+                    onClick={() => handleCopyClipBoard("010-4998-8965")}
                     className="cursor-pointer"
                   />
                 </span>
@@ -71,17 +71,11 @@ const About: React.FC<ItabRef> = ({ tabRef }) => {
             <IoMdMail size={40} />
             <div className="w-1/3 space-y-2">
               <div className="text-2xl font-bold">이메일</div>
-              <div className="flex items-center">
-                <input
-                  className="bg-inherit outline-none"
-                  value="whljm1003@gmail.com"
-                  readOnly
-                  type="text"
-                  ref={emailInput}
-                />
+              <div className="flex items-center space-x-2">
+                <span className="text-base">whljm1003@gmail.com</span>
                 <span>
                   <IoCopy
-                    onClick={() => copy(emailInput)}
+                    onClick={() => handleCopyClipBoard("whljm1003@gmail.com")}
                     className="cursor-pointer"
                   />
                 </span>
