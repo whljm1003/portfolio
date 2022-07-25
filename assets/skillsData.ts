@@ -33,21 +33,26 @@ export const MainSkills = [
   },
   {
     id: 4,
+    name: "TypeScript",
+    img: TypeScript,
+  },
+  {
+    id: 5,
     name: "React",
     img: React,
   },
   {
-    id: 5,
+    id: 6,
     name: "Styled-Components",
     img: StyledComponents,
   },
   {
-    id: 6,
+    id: 7,
     name: "React-Query",
     img: ReactQuery,
   },
   {
-    id: 7,
+    id: 8,
     name: "Recoil",
     img: Recoil,
   },
@@ -65,21 +70,16 @@ export const SubSkills = [
   },
   {
     id: 3,
-    name: "TypeScript",
-    img: TypeScript,
-  },
-  {
-    id: 4,
     name: "NextJs",
     img: NextJs,
   },
   {
-    id: 5,
+    id: 4,
     name: "NodeJs",
     img: NodeJs,
   },
   {
-    id: 6,
+    id: 5,
     name: "Mysql",
     img: Mysql,
   },

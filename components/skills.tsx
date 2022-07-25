@@ -33,7 +33,7 @@ const About: React.FC<ItabRef> = ({ tabRef }) => {
             <motion.div variants={sliceLeft} className="space-y-6">
               <h2 className="flex items-center space-x-3 text-2xl font-bold">
                 <FaRegSmileBeam />
-                <span>기술 스택</span>
+                <span>메인 기술 스택</span>
               </h2>
               <div className="flex w-full flex-wrap justify-around gap-4">
                 {MainSkills.map((skill) => (

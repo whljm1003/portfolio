@@ -78,7 +78,7 @@ export const projects = [
     ],
     link: {
       github: "https://github.com/whljm1003/pan_client",
-      deploy: "https://picanote.site/",
+      deploy: "https://picanote.shop",
     },
   },
   {

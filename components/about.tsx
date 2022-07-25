@@ -45,16 +45,16 @@ const About: React.FC<ItabRef> = ({ tabRef }) => {
           </h1>
         </div>
         <div className="items-cente flex w-full flex-wrap space-y-6">
-          <div className="flex w-full items-center justify-center space-x-5 lg:w-1/2 ">
+          <div className="flex w-full items-center justify-center space-x-5 lg:w-1/2">
             <BsFillPersonFill size={40} />
-            <div className="w-1/3 space-y-2">
+            <div className="w-2/4 space-y-2 md:w-1/3 ">
               <div className="text-2xl font-bold">이름</div>
               <div className="text-base">이정민</div>
             </div>
           </div>
-          <div className="flex w-full items-center justify-center space-x-5 lg:w-1/2 ">
+          <div className="flex w-full items-center justify-center space-x-5 lg:w-1/2">
             <AiFillPhone size={40} />
-            <div className="w-1/3 space-y-2">
+            <div className="w-2/4 space-y-2 md:w-1/3">
               <div className="text-2xl font-bold">연락처</div>
               <div className="flex items-center space-x-2">
                 <span className="text-base">010-4998-8965</span>
@@ -69,7 +69,7 @@ const About: React.FC<ItabRef> = ({ tabRef }) => {
           </div>
           <div className="flex w-full items-center justify-center space-x-5 lg:w-1/2 ">
             <IoMdMail size={40} />
-            <div className="w-1/3 space-y-2">
+            <div className="w-2/4 space-y-2 md:w-1/3 ">
               <div className="text-2xl font-bold">이메일</div>
               <div className="flex items-center space-x-2">
                 <span className="text-base">whljm1003@gmail.com</span>
@@ -84,7 +84,7 @@ const About: React.FC<ItabRef> = ({ tabRef }) => {
           </div>
           <div className="flex w-full items-center justify-center space-x-5 lg:w-1/2 ">
             <AiFillGithub size={40} />
-            <div className="w-1/3">
+            <div className="w-2/4 md:w-1/3 ">
               <div className="mb-2 text-2xl font-bold">Github</div>
               <Link href="https://github.com/whljm1003">
                 <a className="text-base">https://github.com/whljm1003</a>
