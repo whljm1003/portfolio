@@ -54,16 +54,23 @@ const About: React.FC<ItabRef> = ({ tabRef }) => {
           </div>
           <div className="flex w-full items-center justify-center space-x-5 lg:w-1/2">
             <AiFillPhone size={40} />
-            <div className="w-2/4 space-y-2 md:w-1/3">
-              <div className="text-2xl font-bold">연락처</div>
-              <div className="flex items-center space-x-2">
-                <span className="text-base">010-4998-8965</span>
+            <div className=" w-2/4 space-y-2 md:w-1/3">
+              <div className="text-2xl font-bold ">연락처</div>
+              {/* 태블릿 버전 부터 출력 */}
+              <div className="hidden items-center space-x-2 sm:flex">
+                <span className="sm: text-base">010-4998-8965</span>
                 <span>
                   <IoCopy
                     onClick={() => handleCopyClipBoard("010-4998-8965")}
                     className="cursor-pointer"
                   />
                 </span>
+              </div>
+              {/* 모바일 버전에만 출력 */}
+              <div className="w-2/4 space-y-2 sm:hidden md:w-1/3">
+                <Link href={"tel:010-4998-8965"}>
+                  <a className="text-base">010-4998-8965</a>
+                </Link>
               </div>
             </div>
           </div>
