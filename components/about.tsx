@@ -67,7 +67,7 @@ const About: React.FC<ItabRef> = ({ tabRef }) => {
                 </span>
               </div>
               {/* 모바일 버전에만 출력 */}
-              <div className="w-2/4 space-y-2 sm:hidden md:w-1/3">
+              <div className="w-full space-y-2 sm:hidden">
                 <Link href={"tel:010-4998-8965"}>
                   <a className="text-base">010-4998-8965</a>
                 </Link>
