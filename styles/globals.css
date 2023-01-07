@@ -23,3 +23,22 @@
     display: none !important;
   }
 }
+
+.snowflake {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  top: -8px;
+  /* animation: fall 10s linear; */
+}
+
+@keyframes fall {
+  from {
+  }
+  to {
+    transform: translateY(6822px);
+    opacity: 0;
+  }
+}

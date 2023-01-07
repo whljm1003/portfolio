@@ -34,6 +34,7 @@ const Main: React.FC<ItabRef> = ({ tabRef }) => {
               src={Img}
               width={200}
               height={200}
+              priority={true}
             />
           </div>
           <div className="z-10 flex flex-col items-center justify-center">

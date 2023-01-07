@@ -11,7 +11,10 @@ module.exports = {
       square: "square",
       roman: "upper-roman",
     },
-    extend: {},
+    extend: {
+      keyframes: {},
+      animation: {},
+    },
   },
   plugins: [],
 };
