@@ -6,6 +6,7 @@ import TypeIt from "typeit-react";
 import { motion } from "framer-motion";
 import { initialScreen } from "./motion";
 import { ItabRef } from "./header";
+import Model from "./model";
 
 const Main: React.FC<ItabRef> = ({ tabRef }) => {
   return (
@@ -29,13 +30,14 @@ const Main: React.FC<ItabRef> = ({ tabRef }) => {
           className="justify-cente m-auto flex w-full max-w-5xl flex-col pt-24 pb-10"
         >
           <div className="flex justify-center">
-            <Image
+            <Model />
+            {/* <Image
               className=" rounded-full"
               src={Img}
               width={200}
               height={200}
               priority={true}
-            />
+            /> */}
           </div>
           <div className="z-10 flex flex-col items-center justify-center">
             <h1 className="my-8 text-xl text-gray-100 lg:text-5xl">
