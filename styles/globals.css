@@ -1,6 +1,8 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 :root {
   --swiper-theme-color: black !important;
@@ -31,7 +33,6 @@
   background: white;
   position: absolute;
   top: -8px;
-  /* animation: fall 10s linear; */
 }
 
 @keyframes fall {
@@ -41,4 +42,4 @@
     transform: translateY(6822px);
     opacity: 0;
   }
-}
+} */

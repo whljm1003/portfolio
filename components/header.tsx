@@ -1,3 +1,4 @@
+'use client'
 import { FC, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { motion } from "framer-motion";

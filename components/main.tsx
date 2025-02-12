@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import Img from "../assets/image/img.gif";
 import bg from "../assets/image/developer_background.jpeg";
@@ -6,7 +7,7 @@ import TypeIt from "typeit-react";
 import { motion } from "framer-motion";
 import { initialScreen } from "./motion";
 import { ItabRef } from "./header";
-import Model from "./model";
+// import Model from "./model";
 
 const Main: React.FC<ItabRef> = ({ tabRef }) => {
   return (
@@ -18,10 +19,12 @@ const Main: React.FC<ItabRef> = ({ tabRef }) => {
     >
       <div className="relative">
         <Image
-          priority={true}
+          alt="background"
+          priority
+          loading="eager"
           src={bg}
           className="opacity-80 blur-sm"
-          layout="fill"
+          fill
         />
         <motion.div
           variants={initialScreen}
@@ -30,14 +33,15 @@ const Main: React.FC<ItabRef> = ({ tabRef }) => {
           className="justify-cente m-auto flex w-full max-w-5xl flex-col pt-24 pb-10"
         >
           <div className="flex justify-center">
-            <Model />
-            {/* <Image
-              className=" rounded-full"
+            {/* <Model /> */}
+            <Image
+              alt="profile"
+              className=" rounded-full z-50"
               src={Img}
               width={200}
               height={200}
-              priority={true}
-            /> */}
+              // priority={true}
+            />
           </div>
           <div className="z-10 flex flex-col items-center justify-center">
             <h1 className="my-8 text-xl text-gray-100 lg:text-5xl">

@@ -1,3 +1,4 @@
+'use client'
 import { useEffect } from "react";
 import { BsFillPersonFill } from "react-icons/bs";
 import { AiFillPhone, AiFillGithub } from "react-icons/ai";
@@ -25,7 +26,7 @@ const About: React.FC<ItabRef> = ({ tabRef }) => {
   }, [isCopy]);
 
   return (
-    <section
+    <div
       ref={(el) => {
         if (el) tabRef.current[1] = el;
       }}
@@ -69,7 +70,7 @@ const About: React.FC<ItabRef> = ({ tabRef }) => {
               {/* 모바일 버전에만 출력 */}
               <div className="w-full space-y-2 sm:hidden">
                 <Link href={"tel:010-4998-8965"}>
-                  <a className="text-base">010-4998-8965</a>
+                  <span className="text-base">010-4998-8965</span>
                 </Link>
               </div>
             </div>
@@ -94,13 +95,13 @@ const About: React.FC<ItabRef> = ({ tabRef }) => {
             <div className="w-2/4 md:w-1/3 ">
               <div className="mb-2 text-2xl font-bold">Github</div>
               <Link href="https://github.com/whljm1003">
-                <a className="text-base">https://github.com/whljm1003</a>
+                <span className="text-base">https://github.com/whljm1003</span>
               </Link>
             </div>
           </div>
         </div>
       </motion.div>
-    </section>
+    </div>
   );
 };
 

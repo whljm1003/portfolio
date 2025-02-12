@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import wanted from "../assets/image/icons/wanted.png";
 import { wantedData } from "../assets/wantedData";
@@ -6,7 +7,7 @@ import { GiRollingDices } from "react-icons/gi";
 import { motion } from "framer-motion";
 import { variants, sliceLeft, sliceRight } from "./motion";
 // import Swiper core and required modules
-import { EffectCards, Navigation, Pagination } from "swiper";
+import { EffectCards, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
@@ -16,8 +17,12 @@ import "swiper/css/navigation";
 import Link from "next/link";
 import React from "react";
 import { ItabRef } from "./header";
+// 다음과 같이 동적으로 import
+
 
 const Career: React.FC<ItabRef> = ({ tabRef }) => {
+
+
   return (
     <section
       ref={(el) => {
@@ -47,8 +52,9 @@ const Career: React.FC<ItabRef> = ({ tabRef }) => {
                 <Image
                   src={wanted}
                   alt="wanted"
-                  layout="fill"
-                  className="rounded-full "
+                  fill
+                  sizes="(max-width: 768px) 192px, 192px"  // 48rem = 192px
+                  className="rounded-full"
                 />
               </div>
             </motion.div>
@@ -108,13 +114,13 @@ const Career: React.FC<ItabRef> = ({ tabRef }) => {
                       </h3>
                       <ul className="mt-2 list-square pl-4 opacity-80">
                         <li className="hover:opacity-60">
-                          <Link href={data.link.github}>
-                            <a className="border-b-2"> Github</a>
+                          <Link href={data.link.github} >
+                            <span className="border-b-2"> Github</span>
                           </Link>
                         </li>
                         <li className="hover:opacity-60">
                           <Link href={data.link.deploy}>
-                            <a className="border-b-2 "> 배포링크</a>
+                            <span className="border-b-2 "> 배포링크</span>
                           </Link>
                         </li>
                       </ul>

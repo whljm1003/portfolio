@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import { FaLink, FaTools } from "react-icons/fa";
 import { MdPeopleAlt, MdDescription } from "react-icons/md";
@@ -7,7 +8,7 @@ import { motion } from "framer-motion";
 import { variants, sliceUp } from "./motion";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -74,10 +75,10 @@ const Project: React.FC<ItabRef> = ({ tabRef }) => {
                           className="relative m-auto h-[90%] lg:w-[90%] "
                         >
                           <Image
-                            priority={true}
+                            // priority={true}
                             src={img.url}
                             alt={img.name}
-                            layout="fill"
+                            fill
                           />
                         </div>
                       </SwiperSlide>
@@ -125,17 +126,16 @@ const Project: React.FC<ItabRef> = ({ tabRef }) => {
                       <ul className="list-square pl-5">
                         <li className="hover:opacity-70">
                           <Link href={project.link.github}>
-                            <a className="border-b-2 border-gray-600">
-                              {" "}
+                            <span className="border-b-2 border-gray-600">
                               Github
-                            </a>
+                            </span>
                           </Link>
                         </li>
                         <li className="hover:opacity-70">
                           <Link href={project.link.deploy}>
-                            <a className="border-b-2 border-gray-600">
+                            <span className="border-b-2 border-gray-600">
                               배포링크
-                            </a>
+                            </span>
                           </Link>
                         </li>
                       </ul>

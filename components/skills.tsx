@@ -44,9 +44,7 @@ const About: React.FC<ItabRef> = ({ tabRef }) => {
                     <Image
                       src={skill.img}
                       alt={skill.name}
-                      width={70}
-                      height={70}
-                      className="rounded-full"
+                      className="rounded-full w-[70px] h-[70px] object-cover"
                     />
                     <span className="text-xs font-semibold">{skill.name}</span>
                   </div>
@@ -67,9 +65,7 @@ const About: React.FC<ItabRef> = ({ tabRef }) => {
                     <Image
                       src={skill.img}
                       alt={skill.name}
-                      width={70}
-                      height={70}
-                      className="rounded-full"
+                      className="rounded-full w-[70px] h-[70px] object-cover"
                     />
                     <span className="text-xs font-semibold">{skill.name}</span>
                   </div>
@@ -90,9 +86,7 @@ const About: React.FC<ItabRef> = ({ tabRef }) => {
                     <Image
                       src={skill.img}
                       alt={skill.name}
-                      width={70}
-                      height={70}
-                      className="rounded-full"
+                      className="rounded-full w-[70px] h-[70px] object-cover"
                     />
                     <span className="text-xs font-semibold">{skill.name}</span>
                   </div>
