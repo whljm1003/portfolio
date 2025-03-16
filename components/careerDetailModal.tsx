@@ -38,10 +38,10 @@ export default function CareerDetailModal({
       />
       <motion.div
         layoutId={`career-${detail}`}
-        style={{ top: scrollYGet + 25 }}
+        style={{ top: scrollYGet + 200 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="absolute left-0 right-0 mx-auto my-0 h-[90vh] overflow-y-auto rounded-lg bg-white z-50 max-w-7xl"
+        className="absolute left-0 right-0 mx-auto my-0 h-[70vh] overflow-y-auto rounded-lg bg-slate-50 z-50 max-w-5xl"
       >
         <motion.div
           variants={variants}
@@ -55,14 +55,14 @@ export default function CareerDetailModal({
             initial="start"
             whileInView="end"
             viewport={{ once: true, amount: 0.2 }}
-            className="flex w-full flex-col items-center space-y-3 rounded-xl bg-slate-50 py-5"
+            className="flex w-full flex-col items-center space-y-3 bg-slate-50 py-5"
           >
             <h1 className="text-4xl font-extrabold">{career.projectTitle}</h1>
             <h2 className="text-2xl font-semibold text-gray-400">
               {career.projectPeriod}
             </h2>
             <section className="w-full">
-              <div className="h-[30rem] w-full">
+              {/* <div className="h-[30rem] w-full">
                 <Swiper
                   slidesPerView={1}
                   spaceBetween={30}
@@ -78,12 +78,12 @@ export default function CareerDetailModal({
                     <SwiperSlide key={img.id}>
                       <div
                         key={img.id}
-                        className="relative m-auto lg:w-[90%] aspect-video"
+                        className="relative m-auto lg:w-[90%] h-[90%] bg-[#ffffff] rounded-lg overflow-hidden shadow-lg"
                       >
                         <Image
                           src={img.url}
                           alt={img.alt}
-                          className="object-contain"
+                          className="object-contain bg-gray-100"
                           // placeholder="blur"
                           fill
                         />
@@ -91,14 +91,14 @@ export default function CareerDetailModal({
                     </SwiperSlide>
                   ))}
                 </Swiper>
-              </div>
+              </div> */}
 
               <div className=" w-full space-y-3 p-5">
                 <h3 className="mb-3 flex items-center text-2xl font-bold">
                   <MdDescription />
                   <span className="pl-2">Description</span>
                 </h3>
-                <p className="border-b-2 border-black pb-10">
+                <p className="border-b-2 border-black pb-10 whitespace-pre-line">
                   {career.description}
                 </p>
 
@@ -129,7 +129,7 @@ export default function CareerDetailModal({
                     <div className="mt-10">
                       <h3 className="mb-6 flex items-center text-2xl font-bold">
                         <FaLink />
-                        <span className="pl-2">문제 해결</span>
+                        <span className="pl-2">이슈</span>
                       </h3>
                       <ul className="list-square pl-5">
                         {career.problemSolving.map((problem) => (

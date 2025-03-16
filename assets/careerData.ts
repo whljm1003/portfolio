@@ -1,18 +1,7 @@
-import EntizenImg01 from "@/assets/image/entizen/entizen_01.png";
-import EntizenImg02 from "@/assets/image/entizen/entizen_02.png";
-import EntizenImg03 from "@/assets/image/entizen/entizen_03.png";
-import EntizenImg04 from "@/assets/image/entizen/entizen_04.png";
-import EntizenImg05 from "@/assets/image/entizen/entizen_05.png";
-import GoldrushImg01 from "@/assets/image/goldrush/goldrush_01.png";
-import GoldrushImg02 from "@/assets/image/goldrush/goldrush_02.png";
-import GoldrushImg03 from "@/assets/image/goldrush/goldrush_03.png";
-import GoldrushImg04 from "@/assets/image/goldrush/goldrush_04.png";
-import GoldrushImg05 from "@/assets/image/goldrush/goldrush_05.png";
-
 export const careers = [
   {
     id: 1,
-    projectTitle: "엔티즌 (LS산전)",
+    projectTitle: "엔티즌",
     projectPeriod: "2022.09 ~ 2023.02",
     projectSubTitle: "구매자와 판매자 간 역경매 중개 플랫폼",
     description:
@@ -41,33 +30,6 @@ export const careers = [
           "카카오 로그인: 최초 카카오 로그인 SDK를 사용해 구현했으나 웹앱에서 정상 작동하지 않아 팝업 형태로 전환하였습니다. 이후 웹앱 패키징 문제로 팝업 방식이 적합하지 않아, 리다이렉트 방식으로 변경하였습니다.\n 구글 로그인: 웹에서는 react 기반의 구글 로그인을 구현하였으나, 앱에서는 공식 문서에 따라 사용이 제한되어 별도로 구현된 구글 로그인을 사용하였습니다",
         solution:
           "웹에서 구글 로그인 버튼 클릭 시, 앱으로 네이티브 브릿지 호출이 이루어지고, 앱에서 구글 로그인 처리를 한 후 이메일과 로그인 ID를 반환합니다. 이후 웹에서 이를 활용하여 회원 가입 또는 로그인을 진행합니다.",
-      },
-    ],
-    imgs: [
-      {
-        id: 1,
-        url: EntizenImg01,
-        alt: "엔티즌 이미지_1",
-      },
-      {
-        id: 2,
-        url: EntizenImg02,
-        alt: "엔티즌 이미지_2",
-      },
-      {
-        id: 3,
-        url: EntizenImg03,
-        alt: "엔티즌 이미지_3",
-      },
-      {
-        id: 4,
-        url: EntizenImg04,
-        alt: "엔티즌 이미지_4",
-      },
-      {
-        id: 5,
-        url: EntizenImg05,
-        alt: "엔티즌 이미지_5",
       },
     ],
     contributions: [
@@ -100,19 +62,12 @@ export const careers = [
     description:
       "PHP 기반으로 구축된 목재 및 자재 쇼핑몰의 유지보수 작업을 수행하며, 프론트엔드 UI 개선 및 주문·결제 기능 보완.",
     problemSolving: [],
-    imgs: [
-      {
-        id: 1,
-        url: "",
-        alt: "",
-      },
-    ],
     contributions: [
       { id: 1, contents: "HTML/CSS 수정 및 UI 개선으로 사용자 경험 향상" },
       {
         id: 2,
         contents:
-          "JavaScript를 활용한 데이터 처리 및 동적 UI 개선 (DOM 조작, 사용자 인터랙션 최적화)",
+          "JavaScript를 활용한 데이터 처리 및 동적 UI 개선\n (DOM 조작, 사용자 인터랙션 최적화)",
       },
       {
         id: 3,
@@ -133,13 +88,7 @@ export const careers = [
     projectPeriod: "2023.09 ~ 2023.10",
     description:
       "병원에서 검진을 받은 환자가 유전자 검사 결과를 PDF 보고서로 확인할 수 있는 플랫폼.",
-    imgs: [
-      {
-        id: 1,
-        url: "",
-        alt: "",
-      },
-    ],
+
     contributions: [
       {
         id: 1,
@@ -164,14 +113,7 @@ export const careers = [
       { id: 3, name: "CSS: Emotion" },
       { id: 4, name: "배포: AWS" },
     ],
-    problemSolving: [
-      {
-        id: 1,
-        title: "",
-        issue: "",
-        solution: "",
-      },
-    ],
+    problemSolving: [],
     link: {
       github: "",
       deploy: "",
@@ -184,21 +126,7 @@ export const careers = [
     projectPeriod: "2023.11 ~ 2023.12",
     description:
       "검증된 패션 퍼스널 쇼퍼(패프)를 직접 선택하여, 온라인에서 맞춤형 스타일 컨설팅을 받을 수 있는 플랫폼.",
-    problemSolving: [
-      {
-        id: 1,
-        title: "",
-        issue: "",
-        solution: "",
-      },
-    ],
-    imgs: [
-      {
-        id: 1,
-        url: "",
-        alt: "",
-      },
-    ],
+    problemSolving: [],
     contributions: [
       {
         id: 1,
@@ -232,26 +160,13 @@ export const careers = [
   },
   {
     id: 5,
-    projectTitle: "미술로 생각하기 (빅토)",
+    projectTitle: "미술로 생각하기",
     projectSubTitle: "미술 교육 플랫폼",
     projectPeriod: "2024.01 ~ 2024.04",
     description:
-      "기존 학부모 및 선생님들이 이용하던 교육 플랫폼을 Next.js 기반으로 리뉴얼하여, 가맹점 및 본사 관리자, 학부모, 선생님을 위한 웹·모바일 환경을 개선. 보다 효율적인 학습 관리 및 운영이 가능하도록 개선함.",
-    problemSolving: [
-      {
-        id: 1,
-        title: "",
-        issue: "",
-        solution: "",
-      },
-    ],
-    imgs: [
-      {
-        id: 1,
-        url: "",
-        alt: "",
-      },
-    ],
+      "기존 학부모 및 선생님들이 이용하던 교육 플랫폼을 Next.js 기반으로 리뉴얼하였습니다.\n가맹점 및 본사 관리자, 학부모, 선생님을 위한 모바일 환경을 개선. 보다 효율적인 학습 관리 및 운영이 가능하도록 개선함.",
+    problemSolving: [],
+
     contributions: [
       {
         id: 1,
@@ -285,41 +200,7 @@ export const careers = [
     projectPeriod: "2024.05 ~ 2024.06",
     description:
       "사용자가 목표를 설정하고 실물 금을 구매하며 자산을 관리할 수 있는 금융 플랫폼.",
-    problemSolving: [
-      {
-        id: 1,
-        title: "",
-        issue: "",
-        solution: "",
-      },
-    ],
-    imgs: [
-      {
-        id: 1,
-        url: GoldrushImg01,
-        alt: "gold_rush_img01",
-      },
-      {
-        id: 2,
-        url: GoldrushImg02,
-        alt: "gold_rush_img02",
-      },
-      {
-        id: 3,
-        url: GoldrushImg03,
-        alt: "gold_rush_img03",
-      },
-      {
-        id: 4,
-        url: GoldrushImg04,
-        alt: "gold_rush_img04",
-      },
-      {
-        id: 5,
-        url: GoldrushImg05,
-        alt: "gold_rush_img05",
-      },
-    ],
+    problemSolving: [],
     contributions: [
       {
         id: 1,
@@ -354,21 +235,7 @@ export const careers = [
     projectSubTitle: "의료 지원 및 보안 서비스를 지원하는 플랫폼.",
     projectPeriod: "2024.09 ~ 2024.10",
     description: "실시간으로 의료 지원 및 보안 서비스를 지원하는 플랫폼.",
-    problemSolving: [
-      {
-        id: 1,
-        title: "",
-        issue: "",
-        solution: "",
-      },
-    ],
-    imgs: [
-      {
-        id: 1,
-        url: "",
-        alt: "",
-      },
-    ],
+    problemSolving: [],
     contributions: [
       { id: 1, contents: "관리자 페이지 기능 고도화 및 UI 개선" },
       { id: 2, contents: "Socket.IO를 활용한 관리자 간 실시간 채팅 기능 구현" },
@@ -395,23 +262,8 @@ export const careers = [
     projectTitle: "ECF 쇼핑몰",
     projectSubTitle: "다양한 브랜드 제품을 소개하는 온라인 쇼핑 플랫폼",
     projectPeriod: "2024.06 ~ 2024.10",
-    description:
-      "다양한 브랜드 제품을 소개하는 온라인 쇼핑 플랫폼 (무신사와 유사)",
-    problemSolving: [
-      {
-        id: 1,
-        title: "",
-        issue: "",
-        solution: "",
-      },
-    ],
-    imgs: [
-      {
-        id: 1,
-        url: "",
-        alt: "",
-      },
-    ],
+    description: "다양한 브랜드 제품을 소개하는 온라인 쇼핑 플랫폼",
+    problemSolving: [],
     contributions: [
       { id: 1, contents: "클라이언트와 협업하여 요구 사항 분석" },
       { id: 2, contents: "파트너 및 본사 관리자 페이지 퍼블리싱" },

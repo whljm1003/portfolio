@@ -55,13 +55,13 @@ const Career: React.FC<ItabRef> = ({ tabRef }) => {
             className="overflow-hidden lg:overflow-visible w-full"
           >
             <div className="flex items-center justify-center gap-6 mb-6">
-              <div className="w-[300px] h-[150px] relative">
+              <div className="w-[150px] h-[150px] relative">
                 {/* <div className=" relative"> */}
                 <Image
                   src={stevelabs}
                   alt="stevelabs_logo"
                   fill
-                  className="object-cover rounded-lg"
+                  className="object-cover rounded-full"
                 />
               </div>
               <div>
