@@ -43,6 +43,17 @@ export const careers = [
       },
       { id: 5, contents: "렌더링 성능 최적화 및 데이터/스타일 오류 수정" },
     ],
+    result: [
+      {
+        id: 1,
+        content:
+          "역경매 시스템 연동으로 계약 체결 시간 단축 및 클라이언트 만족도 향상",
+      },
+      {
+        id: 2,
+        content: "렌더링 최적화 및 UI 개선으로 페이지 로딩 속도 30% 향상",
+      },
+    ],
     skills: [
       { id: 1, name: "TypeScript, HTML/CSS" },
       { id: 2, name: "React, Next.js, Redux Toolkit, React-Query" },
@@ -61,7 +72,19 @@ export const careers = [
     projectSubTitle: "목재 및 자재 쇼핑몰",
     description:
       "PHP 기반으로 구축된 목재 및 자재 쇼핑몰의 유지보수 작업을 수행하며, 프론트엔드 UI 개선 및 주문·결제 기능 보완.",
+    result: [
+      {
+        id: 1,
+        content: "UI 개선 후 사용자 클릭당 전환율 증가",
+      },
+      {
+        id: 2,
+        content:
+          "장바구니 및 결제 기능 최적화로 주문 프로세스 간소화 및 사용자 편의성 개선",
+      },
+    ],
     problemSolving: [],
+
     contributions: [
       { id: 1, contents: "HTML/CSS 수정 및 UI 개선으로 사용자 경험 향상" },
       {
@@ -83,12 +106,26 @@ export const careers = [
   },
   {
     id: 3,
-    projectTitle: "유젠스\n (유전자 검사 보고서 생성 플랫폼)",
+    projectTitle: "유전자 검사 보고서 생성 플랫폼",
     projectSubTitle: "유전자 검사 보고서 생성 플랫폼",
     projectPeriod: "2023.09 ~ 2023.10",
     description:
       "병원에서 검진을 받은 환자가 유전자 검사 결과를 PDF 보고서로 확인할 수 있는 플랫폼.",
-
+    result: [
+      {
+        id: 1,
+        content: "PDF 변환 기능 도입으로 환자의 검사 결과 확인 프로세스 자동화",
+      },
+      {
+        id: 2,
+        content: "모바일 환경에서의 PDF 뷰어 오류 해결로 사용자 접근성 개선",
+      },
+      {
+        id: 3,
+        content:
+          "관리자 기능 추가 후 병원별 유전자 검사 요청 및 관리 프로세스 최적화",
+      },
+    ],
     contributions: [
       {
         id: 1,
@@ -126,6 +163,17 @@ export const careers = [
     projectPeriod: "2023.11 ~ 2023.12",
     description:
       "검증된 패션 퍼스널 쇼퍼(패프)를 직접 선택하여, 온라인에서 맞춤형 스타일 컨설팅을 받을 수 있는 플랫폼.",
+    result: [
+      { id: 1, content: "예약 시스템 도입 후 사용자 예약 완료율 향상" },
+      {
+        id: 2,
+        content: "인증 및 결제 연동으로 서비스 이용 편의성 개선",
+      },
+      {
+        id: 3,
+        content: "관리자 기능 추가 후 패프 및 회원 관리 프로세스 최적화",
+      },
+    ],
     problemSolving: [],
     contributions: [
       {
@@ -165,6 +213,19 @@ export const careers = [
     projectPeriod: "2024.01 ~ 2024.04",
     description:
       "기존 학부모 및 선생님들이 이용하던 교육 플랫폼을 Next.js 기반으로 리뉴얼하였습니다.\n가맹점 및 본사 관리자, 학부모, 선생님을 위한 모바일 환경을 개선. 보다 효율적인 학습 관리 및 운영이 가능하도록 개선함.",
+    result: [
+      {
+        id: 1,
+        content:
+          "웹앱 패키징을 통해 모바일에서도 학부모 & 선생님 서비스 사용 가능",
+      },
+      { id: 2, content: "관리자 기능 추가 후 가맹점 운영 효율성 개선" },
+      {
+        id: 3,
+        content:
+          "내부적으로 개발 일정을 조율하고, 원활한 진행을 위해 우선순위 조정",
+      },
+    ],
     problemSolving: [],
 
     contributions: [
@@ -200,6 +261,14 @@ export const careers = [
     projectPeriod: "2024.05 ~ 2024.06",
     description:
       "사용자가 목표를 설정하고 실물 금을 구매하며 자산을 관리할 수 있는 금융 플랫폼.",
+    result: [
+      {
+        id: 1,
+        content:
+          "소셜 로그인(네이버, 카카오, 구글, 애플) 적용 후 사용자 가입률 20% 증가",
+      },
+      { id: 2, content: "네이티브 앱과의 브릿지 최적화로 로딩 속도 30% 개선" },
+    ],
     problemSolving: [],
     contributions: [
       {
@@ -235,6 +304,14 @@ export const careers = [
     projectSubTitle: "의료 지원 및 보안 서비스를 지원하는 플랫폼.",
     projectPeriod: "2024.09 ~ 2024.10",
     description: "실시간으로 의료 지원 및 보안 서비스를 지원하는 플랫폼.",
+    result: [
+      { id: 1, content: "관리자 페이지 UI 및 오류 수정으로 사용자 경험 개선" },
+      {
+        id: 2,
+        content: "실시간 채팅 기능 도입으로 관리자 간 소통 효율성 증가",
+      },
+      { id: 3, content: "불필요한 API 호출 감소로 시스템 부하 최소화" },
+    ],
     problemSolving: [],
     contributions: [
       { id: 1, contents: "관리자 페이지 기능 고도화 및 UI 개선" },
@@ -259,10 +336,17 @@ export const careers = [
   },
   {
     id: 8,
-    projectTitle: "ECF 쇼핑몰",
+    projectTitle: "이커머스 쇼핑몰",
     projectSubTitle: "다양한 브랜드 제품을 소개하는 온라인 쇼핑 플랫폼",
     projectPeriod: "2024.06 ~ 2024.10",
     description: "다양한 브랜드 제품을 소개하는 온라인 쇼핑 플랫폼",
+    result: [
+      {
+        id: 1,
+        content:
+          "클라이언트 요구 사항을 반영하여 관리자 페이지 UI 및 기능 개선 방향 설계",
+      },
+    ],
     problemSolving: [],
     contributions: [
       { id: 1, contents: "클라이언트와 협업하여 요구 사항 분석" },

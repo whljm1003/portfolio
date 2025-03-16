@@ -37,7 +37,7 @@ const Main: React.FC<ItabRef> = ({ tabRef }) => {
             {/* <Model /> */}
             <Image
               alt="profile"
-              className=" rounded-full z-50"
+              className=" rounded-full z-10"
               src={Img}
               width={200}
               height={200}

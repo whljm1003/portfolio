@@ -14,6 +14,9 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { careers } from "@/assets/careerData";
 import { sliceUp, variants } from "./motion";
+import { FaWindowClose } from "react-icons/fa";
+import { DiCoda } from "react-icons/di";
+import { MdRoomPreferences } from "react-icons/md";
 type Props = {
   detail: number;
   setDetail: (detail: number) => void;
@@ -26,6 +29,8 @@ export default function CareerDetailModal({
   scrollYGet,
 }: Props) {
   const career = careers.find((career) => career.id === detail);
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+  const topOffset = isMobile ? scrollYGet : scrollYGet + 200;
 
   if (!career) return null;
   return (
@@ -38,10 +43,10 @@ export default function CareerDetailModal({
       />
       <motion.div
         layoutId={`career-${detail}`}
-        style={{ top: scrollYGet + 200 }}
+        style={{ top: topOffset }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="absolute left-0 right-0 mx-auto my-0 h-[70vh] overflow-y-auto rounded-lg bg-slate-50 z-50 max-w-5xl"
+        className="absolute left-0 right-0 mx-auto my-0 h-screen lg:h-[70vh] overflow-y-auto lg:rounded-lg bg-slate-50 z-50 max-w-5xl"
       >
         <motion.div
           variants={variants}
@@ -55,100 +60,105 @@ export default function CareerDetailModal({
             initial="start"
             whileInView="end"
             viewport={{ once: true, amount: 0.2 }}
-            className="flex w-full flex-col items-center space-y-3 bg-slate-50 py-5"
+            className="flex w-full flex-col items-center bg-slate-50 py-5"
           >
-            <h1 className="text-4xl font-extrabold">{career.projectTitle}</h1>
-            <h2 className="text-2xl font-semibold text-gray-400">
-              {career.projectPeriod}
-            </h2>
+            <button
+              className="absolute top-4 right-4"
+              onClick={() => setDetail(-1)}
+            >
+              <FaWindowClose size={24} />
+            </button>
+            <div className="flex flex-col justify-center items-center gap-2">
+              <h1 className="text-4xl font-extrabold">{career.projectTitle}</h1>
+              <h2 className="text-xl font-semibold text-gray-400">
+                {career.projectPeriod}
+              </h2>
+            </div>
             <section className="w-full">
-              {/* <div className="h-[30rem] w-full">
-                <Swiper
-                  slidesPerView={1}
-                  spaceBetween={30}
-                  loop={true}
-                  pagination={{
-                    type: "fraction",
-                  }}
-                  navigation={true}
-                  modules={[Pagination, Navigation]}
-                  className="swiper h-full w-full"
-                >
-                  {career.imgs.map((img) => (
-                    <SwiperSlide key={img.id}>
-                      <div
-                        key={img.id}
-                        className="relative m-auto lg:w-[90%] h-[90%] bg-[#ffffff] rounded-lg overflow-hidden shadow-lg"
-                      >
-                        <Image
-                          src={img.url}
-                          alt={img.alt}
-                          className="object-contain bg-gray-100"
-                          // placeholder="blur"
-                          fill
-                        />
-                      </div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              </div> */}
-
-              <div className=" w-full space-y-3 p-5">
-                <h3 className="mb-3 flex items-center text-2xl font-bold">
-                  <MdDescription />
-                  <span className="pl-2">Description</span>
-                </h3>
-                <p className="border-b-2 border-black pb-10 whitespace-pre-line">
-                  {career.description}
-                </p>
-
-                <div className="flex w-full flex-wrap justify-between">
-                  <div className="w-full lg:w-1/2">
-                    <h3 className="mb-3 flex items-center text-2xl font-bold">
-                      <MdPeopleAlt />
-                      <span className="pl-2">주요 역할 및 기여</span>
-                    </h3>
-                    <ul className="list-square pl-5">
-                      {career.contributions.map((contribution) => (
-                        <li key={contribution.id}>{contribution.contents}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="mt-10 w-full lg:mt-0 lg:w-1/2">
-                    <h3 className="mb-3 flex items-center text-2xl font-bold">
-                      <FaTools />
-                      <span className="pl-2">기술 스택</span>
-                    </h3>
-                    <ul className="list-square pl-5">
-                      {career.skills.map((skill) => (
-                        <li key={skill.id}>{skill.name}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  {career.problemSolving.length > 0 ? (
-                    <div className="mt-10">
-                      <h3 className="mb-6 flex items-center text-2xl font-bold">
-                        <FaLink />
-                        <span className="pl-2">이슈</span>
-                      </h3>
-                      <ul className="list-square pl-5">
-                        {career.problemSolving.map((problem) => (
-                          <li key={problem.id} className="mb-5">
-                            <h4 className="text-lg font-semibold">
-                              {problem.title}
-                            </h4>
-                            <p className="text-sm whitespace-pre-line">
-                              {problem.issue}
-                            </p>
-                            <p className="text-sm whitespace-pre-line">
-                              {problem.solution}
-                            </p>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ) : null}
+              <div className="flex flex-col gap-10 w-full p-5">
+                {/* 개요 */}
+                <div className="w-full">
+                  <h3 className="mb-3 flex items-center text-2xl font-bold">
+                    <MdDescription />
+                    <span className="pl-2">개요</span>
+                  </h3>
+                  <p className=" whitespace-pre-line">{career.description}</p>
                 </div>
+
+                {/* 주요 역할 및 기여 */}
+                <div>
+                  <h3 className="mb-3 flex items-center text-2xl font-bold">
+                    <MdPeopleAlt />
+                    <span className="pl-2">주요 역할 및 기여</span>
+                  </h3>
+                  <ul className="list-square pl-5">
+                    {career.contributions.map((contribution) => (
+                      <li key={contribution.id}>{contribution.contents}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* 성과 */}
+                <div>
+                  <h3 className="mb-3 flex items-center text-2xl font-bold">
+                    <DiCoda />
+                    <span className="pl-2">성과</span>
+                  </h3>
+                  <ul className="list-square pl-5">
+                    {career.result.map((result) => (
+                      <li key={result.id}>{result.content}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* 기술 스택 */}
+                <div>
+                  <h3 className="mb-3 flex items-center text-2xl font-bold">
+                    <FaTools />
+                    <span className="pl-2">기술 스택</span>
+                  </h3>
+                  <ul className="list-square pl-5">
+                    {career.skills.map((skill) => (
+                      <li key={skill.id}>{skill.name}</li>
+                    ))}
+                  </ul>
+                </div>
+                {career.problemSolving.length > 0 ? (
+                  <div className="">
+                    <h3 className="mb-3 flex items-center text-2xl font-bold">
+                      <FaLink />
+                      <span className="pl-2">이슈</span>
+                    </h3>
+                    <ul className="list-square pl-5 flex flex-col gap-3">
+                      {career.problemSolving.map((problem) => (
+                        <li key={problem.id}>
+                          <h4 className="text-lg font-semibold">
+                            {problem.title}
+                          </h4>
+                          <p className="text-sm whitespace-pre-line">
+                            {problem.issue}
+                          </p>
+                          <p className="text-sm whitespace-pre-line">
+                            {problem.solution}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
+
+                {/* 참고 자료 */}
+                {/* <div>
+                  <h3 className="mb-3 flex items-center text-2xl font-bold">
+                    <MdRoomPreferences />
+                    <span className="pl-2">참고 자료</span>
+                  </h3>
+                  <ul className="list-square pl-5">
+                    {career.skills.map((skill) => (
+                      <li key={skill.id}>{skill.name}</li>
+                    ))}
+                  </ul>
+                </div> */}
               </div>
             </section>
           </motion.div>

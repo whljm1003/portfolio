@@ -86,7 +86,7 @@ const Career: React.FC<ItabRef> = ({ tabRef }) => {
               )}
             </AnimatePresence>
             <AnimatePresence>
-              <div className="grid grid-cols-auto-fill w-full gap-4 my-12">
+              <div className="grid grid-cols-auto-fill w-full gap-4 my-12 px-5 lg:px-0">
                 {careers.map((item, index) => (
                   <motion.div
                     layoutId={`career-${item}`}
