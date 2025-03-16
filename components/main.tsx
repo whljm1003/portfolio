@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 import Img from "../assets/image/img.gif";
 import bg from "../assets/image/developer_background.jpeg";
@@ -7,6 +7,7 @@ import TypeIt from "typeit-react";
 import { motion } from "framer-motion";
 import { initialScreen } from "./motion";
 import { ItabRef } from "./header";
+import { introduction, typeItString } from "@/assets/about";
 // import Model from "./model";
 
 const Main: React.FC<ItabRef> = ({ tabRef }) => {
@@ -40,29 +41,24 @@ const Main: React.FC<ItabRef> = ({ tabRef }) => {
               src={Img}
               width={200}
               height={200}
-              // priority={true}
             />
           </div>
           <div className="z-10 flex flex-col items-center justify-center">
-            <h1 className="my-8 text-xl text-gray-100 lg:text-5xl">
+            <h1 className="my-8 text-xl text-white lg:text-5xl ">
               <TypeIt
                 options={{
-                  strings: ["Hello, I&apos;m an Front-end Developer."],
+                  strings: typeItString,
                   speed: 80,
                   waitUntilVisible: true,
                 }}
               />
             </h1>
-            <p className="p-2 text-center text-base font-extrabold text-white lg:text-lg">
-              안녕하세요. <br />
-              포기하지 않고 끈기 있게 도전하는 개발자 이정민입니다.
-              <br />
-              웹 서비스로 사용자들에게 편리함을 더해주고, <br />
-              고객 UI/UX에 대해 한번 더 생각하는 개발자가 되고싶습니다. <br />
+            <p className="p-2 text-center text-base font-extrabold text-white lg:text-lg whitespace-pre-line">
+              {introduction}
             </p>
           </div>
           <button
-            className="m-auto mt-10 animate-bounce rounded-2xl bg-[#45aaf2] px-10 text-lg font-semibold leading-10 text-white hover:opacity-80"
+            className="m-auto mt-10 animate-bounce rounded-2xl bg-[#f6b93b] px-10 text-lg font-semibold leading-10 text-white hover:opacity-80"
             onClick={() =>
               tabRef.current[1].scrollIntoView({ behavior: "smooth" })
             }

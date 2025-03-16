@@ -1,18 +1,18 @@
-import "./globals.css";
+import "../styles/globals.css";
 
 export const metadata = {
-  title: 'Portfolio',
-  description: 'LeeJungMin_Portfolio',
-}
+  title: "Portfolio",
+  description: "LeeJungMin_Portfolio",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body>{children}</body>
     </html>
-  )
+  );
 }

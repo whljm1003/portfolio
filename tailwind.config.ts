@@ -1,5 +1,17 @@
 import type { Config } from "tailwindcss";
 
+const colors = {
+  main1: "#B2DBCB",
+  main2: "#8AC2AC",
+  main3: "#DAF5EA",
+  main4: "#67A88F",
+  main5: "#518E77",
+  main6: "#30755B",
+  main7: "#1C5C44",
+  main8: "#0E422E",
+  main9: "#063322",
+  main10: "#013320",
+};
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,9 +26,16 @@ module.exports = {
       square: "square",
       roman: "upper-roman",
     },
+
     extend: {
       keyframes: {},
       animation: {},
+      colors: {
+        ...colors,
+      },
+      backgroundColor: {
+        ...colors,
+      },
     },
   },
   plugins: [],

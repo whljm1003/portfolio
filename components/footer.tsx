@@ -5,7 +5,7 @@ import { ImVimeo2 } from "react-icons/im";
 
 const Footer: NextPage = () => {
   return (
-    <footer className="overflow-hidden bg-[#222] text-[#f9c51d]">
+    <footer className="overflow-hidden bg-[#222] text-[#f6b93b]">
       <div className="h-34 flex flex-col items-center justify-center py-6">
         <div className="mb-3 flex space-x-5">
           <span className="hover:cursor-pointer">
@@ -23,7 +23,7 @@ const Footer: NextPage = () => {
             </Link>
           </span>
         </div>
-        <div>© 2022. Lee Jung Min. All rights reserved.</div>
+        <div>© 2025. Lee Jung Min. All rights reserved.</div>
       </div>
     </footer>
   );

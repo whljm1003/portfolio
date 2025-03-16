@@ -5,15 +5,19 @@ import React from "./image/skills/react.png";
 import Mysql from "./image/skills/mysql.png";
 import NodeJs from "./image/skills/nodejs.png";
 import TypeScript from "./image/skills/typescript.png";
-import Recoil from "./image/skills/recoil.jpeg";
 import ReactQuery from "./image/skills/react-query.png";
 import StyledComponents from "./image/skills/styled_coponents.png";
 import NextJs from "./image/skills/nextjs.png";
-import Redux from "./image/skills/redux.png";
 import Tailwind from "./image/skills/tailwind.png";
-import Apollo from "./image/skills/apollo.png";
 import GraphQL from "./image/skills/graphQL.png";
 import Vue from "./image/skills/vue.png";
+import Dart from "./image/skills/Dart.svg";
+import Flutter from "./image/skills/Flutter.svg";
+import Nest from "./image/skills/Nest.js.svg";
+import PostgresSQL from "./image/skills/PostgresSQL.svg";
+import Zustand from "./image/skills/zustand_icon.jpeg";
+import Prisma from "./image/skills/prisma_icon.png";
+import Remix from "./image/skills/remix-glowing.svg";
 
 export const MainSkills = [
   {
@@ -43,61 +47,76 @@ export const MainSkills = [
   },
   {
     id: 6,
+    name: "NextJs",
+    img: NextJs,
+  },
+  {
+    id: 7,
     name: "Styled-Components",
     img: StyledComponents,
   },
   {
-    id: 7,
+    id: 8,
+    name: "Tailwind",
+    img: Tailwind,
+  },
+  {
+    id: 9,
     name: "React-Query",
     img: ReactQuery,
   },
   {
-    id: 8,
-    name: "Recoil",
-    img: Recoil,
+    id: 10,
+    name: "Zustand",
+    img: Zustand,
   },
 ];
 export const SubSkills = [
   {
     id: 1,
-    name: "Redux",
-    img: Redux,
+    name: "GraphQL",
+    img: GraphQL,
   },
   {
     id: 2,
-    name: "Tailwind",
-    img: Tailwind,
-  },
-  {
-    id: 3,
-    name: "NextJs",
-    img: NextJs,
-  },
-  {
-    id: 4,
     name: "NodeJs",
     img: NodeJs,
   },
   {
+    id: 3,
+    name: "NestJs",
+    img: Nest,
+  },
+  {
+    id: 4,
+    name: "Prisma",
+    img: Prisma,
+  },
+  {
     id: 5,
-    name: "Mysql",
+    name: "MySQL",
     img: Mysql,
+  },
+  {
+    id: 6,
+    name: "PostgresSQL",
+    img: PostgresSQL,
   },
 ];
 export const InterestedSkills = [
   {
     id: 1,
-    name: "Vue",
-    img: Vue,
+    name: "Remix",
+    img: Remix,
   },
   {
     id: 2,
-    name: "Apollo",
-    img: Apollo,
+    name: "Dart",
+    img: Dart,
   },
   {
     id: 3,
-    name: "GraphQL",
-    img: GraphQL,
+    name: "Flutter",
+    img: Flutter,
   },
 ];

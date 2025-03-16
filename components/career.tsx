@@ -1,27 +1,33 @@
-'use client'
+"use client";
 import Image from "next/image";
-import wanted from "../assets/image/icons/wanted.png";
-import { wantedData } from "../assets/wantedData";
+import stevelabs from "../assets/image/stevelabs/stevelabs_logo.webp";
+// import { wantedData } from "../assets/wantedData";
 import { GiRollingDices } from "react-icons/gi";
 // frmaer-motion
-import { motion } from "framer-motion";
-import { variants, sliceLeft, sliceRight } from "./motion";
-// import Swiper core and required modules
-import { EffectCards, Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { motion, useScroll } from "framer-motion";
+import { variants, sliceRight } from "./motion";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-cards";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import Link from "next/link";
-import React from "react";
+
+import React, { useState } from "react";
 import { ItabRef } from "./header";
+import { AnimatePresence } from "framer-motion";
+import CareerDetailModal from "./careerDetailModal";
+import { careers } from "@/assets/careerData";
+
 // 다음과 같이 동적으로 import
 
-
 const Career: React.FC<ItabRef> = ({ tabRef }) => {
+  const { scrollY } = useScroll();
 
+  const [detail, setDetail] = useState<number>(-1);
+
+  const handleDetail = (item: number) => {
+    setDetail(item);
+  };
 
   return (
     <section
@@ -36,100 +42,69 @@ const Career: React.FC<ItabRef> = ({ tabRef }) => {
         whileInView="end"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="justify-centerpy-5 m-auto my-16 flex w-full max-w-5xl flex-col items-center">
+        <div className="justify-center py-5 m-auto my-16 flex w-full max-w-5xl flex-col items-center">
           <div className="flex items-center justify-center">
             <GiRollingDices size={34} />
             <h1 className="mr-9 mb-10 border-b-2 border-black text-4xl font-bold leading-[1.5]">
               CAREER
             </h1>
           </div>
-          <section className="flex flex-col items-center lg:flex-row lg:items-start">
-            <motion.div
-              variants={sliceLeft}
-              className="h-full lg:w-1/3 lg:pr-12"
-            >
-              <div className="border-1 rounded-ful relative my-10 h-48 w-48 lg:my-0">
+
+          <motion.div
+            variants={sliceRight}
+            className="overflow-hidden lg:overflow-visible w-full"
+          >
+            <div className="flex items-center justify-center gap-6 mb-6">
+              <div className="w-[300px] h-[150px] relative">
+                {/* <div className=" relative"> */}
                 <Image
-                  src={wanted}
-                  alt="wanted"
+                  src={stevelabs}
+                  alt="stevelabs_logo"
                   fill
-                  sizes="(max-width: 768px) 192px, 192px"  // 48rem = 192px
-                  className="rounded-full"
+                  className="object-cover rounded-lg"
                 />
               </div>
-            </motion.div>
+              <div>
+                <h1 className="py-2 px-5 text-3xl font-bold">(주)스티브랩스</h1>
+                <h3 className="px-5 text-gray-500 leading-6">
+                  2022.09 ~ 2024.10
+                </h3>
+                <p className="py-4 px-5 font-semibold">웹 프론트엔드 개발자</p>
+              </div>
+            </div>
 
-            <motion.div
-              variants={sliceRight}
-              className=" overflow-hidden lg:overflow-visible lg:border-l-2 lg:pl-12"
-            >
-              <h1 className="py-2 px-5 text-2xl font-bold lg:px-0">
-                프리온보딩 프론트엔드 코스
-              </h1>
-              <h3 className="px-5 text-sm leading-6 lg:px-0">
-                2022.02 ~ 2022.04
-              </h3>
-              <p className="py-4 px-5 font-semibold lg:px-0">
-                다양한 기술 스택을 사용하여 8개의 프로젝트를 진행하였습니다.
-              </p>
-
-              <Swiper
-                effect={"cards"}
-                grabCursor={true}
-                pagination={{
-                  dynamicBullets: true,
-                }}
-                modules={[EffectCards, Pagination, Navigation]}
-                className="h-[35rem] w-[20rem]  lg:w-[30rem]"
-              >
-                {wantedData.map((data) => (
-                  <SwiperSlide
-                    key={data.id}
-                    className="flex items-center rounded-2xl bg-white p-4 odd:bg-[#ffffff] even:bg-[#5352ed] even:text-slate-100"
+            {/* grid */}
+            <AnimatePresence>
+              {detail !== -1 && (
+                <>
+                  <CareerDetailModal
+                    detail={detail}
+                    setDetail={setDetail}
+                    scrollYGet={scrollY.get()}
+                  />
+                </>
+              )}
+            </AnimatePresence>
+            <AnimatePresence>
+              <div className="grid grid-cols-auto-fill w-full gap-4 my-12">
+                {careers.map((item, index) => (
+                  <motion.div
+                    layoutId={`career-${item}`}
+                    key={index}
+                    className="rounded-lg bg-[#3c6382] shadow-xl cursor-pointer flex flex-col justify-center items-center p-4 "
+                    onClick={() => handleDetail(item.id)}
                   >
-                    <div>
-                      <h2 className="py-3 text-2xl font-bold group-odd:text-gray-600 group-even:text-white">
-                        {data.title}
-                      </h2>
-                      <h3 className="list-square opacity-80">{`# ${data.remark}`}</h3>
-                      <h3 className="mt-5 text-xl font-bold group-odd:text-gray-600 group-even:text-white">
-                        구현기능/역할
-                      </h3>
-                      <ul className="mt-2 list-square pl-4 opacity-80">
-                        {data.methods.map((method) => (
-                          <li key={method.id}>{method.contents}</li>
-                        ))}
-                      </ul>
-
-                      <h3 className="mt-5 text-xl font-bold group-odd:text-gray-600 group-even:text-white">
-                        기술 스택
-                      </h3>
-                      <ul className="mt-2 list-square pl-4 opacity-80">
-                        {data.skills.map((skill) => (
-                          <li key={skill.id}>{skill.name}</li>
-                        ))}
-                      </ul>
-                      <h3 className="mt-5 text-xl font-bold group-odd:text-gray-600 group-even:text-white ">
-                        관련 링크
-                      </h3>
-                      <ul className="mt-2 list-square pl-4 opacity-80">
-                        <li className="hover:opacity-60">
-                          <Link href={data.link.github} >
-                            <span className="border-b-2"> Github</span>
-                          </Link>
-                        </li>
-                        <li className="hover:opacity-60">
-                          <Link href={data.link.deploy}>
-                            <span className="border-b-2 "> 배포링크</span>
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                  </SwiperSlide>
+                    <span className="text-lg font-semibold text-center text-white whitespace-pre-line">
+                      {item.projectTitle}
+                    </span>
+                    <span className="text-sm text-[#f5f6fa] mt-3">
+                      {item.projectSubTitle}
+                    </span>
+                  </motion.div>
                 ))}
-              </Swiper>
-            </motion.div>
-          </section>
+              </div>
+            </AnimatePresence>
+          </motion.div>
         </div>
       </motion.div>
     </section>

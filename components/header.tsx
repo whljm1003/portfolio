@@ -1,9 +1,10 @@
-'use client'
+"use client";
 import { FC, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { motion } from "framer-motion";
 
-const variousMenu = ["About", "Skills", "Career", "Project"];
+// const variousMenu = ["About", "Skills", "Career", "Project", "Education"];
+const variousMenu = ["About", "Skills", "Career", "Education"];
 
 export interface ItabRef {
   tabRef: Icurrent;
@@ -24,7 +25,7 @@ const Header: FC<ItabRef> = ({ tabRef, yProgress }) => {
         yProgress !== 0 && "lg:bg-[#222]"
       }`}
     >
-      <div className="m-auto flex max-w-5xl flex-col justify-between px-5 py-2 font-bold text-gray-300 lg:flex-row">
+      <div className="m-auto flex max-w-5xl flex-col justify-between px-5 py-2 font-bold text-neutral-200 lg:flex-row">
         <div
           className="cursor-pointer hover:animate-pulse"
           onClick={() =>
@@ -58,7 +59,7 @@ const Header: FC<ItabRef> = ({ tabRef, yProgress }) => {
         </button>
       </div>
       <motion.div
-        className="absolute bottom-0 left-0 h-1 w-full origin-[0_0] bg-[#f9c51d]"
+        className="absolute bottom-0 left-0 h-1 w-full origin-[0_0] bg-[#f6b93b]"
         initial={{ scaleX: 0 }}
         animate={{ scaleX: yProgress }}
         transition={{ ease: "easeOut", duration: 0.2 }}
