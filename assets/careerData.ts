@@ -1,3 +1,8 @@
+export enum VideoType {
+  MOBILE = "mobile",
+  WEB = "web",
+}
+
 export const careers = [
   {
     id: 1,
@@ -27,7 +32,7 @@ export const careers = [
         id: 3,
         title: "소셜 로그인 구현 이슈",
         issue:
-          "카카오 로그인: 최초 카카오 로그인 SDK를 사용해 구현했으나 웹앱에서 정상 작동하지 않아 팝업 형태로 전환하였습니다. 이후 웹앱 패키징 문제로 팝업 방식이 적합하지 않아, 리다이렉트 방식으로 변경하였습니다.\n 구글 로그인: 웹에서는 react 기반의 구글 로그인을 구현하였으나, 앱에서는 공식 문서에 따라 사용이 제한되어 별도로 구현된 구글 로그인을 사용하였습니다",
+          "카카오 로그인: 최초 카카오 로그인 SDK를 사용해 구현했으나 웹앱에서 정상 작동하지 않아 팝업 형태로 전환하였습니다. 이후 웹앱 패키징 문제로 팝업 방식이 적합하지 않아, 리다이렉트 방식으로 변경하였습니다.\n 구글 로그인: 웹에서는 react 기반의 구글 로그인을 구현하였으나, 앱에서는 공식 문서에 따라 사용이 제한되어 별도로 구현된 구글 로그인을 사용하였습니다.",
         solution:
           "웹에서 구글 로그인 버튼 클릭 시, 앱으로 네이티브 브릿지 호출이 이루어지고, 앱에서 구글 로그인 처리를 한 후 이메일과 로그인 ID를 반환합니다. 이후 웹에서 이를 활용하여 회원 가입 또는 로그인을 진행합니다.",
       },
@@ -60,6 +65,7 @@ export const careers = [
       { id: 3, name: "CSS: styled-component, Material-UI" },
       { id: 4, name: "배포: AWS" },
     ],
+    videos: [],
     link: {
       github: "",
       deploy: "",
@@ -99,6 +105,7 @@ export const careers = [
       },
     ],
     skills: [{ id: 1, name: "JavaScript, HTML/CSS" }],
+    videos: [],
     link: {
       github: "",
       deploy: "",
@@ -150,7 +157,17 @@ export const careers = [
       { id: 3, name: "CSS: Emotion" },
       { id: 4, name: "배포: AWS" },
     ],
-    problemSolving: [],
+    videos: [],
+    problemSolving: [
+      {
+        id: 1,
+        title: "iOS 웹앱에서 PDF Viewer 미작동 문제",
+        issue:
+          "react-pdf를 활용하여 PDF 뷰어를 구현하는 과정에서 iOS 웹앱 환경에서 Viewer가 정상적으로 동작하지 않는 문제가 발생하였습니다.\n 해당 문제는 iOS의 메모리 관리 제한으로 인해 대용량 PDF를 Canvas로 렌더링할 때 정상적으로 표시되지 않는 점과, Safari에서 ReadableStream 등의 기능 미지원, 특정 iOS 버전에서의 호환성 문제 등으로 인해 발생한 것으로 확인되었습니다.\n GitHub 이슈(#1145, #1824)에서도 동일한 문제가 보고되었으나, 프로젝트 개발 당시까지 완전한 해결책이 마련되지 않은 상태였습니다.",
+        solution:
+          "기존 방식 대신 PDF 파일을 AWS S3에 저장한 후, react-pdf/renderer Viewer를 활용하여 표시하는 방식으로 변경하였습니다.\n 최종적인 플로우는 PDF 생성 → AWS S3 저장 → react-pdf/renderer Viewer로 로드 → 추가 내용 및 서명 후 새로운 PDF 생성 → 기존 PDF 삭제 및 최종 PDF URL을 서버에 저장하는 방식으로 구성했습니다.",
+      },
+    ],
     link: {
       github: "",
       deploy: "",
@@ -201,6 +218,7 @@ export const careers = [
       { id: 3, name: "CSS: Emotion" },
       { id: 4, name: "배포: AWS" },
     ],
+    videos: [],
     link: {
       github: "",
       deploy: "",
@@ -249,6 +267,14 @@ export const careers = [
       { id: 3, name: "CSS: Emotion" },
       { id: 4, name: "배포: AWS" },
     ],
+    videos: [
+      {
+        id: 1,
+        title: "랜딩페이지 영상",
+        url: "/videos/bigto-landing.mov",
+        videoType: VideoType.WEB,
+      },
+    ],
     link: {
       github: "",
       deploy: "",
@@ -293,6 +319,20 @@ export const careers = [
       { id: 3, name: "CSS: Zustand, Tailwind CSS" },
       { id: 4, name: "배포: AWS" },
     ],
+    videos: [
+      {
+        id: 1,
+        title: "랜딩페이지 영상",
+        url: "/videos/goldRush-landing.mov",
+        videoType: VideoType.WEB,
+      },
+      {
+        id: 2,
+        title: "서비스 영상",
+        url: "/videos/goldRush-survice.mp4",
+        videoType: VideoType.MOBILE,
+      },
+    ],
     link: {
       github: "",
       deploy: "",
@@ -301,7 +341,7 @@ export const careers = [
   {
     id: 7,
     projectTitle: "Flying Doctors",
-    projectSubTitle: "의료 지원 및 보안 서비스를 지원하는 플랫폼.",
+    projectSubTitle: "의료 지원 및 보안 서비스를 지원하는 플랫폼",
     projectPeriod: "2024.09 ~ 2024.10",
     description: "실시간으로 의료 지원 및 보안 서비스를 지원하는 플랫폼.",
     result: [
@@ -328,6 +368,14 @@ export const careers = [
       { id: 2, name: "React, Next.js, React-Query, Socket.IO" },
       { id: 3, name: "CSS: styled-component" },
       { id: 4, name: "배포: AWS" },
+    ],
+    videos: [
+      {
+        id: 2,
+        title: "서비스 영상",
+        url: "/videos/flyingDoctors-service.mp4",
+        videoType: VideoType.MOBILE,
+      },
     ],
     link: {
       github: "",
@@ -364,6 +412,7 @@ export const careers = [
       { id: 3, name: "서버: Nest.js, Prisma, PostgreSQL" },
       { id: 4, name: "배포: AWS" },
     ],
+    videos: [],
     link: {
       github: "",
       deploy: "",
