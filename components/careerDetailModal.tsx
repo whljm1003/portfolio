@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaLink, FaTools } from "react-icons/fa";
 import { MdPeopleAlt, MdDescription } from "react-icons/md";
 import { motion } from "framer-motion";
@@ -31,7 +31,25 @@ export default function CareerDetailModal({
   const career = careers.find((career) => career.id === detail);
   const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
   const topOffset = isMobile ? scrollYGet : scrollYGet + 200;
+  // const topOffset = isMobile ? 0 : scrollYGet + 200;
   const [selectedVideo, setSelectedVideo] = useState<VideoState | null>(null);
+
+  useEffect(() => {
+    if (isMobile) {
+      const body = document.querySelector("body");
+      // document.querySelector('body')?.style.overflow = "hidden";
+      if (body) {
+        body.style.overflow = "hidden";
+      }
+    }
+
+    return () => {
+      const body = document.querySelector("body");
+      if (body) {
+        body.style.overflow = "";
+      }
+    };
+  }, [isMobile]);
 
   if (!career) return null;
   return (
@@ -53,7 +71,7 @@ export default function CareerDetailModal({
         style={{ top: topOffset }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="absolute left-0 right-0 mx-auto my-0 h-screen lg:h-[70vh] overflow-y-auto lg:rounded-lg bg-slate-50 z-50 max-w-5xl"
+        className={`absolute left-0 right-0 mx-auto my-0 h-screen lg:h-[70vh] overflow-y-auto lg:rounded-lg bg-slate-50 z-50 max-w-5xl`}
       >
         <motion.div
           variants={variants}

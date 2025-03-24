@@ -22,11 +22,29 @@ import { careers } from "@/assets/careerData";
 
 const Career: React.FC<ItabRef> = ({ tabRef }) => {
   const { scrollY } = useScroll();
-
   const [detail, setDetail] = useState<number>(-1);
+  const [isHovers, setIsHovers] = useState(
+    Array.from(careers).map((e) => false)
+  );
+  console.log(isHovers);
 
   const handleDetail = (item: number) => {
     setDetail(item);
+  };
+
+  const onMouseEnter = (index: number) => {
+    setIsHovers((prev) => {
+      const temp = Array.from(careers).map(() => false);
+      temp[index] = true;
+      return temp;
+    });
+  };
+  const onMouseLeave = (index: number) => {
+    setIsHovers((prev) => {
+      const temp = Array.from(careers).map(() => false);
+      temp[index] = false;
+      return temp;
+    });
   };
 
   return (
@@ -88,19 +106,30 @@ const Career: React.FC<ItabRef> = ({ tabRef }) => {
             <AnimatePresence>
               <div className="grid grid-cols-auto-fill w-full gap-4 my-12 px-5 lg:px-0">
                 {careers.map((item, index) => (
-                  <motion.div
-                    layoutId={`career-${item}`}
+                  <div
                     key={index}
-                    className="rounded-lg bg-[#3c6382] shadow-xl cursor-pointer flex flex-col justify-center items-center p-4 "
-                    onClick={() => handleDetail(item.id)}
+                    className={`rounded-lg bg-[#3c6382] shadow-xl flex flex-col justify-center items-center p-4 ${isHovers[index] ? "bg-gray-800" : ""}`}
+                    onMouseEnter={() => onMouseEnter(index)}
+                    onMouseLeave={() => onMouseLeave(index)}
                   >
-                    <span className="text-lg font-semibold text-center text-white whitespace-pre-line">
-                      {item.projectTitle}
-                    </span>
-                    <span className="text-sm text-[#f5f6fa] mt-3">
-                      {item.projectSubTitle}
-                    </span>
-                  </motion.div>
+                    {isHovers[index] === true ? (
+                      <span
+                        onClick={() => handleDetail(item.id)}
+                        className="cursor-pointer rounded-lg px-4 py-3 text-lg font-bold ring-2 ring-gray-400 text-[#f5f6fa] text-center"
+                      >
+                        자세히 보기
+                      </span>
+                    ) : (
+                      <>
+                        <span className="text-lg font-semibold text-center text-white whitespace-pre-line">
+                          {item.projectTitle}
+                        </span>
+                        <span className="text-sm text-[#f5f6fa] mt-3">
+                          {item.projectSubTitle}
+                        </span>
+                      </>
+                    )}
+                  </div>
                 ))}
               </div>
             </AnimatePresence>

@@ -42,7 +42,7 @@ export default function Home({}: Props) {
       <Footer />
       <button
         onClick={() => tabRef.current[0].scrollIntoView({ behavior: "smooth" })}
-        className={`group fixed bottom-6 right-6 z-50 h-12 w-12 rounded-xl bg-slate-800 ${
+        className={`group fixed bottom-6 right-6 z-40 h-12 w-12 rounded-xl bg-slate-800 ${
           yProgress === 0 && "hidden"
         }`}
       >
