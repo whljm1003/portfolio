@@ -28,7 +28,7 @@ const Education: React.FC<ItabRef> = ({ tabRef }) => {
         whileInView="end"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="justify-center py-5 m-auto my-16 flex w-full max-w-5xl flex-col items-center gap-16">
+        <div className="justify-center py-5 m-auto my-16 flex w-full max-w-5xl flex-col items-center  lg:gap-16">
           <div className="flex items-center justify-center">
             <GiRollingDices size={34} color="white" />
             <h1 className="mr-9 mb-10 border-b-2 text-white border-white text-4xl font-bold leading-[1.5]">

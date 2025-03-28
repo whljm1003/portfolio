@@ -11,7 +11,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import Link from "next/link";
+
 import React from "react";
 import { EducationData } from "@/assets/educateData";
 
@@ -23,12 +23,11 @@ export default function EducationDetail({ data }: Props) {
   return (
     <section className="flex flex-col items-center lg:flex-row lg:items-start">
       <motion.div variants={sliceLeft} className="h-full lg:pr-12">
-        <div className=" rounded-full relative my-10 h-48 w-48 lg:my-0">
+        <div className=" rounded-full relative my-10 h-[150px] w-[150px] lg:h-48 lg:w-48 lg:my-0">
           <Image
             src={data.image}
             alt="wanted"
             fill
-            sizes="(max-width: 768px) 192px, 192px" // 48rem = 192px
             className="rounded-full object-cover"
           />
         </div>
@@ -38,15 +37,17 @@ export default function EducationDetail({ data }: Props) {
         variants={sliceRight}
         className=" overflow-hidden lg:overflow-visible lg:border-l-2 lg:pl-12"
       >
-        <h1 className="py-2 px-5 text-2xl font-bold text-white lg:px-0">
-          {data.title}
-        </h1>
-        <h3 className="px-5 text-sm leading-6 text-white lg:px-0">
-          {data.date}
-        </h3>
-        <p className="py-4 px-5 font-semibold text-white lg:px-0">
-          {data.description}
-        </p>
+        <div className="flex flex-col justify-center items-center lg:block">
+          <h1 className="py-2 px-5 text-2xl font-bold text-white lg:px-0">
+            {data.title}
+          </h1>
+          <h3 className="px-5 text-sm lg:text-base leading-6 text-white lg:px-0">
+            {data.date}
+          </h3>
+          <p className="text-lg py-4 px-5 font-semibold text-white lg:px-0">
+            {data.description}
+          </p>
+        </div>
 
         <Swiper
           speed={600}

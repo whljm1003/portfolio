@@ -11,6 +11,8 @@ const colors = {
   main8: "#0E422E",
   main9: "#063322",
   main10: "#013320",
+  main11: "#1d809f",
+  main12: "#186379FF",
 };
 module.exports = {
   content: [

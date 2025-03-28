@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import codestatesLogo from "../assets/image/icons/codestates_icon.png";
+import codestatesLogo from "@/public/image/icons/codestates_icon.png";
 
 export const learning = [
   { id: 1, content: "HTML, CSS, JavaScript를 활용한 웹 개발 기초 학습" },

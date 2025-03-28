@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import Img from "../assets/image/img.gif";
-import bg from "../assets/image/developer_background.jpeg";
+import Img from "@/public/image/img.gif";
+import bg from "@/public/image/developer_background.jpeg";
 import TypeIt from "typeit-react";
 // frmaer-motion
 import { motion } from "framer-motion";
@@ -24,7 +24,7 @@ const Main: React.FC<ItabRef> = ({ tabRef }) => {
           priority
           loading="eager"
           src={bg}
-          className="opacity-80 blur-sm"
+          className="opacity-85 blur-sm object-cover"
           fill
         />
         <motion.div

@@ -1,16 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaWindowClose } from "react-icons/fa";
-import { VideoState } from "./careerDetailModal";
-import { VideoType } from "@/assets/careerData";
+import { Media, VideoType } from "@/assets/careerData";
 
-type VideoModalProps = {
-  video: VideoState | null;
+type MediaModalProps = {
+  media: Media | null;
   onClose: () => void;
 };
 
-const VideoModal: React.FC<VideoModalProps> = ({ video, onClose }) => {
-  if (!video) return null;
+const MediaModal: React.FC<MediaModalProps> = ({ media, onClose }) => {
+  if (!media) return null;
 
   return (
     <motion.div
@@ -29,14 +28,14 @@ const VideoModal: React.FC<VideoModalProps> = ({ video, onClose }) => {
           autoPlay
           preload="none"
           muted
-          width={video.videoType === VideoType.MOBILE ? "400" : "900"}
+          width={media.videoType === VideoType.MOBILE ? "400" : "900"}
           controlsList="nodownload"
         >
-          <source src={video.url} type="video/mp4" />
+          <source src={media.url} type="video/mp4" />
         </video>
       </div>
     </motion.div>
   );
 };
 
-export default VideoModal;
+export default MediaModal;
