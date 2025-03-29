@@ -31,7 +31,7 @@ export default function CareerDetailModal({
 }: Props) {
   const career = careers.find((career) => career.id === detail);
   const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
-  const topOffset = isMobile ? scrollYGet : scrollYGet + 200;
+  const topOffset = isMobile ? scrollYGet : scrollYGet + 100;
   const [selectedMedia, setSelectedMedia] = useState<Media | null>(null);
 
   useEffect(() => {
@@ -65,7 +65,7 @@ export default function CareerDetailModal({
         style={{ top: topOffset }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className={`absolute left-0 right-0 mx-auto my-0 h-screen lg:h-[70vh] overflow-y-auto lg:rounded-lg bg-slate-50 z-50 max-w-5xl`}
+        className={`absolute left-0 right-0 mx-auto my-0 h-screen lg:h-[80vh] overflow-y-auto lg:rounded-lg bg-slate-50 z-50 max-w-5xl`}
       >
         <motion.div
           variants={sliceUp}

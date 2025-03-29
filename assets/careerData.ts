@@ -472,15 +472,15 @@ export const careers: Careers[] = [
   {
     id: 8,
     basicInfo: {
-      title: "이커머스 쇼핑몰",
+      title: "온라인 편집샵 플랫폼",
       period: "2024.06 ~ 2024.10",
       summary: "다양한 브랜드 제품을 소개하는 온라인 쇼핑 플랫폼",
-      description: "다양한 브랜드 제품을 소개하는 온라인 쇼핑 플랫폼",
+      description:
+        "파트너스(판매자)가 입점 신청을 통해 승인받은 후 상품을 등록하면 쇼핑몰에 노출되어 판매되는 형태의 온라인 쇼핑 플랫폼입니다. 타임특가와 기획전 등 다양한 프로모션 이벤트를 운영하며, 본사 관리자가 이벤트를 오픈하면 판매자는 참여 신청을 통해 특정 시간대에 상품을 노출할 수 있습니다. 결제 시스템은 브랜드별 상품 쿠폰, 적립금, 등급 할인 등 다양한 할인 정책을 제공하며, 굿스플로 API 연동을 통해 자동화된 교환 및 반품 처리를 지원합니다.",
     },
     skills: {
       frontend: [
         "TypeScript",
-        "HTML/CSS",
         "React",
         "Next.js",
         "Zustand",
@@ -494,26 +494,48 @@ export const careers: Careers[] = [
     keyContributions: [
       {
         id: 1,
-        content: "클라이언트와 협업하여 요구 사항 분석",
+        content:
+          "클라이언트와 기획 단계에서 <highlight>정책 관련 소통</highlight> 담당, 불명확한 <highlight>프로세스를 협의</highlight>하여 해결",
       },
       {
         id: 2,
-        content: "파트너 및 본사 관리자 페이지 퍼블리싱",
+        content:
+          "<highlight>장바구니</highlight>, <highlight>결제</highlight>, <highlight>반품/교환</highlight> 등 전반적인 서비스 페이지 및 <highlight>관리자 사이트</highlight>를 구현",
       },
       {
         id: 3,
-        content: "프론트 API 연결 및 서버 기본적인 CRUD API 구현",
+        content:
+          "카카오, 구글 <highlight>소셜 로그인</highlight> 및 KG 이니시스 <highlight>결제 시스템</highlight>을 성공적으로 연동하여 사용자 편의성을 향상",
       },
       {
         id: 4,
-        content: "카카오, 구글 소셜 로그인 기능 구현",
+        content:
+          "Nest.js와 Prisma를 활용하여 기본적인 테이블 추가 및 서버 CRUD 구현을 통해 <highlight>전체 개발 작업 시간을 30% 단축</highlight>",
       },
       {
         id: 5,
-        content: "KG 이니시스 결제 및 나이스페이먼트 본인 인증 시스템 연동",
+        content:
+          "React-Query 및 Zustand를 활용한 데이터 상태 관리 최적화로 서비스 성능을 개선",
       },
     ],
-    problemSolving: [],
+    problemSolving: [
+      {
+        id: 1,
+        title: "서버 개발 역량 강화",
+        issue:
+          "기존에 서버 개발 경험이 부족하여 Nest.js 및 Prisma를 활용한 API 개발 과정에서 어려움이 발생했습니다.",
+        solution:
+          "이전 Node.js 및 Prisma 학습 경험을 바탕으로 이미 작성된 프로젝트의 서버 구조를 분석하였습니다. 또한 AI 도구를 적극 활용하여 API 개발을 진행하고 코드 품질을 개선하였으며, 이 과정에서 서버 개발 역량을 크게 향상시킬 수 있었습니다.",
+      },
+      {
+        id: 2,
+        title: "반품/교환 프로세스 개선",
+        issue:
+          "기획 단계에서 반품/교환 관련 정책이 미흡했고, UI/UX 디자인이 부재하여 개발 진행에 어려움이 있었습니다.",
+        solution:
+          "클라이언트와의 협의를 통해 CS 시스템을 활용한 중간 처리 방식을 도입했습니다. 교환 신청이 들어오면 굿스플로를 통해 자동으로 회수가 진행되고, 파트너스 담당자가 확인 후 고객과 전화 상담을 통해 교환 상품을 발송하거나 교환을 거절하는 프로세스를 구축하여 효율적인 운영이 가능하도록 개선하였습니다.",
+      },
+    ],
     links: {
       github: "",
       deploy: "",
