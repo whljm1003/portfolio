@@ -5,7 +5,7 @@ type Props = {
   skills: {
     id: number;
     name: string;
-    img: StaticImageData;
+    img: string;
   }[];
 };
 
@@ -21,6 +21,8 @@ export default function SkillIcon({ skills }: Props) {
             src={skill.img}
             alt={skill.name}
             className="rounded-full w-[60px] h-[60px] lg:w-[80px] lg:h-[80px] object-cover ring-2 ring-gray-200 bg-white p-[5px]"
+            width={80}
+            height={80}
           />
           <span className="text-xs font-bold">{skill.name}</span>
         </div>

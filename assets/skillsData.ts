@@ -1,122 +1,121 @@
-import CSS from "@/public/image/skills/css.png";
-import HTML from "@/public/image/skills/html.png";
-import JavaScript from "@/public/image/skills/javascript.png";
-import React from "@/public/image/skills/react.png";
 import Mysql from "@/public/image/skills/mysql.png";
 import NodeJs from "@/public/image/skills/nodejs.png";
-import TypeScript from "@/public/image/skills/typescript.png";
-import ReactQuery from "@/public/image/skills/react-query.png";
-import StyledComponents from "@/public/image/skills/styled_coponents.png";
-import NextJs from "@/public/image/skills/nextjs.png";
-import Tailwind from "@/public/image/skills/tailwind.png";
 import GraphQL from "@/public/image/skills/graphQL.png";
-import Vue from "@/public/image/skills/vue.png";
 import Dart from "@/public/image/skills/Dart.svg";
 import Flutter from "@/public/image/skills/Flutter.svg";
 import Nest from "@/public/image/skills/Nest.js.svg";
 import PostgresSQL from "@/public/image/skills/PostgresSQL.svg";
-import Zustand from "@/public/image/skills/zustand_icon.jpeg";
 import Prisma from "@/public/image/skills/prisma_icon.png";
 import Remix from "@/public/image/skills/remix-glowing.svg";
 
 export const MainSkills = [
   {
     id: 1,
-    name: "CSS",
-    img: CSS,
+    name: "TypeScript",
+    img: "/image/skills/typescript.png",
   },
   {
     id: 2,
-    name: "HTML",
-    img: HTML,
+    name: "React",
+    img: "/image/skills/react.png",
   },
   {
     id: 3,
-    name: "JavaScript",
-    img: JavaScript,
+    name: "NextJs",
+    img: "/image/skills/nextjs.png",
   },
   {
     id: 4,
-    name: "TypeScript",
-    img: TypeScript,
+    name: "Styled-Components",
+    img: "/image/skills/styled_coponents.png",
   },
   {
     id: 5,
-    name: "React",
-    img: React,
+    name: "Tailwind",
+    img: "/image/skills/tailwind.png",
   },
   {
     id: 6,
-    name: "NextJs",
-    img: NextJs,
+    name: "React-Query",
+    img: "/image/skills/react-query.png",
   },
   {
     id: 7,
-    name: "Styled-Components",
-    img: StyledComponents,
+    name: "Redux-Toolkit",
+    img: "/image/skills/redux-icon.svg",
   },
   {
     id: 8,
-    name: "Tailwind",
-    img: Tailwind,
+    name: "Recoil",
+    img: "/image/skills/recoil-js.svg",
   },
   {
     id: 9,
-    name: "React-Query",
-    img: ReactQuery,
-  },
-  {
-    id: 10,
     name: "Zustand",
-    img: Zustand,
+    img: "/image/skills/zustand_icon.jpeg",
   },
 ];
 export const SubSkills = [
   {
     id: 1,
     name: "GraphQL",
-    img: GraphQL,
+    img: "/image/skills/graphQL.png",
   },
   {
     id: 2,
     name: "NodeJs",
-    img: NodeJs,
+    img: "/image/skills/nodejs.png",
   },
   {
     id: 3,
     name: "NestJs",
-    img: Nest,
+    img: "/image/skills/Nest.js.svg",
   },
   {
     id: 4,
     name: "Prisma",
-    img: Prisma,
+    img: "/image/skills/prisma_icon.png",
   },
   {
     id: 5,
     name: "MySQL",
-    img: Mysql,
+    img: "/image/skills/mysql.png",
   },
   {
     id: 6,
     name: "PostgresSQL",
-    img: PostgresSQL,
+    img: "/image/skills/PostgresSQL.svg",
   },
 ];
 export const InterestedSkills = [
   {
     id: 1,
     name: "Remix",
-    img: Remix,
+    img: "/image/skills/remix-glowing.svg",
   },
   {
     id: 2,
-    name: "Dart",
-    img: Dart,
+    name: "Vite",
+    img: "/image/skills/vite.svg",
   },
   {
     id: 3,
+    name: "Dart",
+    img: "/image/skills/Dart.svg",
+  },
+  {
+    id: 4,
     name: "Flutter",
-    img: Flutter,
+    img: "/image/skills/Flutter.svg",
+  },
+  {
+    id: 7,
+    name: "Docker",
+    img: "/image/skills/docker.svg",
+  },
+  {
+    id: 8,
+    name: "AWS",
+    img: "/image/skills/aws.svg",
   },
 ];

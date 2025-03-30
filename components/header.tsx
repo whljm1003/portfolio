@@ -15,9 +15,9 @@ interface Icurrent {
 }
 
 const Header: FC<ItabRef> = ({ tabRef, yProgress }) => {
-  const [isHambugger, setIsHambugger] = useState(false);
+  const [isHamburger, setIsHamburger] = useState(false);
 
-  const hambuggerHandler = () => setIsHambugger((prev) => !prev);
+  const hamburgerHandler = () => setIsHamburger((prev) => !prev);
 
   return (
     <header
@@ -36,16 +36,19 @@ const Header: FC<ItabRef> = ({ tabRef, yProgress }) => {
         </div>
         <ul
           className={`relative mt-4 flex-col space-y-2 lg:mt-0 lg:flex lg:flex-row lg:space-y-0 lg:space-x-9 ${
-            !isHambugger && "hidden"
+            !isHamburger && "hidden"
           }`}
         >
           {variousMenu.map((menu, index) => (
             <li
               key={index}
               className="w-full cursor-pointer hover:animate-pulse hover:rounded-sm hover:bg-gray-700 lg:hover:border-b-2 lg:hover:bg-inherit"
-              onClick={() =>
-                tabRef.current[index + 1].scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => {
+                tabRef.current[index + 1].scrollIntoView({
+                  behavior: "smooth",
+                });
+                hamburgerHandler();
+              }}
             >
               <span>{menu}</span>
             </li>
@@ -53,7 +56,7 @@ const Header: FC<ItabRef> = ({ tabRef, yProgress }) => {
         </ul>
         <button
           className="absolute right-5 font-extrabold lg:hidden"
-          onClick={hambuggerHandler}
+          onClick={hamburgerHandler}
         >
           <GiHamburgerMenu size={24} />
         </button>

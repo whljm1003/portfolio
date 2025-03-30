@@ -121,22 +121,22 @@ export default function CareerDetailModal({
 
           <section className="w-full">
             <div className="flex flex-col gap-10 w-full p-5">
-              {/* 4. 프로젝트 개요 */}
+              {/* 4. 디스크립션 */}
               <div className="w-full">
                 <h3 className="mb-3 flex items-center text-xl lg:text-2xl font-bold">
                   <MdDescription />
-                  <span className="pl-2">프로젝트 개요</span>
+                  <span className="pl-2">디스크립션</span>
                 </h3>
                 <p className="whitespace-pre-line">
                   {career.basicInfo.description}
                 </p>
               </div>
 
-              {/* 5. 주요 기여 및 성과 */}
+              {/* 5. 주요 역할 및 성과 */}
               <div>
                 <h3 className="mb-3 flex items-center text-xl lg:text-2xl font-bold">
                   <MdPeopleAlt />
-                  <span className="pl-2">주요 기여 및 성과</span>
+                  <span className="pl-2">주요 역할 및 성과</span>
                 </h3>
                 <ul className="list-square pl-5">
                   {career.keyContributions.map((item) => (
@@ -154,12 +154,12 @@ export default function CareerDetailModal({
                 </ul>
               </div>
 
-              {/* 6. 주요 이슈 및 해결 방법 */}
+              {/* 6. 트러블슈팅 */}
               {career.problemSolving.length > 0 && (
                 <div>
                   <h3 className="mb-4 flex items-center text-xl lg:text-2xl font-bold">
                     <FaTools />
-                    <span className="pl-2">주요 이슈 및 해결 방법</span>
+                    <span className="pl-2">트러블슈팅</span>
                   </h3>
                   <ul className="list-square pl-5 flex flex-col gap-6">
                     {career.problemSolving.map((problem) => (

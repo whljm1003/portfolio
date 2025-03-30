@@ -30,6 +30,12 @@ module.exports = {
     },
 
     extend: {
+      height: {
+        screen: "100dvh",
+      },
+      width: {
+        screen: "100dvw",
+      },
       keyframes: {},
       animation: {},
       colors: {
