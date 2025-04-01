@@ -148,31 +148,43 @@ export const careers: Careers[] = [
     basicInfo: {
       title: "자재바다",
       period: "2023.03 ~ 2023.05",
-      summary: "목재 및 자재 쇼핑몰",
+      summary: "목재 및 자재 쇼핑몰 고도화 및 유지보수",
       description:
-        "PHP 기반으로 구축된 목재 및 자재 쇼핑몰의 유지보수 작업을 수행하며, 프론트엔드 UI 개선 및 주문·결제 기능 보완.",
+        "기존에 PHP로 구축된 목재 및 자재 전문 쇼핑몰의 고도화 및 유지보수 작업을 수행했습니다. Vanilla JavaScript를 활용하여 DOM을 직접 조작하며 장바구니와 결제 페이지의 UI 개선 및 복잡한 배송비·할인 로직의 정확성을 높였습니다. 특히 로직 모듈화와 꼼꼼한 디버깅을 통해 코드의 가독성과 유지보수성을 높였으며, 이를 통해 개발자로서의 문제 해결 역량을 강화할 수 있었습니다.",
     },
     skills: {
-      frontend: ["JavaScript", "Php"],
+      frontend: ["JavaScript (Vanilla)", "DOM Manipulation"],
+      backend: ["PHP"],
+      database: [],
+      deployment: [],
     },
     keyContributions: [
       {
         id: 1,
         content:
-          "Vanilla JavaScript를 활용한 DOM 조작으로 동적 UI 개선 및 데이터 처리 최적화",
+          "Vanilla JavaScript를 활용한 <highlight>DOM 조작으로</highlight> 장바구니 및 결제 페이지의 UI를 동적으로 개선",
       },
       {
         id: 2,
         content:
-          "장바구니 View 및 계산 로직 개선을 통해 배송·결제 과정의 정확성 향상",
+          "장바구니 내 배송비 및 할인 로직을 모듈화하여 정확성을 높이고 코드 유지보수성 향상",
       },
       {
         id: 3,
         content:
-          "JavaScript 로직 모듈화 및 API 데이터 검증 적용으로 결제 불일치 문제 해결",
+          "코드 디버깅과 로직 단위별 모듈화를 통해 <highlight>결제 시 데이터 불일치 문제를</highlight> 효과적으로 해결하여 결제 안정성 확보",
       },
     ],
-    problemSolving: [],
+    problemSolving: [
+      {
+        id: 1,
+        title: "복잡한 배송비 및 할인 로직 처리",
+        issue:
+          "바닐라 자바스크립트를 사용해 DOM을 직접 조작하면서 복잡한 배송비 및 할인 로직을 처리하는 과정에서 정확성 및 코드 관리에 어려움이 있었습니다.",
+        solution:
+          "코드를 기능 단위로 모듈화하고 세부 계산 로직을 별도 함수로 분리하여 처리했습니다. 콘솔 로그를 통한 단계별 디버깅을 진행하며, 문제 발생 시 정확한 지점을 빠르게 찾아 해결했습니다. 이 과정에서 코드를 분석하고 효율적으로 디버깅하는 방법을 체계적으로 익힐 수 있었습니다.",
+      },
+    ],
     links: {
       github: "",
       deploy: "",
@@ -245,51 +257,74 @@ export const careers: Careers[] = [
     media: [],
   },
   {
-    id: 4,
+    id: 10,
     basicInfo: {
-      title: "illo",
+      title: "일로 (illo)",
       period: "2023.11 ~ 2023.12",
-      summary: "맞춤형 스타일 컨설팅 플랫폼",
+      summary: "온라인 맞춤형 스타일 컨설팅 플랫폼",
       description:
-        "검증된 패션 퍼스널 쇼퍼(패프)를 직접 선택하여, 온라인에서 맞춤형 스타일 컨설팅을 받을 수 있는 플랫폼.",
+        "검증된 패션 퍼스널 쇼퍼(패프)를 선택하여 온라인에서 맞춤형 스타일 컨설팅을 받을 수 있는 플랫폼입니다.\n 개인의 패션 고민을 해결하기 위해 기획된 서비스로, 모바일 앱 형태의 웹앱으로 구현되어 뛰어난 사용자 경험을 제공합니다. React Spring Bottom Sheet를 활용하여 iOS와 유사한 인터페이스를 구현하였으며, 이미지 로딩 성능을 최적화하여 빠르고 원활한 사용성을 보장했습니다. 예약 기능 구현을 위해 캘린더 기능과 Toss 결제 연동을 통해 편리한 예약 관리 환경을 제공했습니다.",
     },
     skills: {
-      frontend: ["TypeScript", "React", "Next.js", "React-Query", "Emotion"],
+      frontend: [
+        "TypeScript",
+        "React",
+        "Next.js",
+        "React-Query",
+        "Emotion",
+        "React Spring Bottom Sheet",
+      ],
+      backend: [],
+      database: [],
       deployment: ["AWS"],
     },
     keyContributions: [
       {
         id: 1,
         content:
-          "예약 및 회원 관리 시스템 구현 (로그인, 예약 관리, 마이페이지)",
+          "<highlight>React Spring Bottom Sheet</highlight>를 사용하여 iOS 스타일의 메인 페이지 바텀시트 UI를 구현하여 모바일 사용성을 향상",
       },
       {
         id: 2,
-        content: "관리자 페이지에서 일반 회원, 패프, 리뷰 관리 기능 개발",
+        content:
+          "이미지가 많은 페이지의 렌더링 속도 저하 문제를 해결하기 위해 <highlight>무한스크롤(Infinite Scroll)</highlight> 및 <highlight>Lazy Loading</highlight>을 적용하여 이미지 로딩을 최적화",
       },
       {
         id: 3,
-        content: "토스페이먼츠 결제 및 포트원 본인인증을 통한 예약 시스템 구축",
+        content:
+          "예약 및 회원 관리 시스템을 구축하여 로그인, 예약 관리, 마이페이지 기능을 구현하고 사용자 편의성 증대",
       },
       {
         id: 4,
-        content: "카카오 로그인 구현",
+        content:
+          "관리자 페이지에서 일반 회원, 패프, 리뷰 관리를 위한 기능 개발로 서비스 운영 효율성 향상",
+      },
+      {
+        id: 5,
+        content:
+          "<highlight>Toss Payments 결제</highlight> 및 <highlight>포트원 본인 인증 연동</highlight>을 통해 예약 기능의 신뢰성 및 안정성을 확보",
+      },
+      {
+        id: 6,
+        content:
+          "<highlight>카카오 소셜 로그인</highlight> 기능 구현으로 사용자 접근성 및 가입 절차 간소화",
       },
     ],
-    problemSolving: [],
+    problemSolving: [
+      {
+        id: 1,
+        title: "이미지 렌더링 성능 이슈 해결",
+        issue:
+          "이미지가 많은 페이지에서 초기 로딩 및 스크롤 시 이미지 렌더링 속도가 저하되는 문제가 있었습니다.",
+        solution:
+          "무한스크롤(Infinite Scroll)을 도입하여 한 번에 불러오는 데이터 양을 제한하고, Lazy Loading으로 화면에 보이는 이미지만 우선 로딩하도록 구현했습니다. react-window를 활용하여 이미지 가상화(virtualization) 방식을 추가적으로 적용하면 더 효율적인 이미지 관리를 할 수 있습니다.",
+      },
+    ],
     links: {
       github: "",
       deploy: "",
     },
-    media: [
-      // {
-      //   id: 1,
-      //   type: "image",
-      //   url: "/assets/image/picaNote/PicaNote-Detail.png",
-      //   title: "이미지1",
-      //   description: "이미지 설명2",
-      // },
-    ],
+    media: [],
   },
   {
     id: 5,
@@ -365,24 +400,15 @@ export const careers: Careers[] = [
       github: "",
       deploy: "",
     },
-    media: [
-      {
-        id: 1,
-        type: "video",
-        url: "/videos/bigto-landing.mov",
-        title: "랜딩페이지 영상",
-        videoType: VideoType.WEB,
-      },
-    ],
   },
   {
     id: 6,
     basicInfo: {
       title: "골드러시",
       period: "2024.05 ~ 2024.06",
-      summary: "실물 금 판매 및 재테크 플랫폼",
+      summary: "실물 금 판매 및 목표 설정을 통한 재테크 플랫폼",
       description:
-        "사용자가 목표를 설정하고 실물 금을 구매하며 자산을 관리할 수 있는 금융 플랫폼",
+        "사용자가 목표를 설정하고 실물 금을 직접 구매·관리할 수 있도록 돕는 금융 플랫폼입니다.\n 모바일 사용자 경험을 극대화하기 위해 원페이지 방식으로 구현하였으며, 경제 관련 도서 및 유튜브 영상 제공, 목표 달성 독려 알림을 통해 체계적인 자산 관리를 지원합니다. 실제 금 현물 거래 과정에서는 부가세와 마진을 반영한 가격 책정 로직을 구축하고, 직접 시장 조사와 배송 과정을 운영하여 신뢰성과 사용자 만족도를 높였습니다.",
     },
     skills: {
       frontend: [
@@ -393,53 +419,52 @@ export const careers: Careers[] = [
         "Zustand",
         "Tailwind CSS",
       ],
+      backend: [],
+      database: [],
       deployment: ["AWS"],
     },
     keyContributions: [
       {
         id: 1,
         content:
-          "금 현물 거래 마진 계산 로직 설계 및 도매업체 현장 실사를 통해 거래 프로세스 개선 및 실제 수익 가능성 계산",
+          "금 현물 거래 시 <highlight>부가세와 소매 마진을 고려한 가격 정책을 수립하고</highlight>, <highlight>종로 금 시장 현장 조사를 통해 실거래 환경을 분석하여 거래 프로세스를 개선</highlight>",
       },
       {
         id: 2,
         content:
-          "금 도매업체 방문 및 현장 조사: 종로 금도매업 및 소매업체를 직접 방문하여 실제 거래 환경을 분석하고, 사업 모델에 반영",
+          "금 도매·소매업체와의 <highlight>현장 협업</highlight>을 통해 <highlight>거래 프로세스를 최적화</highlight>하고, 실제 <highlight>20~30돈 이상의 판매</highlight>를 성공적으로 수행하여 플랫폼의 <highlight>수익 모델을 입증</highlight>",
       },
       {
         id: 3,
         content:
-          "배송 프로세스 관리: 택배 우체국 및 포장 방법을 직접 확인하고, 배송 처리까지 직접 수행하여 사용자 경험 최적화",
+          "<highlight>우체국 안심택배</highlight>를 통한 <highlight>배송 프로세스를 직접 구축 및 관리</highlight>하여 배송 신뢰도와 사용자 경험을 높임",
       },
       {
         id: 4,
-        content: " UI/UX 개선을 위해 외부 디자이너와 협업하여 사용자 경험 향상",
+        content:
+          "<highlight>Tailwind CSS</highlight>와 <highlight>외부 디자이너 협업</highlight>을 통해 <highlight>원페이지 형태의 모바일 친화적 UI/UX 디자인 및 반응형 웹 구축</highlight>",
       },
       {
         id: 5,
         content:
-          "Tailwind CSS를 활용하여 앱의 전반적인 디자인을 구축하였으며 랜딩페이지 반응형 웹 구현",
+          "<highlight>무통장 입금(팝빌)</highlight> 및 <highlight>본인 인증(드림시큐리티)</highlight> 시스템과 <highlight>다양한 소셜 로그인(구글, 카카오, 네이버, 애플)을 연동</highlight>하여 사용자 접근성과 편의성을 향상",
       },
       {
         id: 6,
         content:
-          "무통장 입금 결제 시스템(팝빌) 및 본인 인증(드림시큐리티) 기능 구현",
-      },
-      {
-        id: 7,
-        content:
-          "소셜 로그인 (구글, 카카오, 네이버, 애플) 기능 추가로 사용자 접근성 강화",
-      },
-      {
-        id: 8,
-        content: "웹-앱 브릿지 연동 구현으로 네이티브 앱과 데이터 통신 최적화",
-      },
-      {
-        id: 9,
-        content: "Google Analytics을 연동하여 방문 경로 및 유저 유입을 분석",
+          "<highlight>웹-앱 브릿지 연동</highlight> 및 <highlight>Google Analytics 통합</highlight>을 통해 <highlight>네이티브 앱 환경에서의 데이터 통신을 최적화</highlight>하고, 사용자 유입 경로 분석 기반의 서비스 운영 지원",
       },
     ],
-    problemSolving: [],
+    problemSolving: [
+      {
+        id: 1,
+        title: "원페이지 앱의 렌더링 성능 최적화",
+        issue:
+          "모든 컴포넌트가 단일 페이지에서 로드되는 원페이지 구조로 인해 유튜브 영상과 이미지가 반복적으로 렌더링되어 속도 저하가 발생했습니다.",
+        solution:
+          "Intersection Observer API를 활용하여 사용자가 화면에 보지 않는 부분의 유튜브 영상 재생을 일시정지하고, 이미지에 대해서는 Lazy Loading과 Next.js의 Image 컴포넌트를 사용해 성능을 최적화했습니다. 이를 통해 불필요한 리소스 로딩과 렌더링을 최소화하여 앱 성능과 사용자 경험을 개선했습니다.",
+      },
+    ],
     links: {
       github: "",
       deploy: "",
@@ -466,9 +491,9 @@ export const careers: Careers[] = [
     basicInfo: {
       title: "Flying Doctors",
       period: "2024.09 ~ 2024.10",
-      summary: "해외의료지원 서비스",
+      summary: "24시간 실시간 해외 의료 지원 및 보안 플랫폼",
       description:
-        "24시간 실시간으로 해외 의료 지원 및 보안 서비스를 지원하는 플랫폼",
+        "해외에서 응급 상황 발생 시 긴급 채팅과 알림을 통해 병원 안내 및 헬기 지원 등 신속한 의료 대응을 제공하는 플랫폼입니다.\n 사용자는 모바일 앱으로 전문가와 실시간 소통할 수 있으며, 관리자는 웹페이지를 통해 운영을 관리합니다. 크라이시스24 API를 통해 전 세계의 위험 상황 알림을 제공하고, 개인 질환자를 위한 복약 기록 및 시간대별 복약 알림 기능을 지원합니다.",
     },
     skills: {
       frontend: [
@@ -479,42 +504,47 @@ export const careers: Careers[] = [
         "Socket.IO",
         "styled-component",
       ],
+      backend: [],
+      database: [],
       deployment: ["AWS"],
     },
     keyContributions: [
       {
         id: 1,
-        content: "관리자 페이지 기능 고도화 및 UI 개선",
+        content:
+          "관리자 웹페이지 고도화 작업을 통해 전반적인 오류 처리 및 UI/UX 개선",
       },
       {
         id: 2,
-        content: "Socket.IO를 활용한 관리자 간 실시간 채팅 기능 구현",
+        content:
+          "<highlight>Socket.IO를</highlight> 활용하여 관리자 간 실시간 채팅 기능 구현으로 신속한 내부 커뮤니케이션 지원",
       },
       {
         id: 3,
         content:
-          "관리자 페이지에서 발생한 이슈 대응: 실시간으로 발생하는 시스템 오류 및 사용자의 피드백을 빠르게 반영하여 문제 해결",
+          "사용자 피드백 및 시스템 오류를 빠르게 대응하고 처리하여 시스템 안정성 향상",
       },
       {
         id: 4,
         content:
-          "소통 담당: 관리자 및 개발팀 간의 소통을 원활하게 하여 업무 진행 속도와 효율성을 높임",
+          "개발팀과 해당 업체 간 <highlight>소통을 직접 담당</highlight>하여 효율적인 이슈 해결과 업무 진행 지원",
       },
     ],
-    problemSolving: [],
+    problemSolving: [
+      {
+        id: 1,
+        title: "관리자 웹페이지 내 지속적인 오류 대응",
+        issue:
+          "기존 시스템의 잦은 오류와 사용자 피드백에 대한 빠른 대응이 요구되었습니다.",
+        solution:
+          "발생하는 문제를 신속히 진단하고 팀원들과 협업하여 코드 개선 및 문제 원인을 명확히 파악하여 빠르게 처리했습니다. 또한 직접적인 소통 창구 역할을 맡아 고객사의 이해를 돕고 빠르게 문제를 해결하여 신뢰성을 높였습니다.",
+      },
+    ],
     links: {
       github: "",
       deploy: "",
     },
-    media: [
-      {
-        id: 1,
-        type: "video",
-        url: "/videos/flyingDoctors-service.mp4",
-        title: "서비스 영상",
-        videoType: VideoType.MOBILE,
-      },
-    ],
+    media: [],
   },
   {
     id: 8,
@@ -523,7 +553,7 @@ export const careers: Careers[] = [
       period: "2024.06 ~ 2024.10",
       summary: "다양한 브랜드 제품을 소개하는 온라인 쇼핑 플랫폼",
       description:
-        "파트너스(판매자)가 입점 신청을 통해 승인받은 후 상품을 등록하면 쇼핑몰에 노출되어 판매되는 형태의 온라인 쇼핑 플랫폼입니다. 타임특가와 기획전 등 다양한 프로모션 이벤트를 운영하며, 본사 관리자가 이벤트를 오픈하면 판매자는 참여 신청을 통해 특정 시간대에 상품을 노출할 수 있습니다. 결제 시스템은 브랜드별 상품 쿠폰, 적립금, 등급 할인 등 다양한 할인 정책을 제공하며, 굿스플로 API 연동을 통해 자동화된 교환 및 반품 처리를 지원합니다.",
+        "파트너스(판매자)가 입점 및 승인 후 상품을 등록해 판매하는 온라인 쇼핑 플랫폼으로, 타임특가·기획전 등 다양한 프로모션을 운영합니다. 브랜드별 쿠폰, 적립금, 등급 할인 등 다채로운 할인 정책을 제공하며, 굿스플로 API와 연동하여 교환 및 반품 프로세스를 자동화했습니다.",
     },
     skills: {
       frontend: [
@@ -542,27 +572,27 @@ export const careers: Careers[] = [
       {
         id: 1,
         content:
-          "클라이언트와 기획 단계에서 <highlight>정책 관련 소통</highlight> 담당, 불명확한 <highlight>프로세스를 협의</highlight>하여 해결",
+          "클라이언트와 기획 단계에서부터 <highlight>정책 관련 소통을 담당</<highlight>하고 불명확한 프로세스를 협의하여 명확한 개발 기준 마련",
       },
       {
         id: 2,
         content:
-          "<highlight>장바구니</highlight>, <highlight>결제</highlight>, <highlight>반품/교환</highlight> 등 전반적인 서비스 페이지 및 <highlight>관리자 사이트</highlight>를 구현",
+          "장바구니, 결제, 반품/교환을 포함한 주요 서비스 페이지 및 관리자 사이트 구현",
       },
       {
         id: 3,
         content:
-          "카카오, 구글 <highlight>소셜 로그인</highlight> 및 KG 이니시스 <highlight>결제 시스템</highlight>을 성공적으로 연동하여 사용자 편의성을 향상",
+          "카카오, 구글 소셜 로그인과 <highlight>KG 이니시스 결제 시스템</highlight>을 성공적으로 연동하여 사용자 편의성 향상",
       },
       {
         id: 4,
         content:
-          "Nest.js와 Prisma를 활용하여 기본적인 테이블 추가 및 서버 CRUD 구현을 통해 <highlight>전체 개발 작업 시간을 30% 단축</highlight>",
+          "Nest.js와 Prisma를 활용하여 <highlight>테이블 추가 및 서버 CRUD 작업</highlight>을 효율화하여 전체 개발 기간 단축",
       },
       {
         id: 5,
         content:
-          "React-Query 및 Zustand를 활용한 데이터 상태 관리 최적화로 서비스 성능을 개선",
+          "React-Query 및 Zustand를 활용한 데이터 상태 관리 최적화로 API 호출 빈도를 최소화하고 <highlight>렌더링 성능을 개선</highlight>",
       },
     ],
     problemSolving: [
@@ -570,17 +600,17 @@ export const careers: Careers[] = [
         id: 1,
         title: "서버 개발 역량 강화",
         issue:
-          "기존에 서버 개발 경험이 부족하여 Nest.js 및 Prisma를 활용한 API 개발 과정에서 어려움이 발생했습니다.",
+          "서버 개발 경험이 부족하여 Nest.js 및 Prisma를 활용한 API 개발 과정에서 어려움이 발생했습니다.",
         solution:
-          "이전 Node.js 및 Prisma 학습 경험을 바탕으로 이미 작성된 프로젝트의 서버 구조를 분석하였습니다. 또한 AI 도구를 적극 활용하여 API 개발을 진행하고 코드 품질을 개선하였으며, 이 과정에서 서버 개발 역량을 크게 향상시킬 수 있었습니다.",
+          "이전 Node.js 및 Prisma 학습 경험을 기반으로 기존 프로젝트의 API 설계를 분석했습니다. 또한 AI 도구를 활용하여 CRUD 작업을 효율적으로 구현하고 API 응답 속도 및 코드 가독성을 높이는 등 서버 개발 역량을 강화했습니다.",
       },
       {
         id: 2,
         title: "반품/교환 프로세스 개선",
         issue:
-          "기획 단계에서 반품/교환 관련 정책이 미흡했고, UI/UX 디자인이 부재하여 개발 진행에 어려움이 있었습니다.",
+          "기획 단계에서 반품/교환 정책이 명확하지 않고 UI/UX 디자인이 부재하여 개발 진행이 어려웠습니다.",
         solution:
-          "클라이언트와의 협의를 통해 CS 시스템을 활용한 중간 처리 방식을 도입했습니다. 교환 신청이 들어오면 굿스플로를 통해 자동으로 회수가 진행되고, 파트너스 담당자가 확인 후 고객과 전화 상담을 통해 교환 상품을 발송하거나 교환을 거절하는 프로세스를 구축하여 효율적인 운영이 가능하도록 개선하였습니다.",
+          "클라이언트와 협의하여 CS 시스템과 굿스플로 API를 연계한 중간 처리 프로세스를 구축했습니다. 자동화된 회수 처리 이후 파트너스 담당자가 고객과 직접 상담하여 교환 승인 또는 거절이 가능하도록 운영 효율성을 개선했습니다.",
       },
     ],
     links: {
