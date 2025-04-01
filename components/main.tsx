@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import Img from "@/public/image/img.gif";
-import bg from "@/public/image/developer_background.jpeg";
+import MyFace from "@/public/image/myFace_02.png";
+import bg from "@/public/image/developer_background_02.png";
 import TypeIt from "typeit-react";
 // frmaer-motion
 import { motion } from "framer-motion";
@@ -18,29 +19,28 @@ const Main: React.FC<ItabRef> = ({ tabRef }) => {
       }}
       className="w-full overflow-hidden"
     >
-      <div className="relative">
+      <div className="relative flex justify-center items-center w-full">
         <Image
           alt="background"
           priority
           loading="eager"
           src={bg}
-          className="opacity-85 blur-sm object-cover"
+          className="blur-sm object-cover"
           fill
         />
         <motion.div
           variants={initialScreen}
           initial="start"
           animate="end"
-          className="justify-cente m-auto flex w-full max-w-5xl flex-col pt-24 pb-10"
+          className="justify-center m-auto flex w-full max-w-5xl flex-col pt-24 pb-10"
         >
           <div className="flex justify-center">
-            {/* <Model /> */}
             <Image
               alt="profile"
-              className=" rounded-full z-10"
-              src={Img}
-              width={200}
-              height={200}
+              className="w-[220px] h-[220px] lg:w-[270px] lg:h-[270px] rounded-full z-10"
+              src={MyFace}
+              width={270}
+              height={270}
             />
           </div>
           <div className="z-10 flex flex-col items-center justify-center">
