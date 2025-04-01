@@ -400,6 +400,7 @@ export const careers: Careers[] = [
       github: "",
       deploy: "",
     },
+    media: [],
   },
   {
     id: 6,
