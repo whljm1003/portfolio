@@ -153,7 +153,7 @@ export const careers: Careers[] = [
         "기존에 PHP로 구축된 목재 및 자재 전문 쇼핑몰의 고도화 및 유지보수 작업을 수행했습니다. Vanilla JavaScript를 활용하여 DOM을 직접 조작하며 장바구니와 결제 페이지의 UI 개선 및 복잡한 배송비·할인 로직의 정확성을 높였습니다. 특히 로직 모듈화와 꼼꼼한 디버깅을 통해 코드의 가독성과 유지보수성을 높였으며, 이를 통해 개발자로서의 문제 해결 역량을 강화할 수 있었습니다.",
     },
     skills: {
-      frontend: ["JavaScript (Vanilla)", "DOM Manipulation"],
+      frontend: ["JavaScript"],
       backend: ["PHP"],
       database: [],
       deployment: [],
