@@ -36,7 +36,7 @@ export default function Home({}: Props) {
         <About tabRef={tabRef} />
         <Skills tabRef={tabRef} />
         <Career tabRef={tabRef} />
-        {/* <Projects tabRef={tabRef} /> */}
+        <Projects tabRef={tabRef} />
         <Education tabRef={tabRef} />
       </div>
       <Footer />

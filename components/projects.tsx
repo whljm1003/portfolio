@@ -1,8 +1,8 @@
-'use client'
+"use client";
 import Image from "next/image";
 import { FaLink, FaTools } from "react-icons/fa";
 import { MdPeopleAlt, MdDescription } from "react-icons/md";
-import { projects } from "../assets/projectData";
+// import { projects } from "../assets/projectData";
 // frmaer-motion
 import { motion } from "framer-motion";
 import { variants, sliceUp } from "./motion";
@@ -16,6 +16,7 @@ import "swiper/css/navigation";
 import Link from "next/link";
 import { GiRollingDices } from "react-icons/gi";
 import { ItabRef } from "./header";
+import { projects } from "@/assets/projectData";
 
 const Project: React.FC<ItabRef> = ({ tabRef }) => {
   return (
