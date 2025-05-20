@@ -106,7 +106,7 @@ export default function Stevelabs() {
               },
             }}
           >
-            {stevelabsData.reverse().map((data) => (
+            {stevelabsData.map((data) => (
               <SwiperSlide
                 key={data.title}
                 className="flex items-center rounded-2xl px-5 bg-white p-4 odd:bg-[#ffffff] even:bg-[#5352ed] even:text-slate-100"
