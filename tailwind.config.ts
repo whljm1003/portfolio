@@ -36,8 +36,6 @@ module.exports = {
       width: {
         screen: "100dvw",
       },
-      keyframes: {},
-      animation: {},
       colors: {
         ...colors,
       },

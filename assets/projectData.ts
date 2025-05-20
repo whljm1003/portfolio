@@ -8,7 +8,6 @@ import PicaNote_DETAIL from "@/public/image/picaNote/PicaNote-Detail.png";
 import PicaNote_TEMPLETE from "@/public/image/picaNote/PicaNote-Templete.png";
 import PicaNote_WRITE from "@/public/image/picaNote/PicaNote-Write.png";
 import PicaNote_PICTURE from "@/public/image/picaNote/PicaNote-Picture.png";
-
 import Portfolio_MAIN from "@/public/image/portfolio/portfolio-Main.png";
 import Portfolio_SKILLS from "@/public/image/portfolio/portfolio-Skills.png";
 import Portfolio_CAREER from "@/public/image/portfolio/portfolio-Main.png";

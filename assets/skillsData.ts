@@ -1,121 +1,78 @@
-import Mysql from "@/public/image/skills/mysql.png";
-import NodeJs from "@/public/image/skills/nodejs.png";
-import GraphQL from "@/public/image/skills/graphQL.png";
-import Dart from "@/public/image/skills/Dart.svg";
-import Flutter from "@/public/image/skills/Flutter.svg";
-import Nest from "@/public/image/skills/Nest.js.svg";
-import PostgresSQL from "@/public/image/skills/PostgresSQL.svg";
-import Prisma from "@/public/image/skills/prisma_icon.png";
-import Remix from "@/public/image/skills/remix-glowing.svg";
-
-export const MainSkills = [
+export const LanguageSkills = [
   {
-    id: 1,
+    name: "JavaScript",
+    backgroundColor: "#F7DF1E",
+    textColor: "#000000",
+  },
+  {
     name: "TypeScript",
-    img: "/image/skills/typescript.png",
+    backgroundColor: "#3178C6",
+    textColor: "#FFFFFF",
+  },
+];
+export const FrontEndSkills = [
+  {
+    name: "Next.js (React)",
+    backgroundColor: "#000000",
+    textColor: "#FFFFFF",
   },
   {
-    id: 2,
-    name: "React",
-    img: "/image/skills/react.png",
-  },
-  {
-    id: 3,
-    name: "NextJs",
-    img: "/image/skills/nextjs.png",
-  },
-  {
-    id: 4,
-    name: "Styled-Components",
-    img: "/image/skills/styled_coponents.png",
-  },
-  {
-    id: 5,
-    name: "Tailwind",
-    img: "/image/skills/tailwind.png",
-  },
-  {
-    id: 6,
-    name: "React-Query",
-    img: "/image/skills/react-query.png",
-  },
-  {
-    id: 7,
-    name: "Redux-Toolkit",
-    img: "/image/skills/redux-icon.svg",
-  },
-  {
-    id: 8,
-    name: "Recoil",
-    img: "/image/skills/recoil-js.svg",
-  },
-  {
-    id: 9,
     name: "Zustand",
-    img: "/image/skills/zustand_icon.jpeg",
+    backgroundColor: "#764ABC",
+    textColor: "#FFFFFF",
+  },
+  {
+    name: "React-Query",
+    backgroundColor: "#FF4154",
+    textColor: "#FFFFFF",
+  },
+  {
+    name: "React-Hook-Form",
+    backgroundColor: "#EC5990",
+    textColor: "#FFFFFF",
+  },
+  {
+    name: "styled-component",
+    backgroundColor: "#DB7093",
+    textColor: "#FFFFFF",
+  },
+  {
+    name: "Emotion",
+    backgroundColor: "#E74C3C",
+    textColor: "#FFFFFF",
+  },
+  {
+    name: "Tailwind CSS",
+    backgroundColor: "#06B6D4",
+    textColor: "#FFFFFF",
   },
 ];
-export const SubSkills = [
+export const BackEndSkills = [
   {
-    id: 1,
-    name: "GraphQL",
-    img: "/image/skills/graphQL.png",
+    name: "NodeJS",
+    backgroundColor: "#339933",
+    textColor: "#FFFFFF",
   },
   {
-    id: 2,
-    name: "NodeJs",
-    img: "/image/skills/nodejs.png",
+    name: "NestJS",
+    backgroundColor: "#E0234E",
+    textColor: "#FFFFFF",
   },
   {
-    id: 3,
-    name: "NestJs",
-    img: "/image/skills/Nest.js.svg",
+    name: "Prisma ORM",
+    backgroundColor: "#2D3748",
+    textColor: "#FFFFFF",
   },
+];
+export const DatabaseSkills = [
   {
-    id: 4,
-    name: "Prisma",
-    img: "/image/skills/prisma_icon.png",
-  },
-  {
-    id: 5,
     name: "MySQL",
-    img: "/image/skills/mysql.png",
+    backgroundColor: "#4479A1",
+    textColor: "#FFFFFF",
   },
   {
-    id: 6,
-    name: "PostgresSQL",
-    img: "/image/skills/PostgresSQL.svg",
-  },
-];
-export const InterestedSkills = [
-  {
-    id: 1,
-    name: "Remix",
-    img: "/image/skills/remix-glowing.svg",
-  },
-  {
-    id: 2,
-    name: "Vite",
-    img: "/image/skills/vite.svg",
-  },
-  {
-    id: 3,
-    name: "Dart",
-    img: "/image/skills/Dart.svg",
-  },
-  {
-    id: 4,
-    name: "Flutter",
-    img: "/image/skills/Flutter.svg",
-  },
-  {
-    id: 7,
-    name: "Docker",
-    img: "/image/skills/docker.svg",
-  },
-  {
-    id: 8,
-    name: "AWS",
-    img: "/image/skills/aws.svg",
+    name: "PostgreSQL",
+    backgroundColor: "#336791",
+    textColor: "#FFFFFF",
   },
 ];

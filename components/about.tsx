@@ -1,18 +1,59 @@
-'use client'
+"use client";
 import { useEffect } from "react";
 import { BsFillPersonFill } from "react-icons/bs";
 import { AiFillPhone, AiFillGithub } from "react-icons/ai";
+import { SiVelog } from "react-icons/si";
 import { IoMdMail } from "react-icons/io";
+import { FaBirthdayCake } from "react-icons/fa";
 import { GiRollingDices } from "react-icons/gi";
 import { IoCopy } from "react-icons/io5";
 import Link from "next/link";
-// frmaer-motion
 import { motion } from "framer-motion";
-import { initialScreen } from "./motion";
+import { initialScreen } from "../lib/motion";
 import { ItabRef } from "./header";
-// ClipBoard && toast
 import useCopyClipBoard from "../hooks/useCopyClipBoard";
 import Toast from "./toast";
+
+const AboutList = [
+  {
+    label: "이름",
+    name: "이정민",
+    icon: <BsFillPersonFill size={40} />,
+    isCopy: false,
+  },
+  {
+    label: "생년월일",
+    name: "1990.10.03",
+    icon: <FaBirthdayCake size={40} />,
+    isCopy: false,
+  },
+  {
+    label: "연락처",
+    name: "010-4998-8965",
+    icon: <AiFillPhone size={40} />,
+    isCopy: true,
+  },
+  {
+    label: "이메일",
+    name: "whljm1003@gmail.com",
+    icon: <IoMdMail size={40} />,
+    isCopy: true,
+  },
+  {
+    label: "깃허브",
+    name: "https://github.com/whljm1003",
+    icon: <AiFillGithub size={40} />,
+    Link: "https://github.com/whljm1003",
+    isCopy: false,
+  },
+  {
+    label: "블로그",
+    name: "https://velog.io/@whljm1003",
+    icon: <SiVelog size={40} />,
+    Link: "https://velog.io/@whljm1003",
+    isCopy: false,
+  },
+];
 
 const About: React.FC<ItabRef> = ({ tabRef }) => {
   const [isCopy, setIsCopy, onCopy] = useCopyClipBoard();
@@ -37,68 +78,44 @@ const About: React.FC<ItabRef> = ({ tabRef }) => {
         variants={initialScreen}
         initial="start"
         animate="end"
-        className="m-auto my-16 flex w-full max-w-5xl flex-col items-center"
+        className="m-auto my-28 flex w-full max-w-5xl flex-col items-center"
       >
         <div className="flex items-center justify-center">
           <GiRollingDices size={34} />
-          <h1 className="mb-10 mr-9 border-b-2 border-black text-4xl font-bold leading-[1.5]">
+          <h1 className="mb-10 mr-9 border-b-2 border-black text-5xl font-bold leading-[1.5]">
             ABOUT ME
           </h1>
         </div>
-        <div className="items-cente flex w-full flex-wrap space-y-6">
-          <div className="flex w-full items-center justify-center space-x-5 lg:w-1/2">
-            <BsFillPersonFill size={40} />
-            <div className="w-2/4 space-y-2 md:w-1/3 ">
-              <div className="text-2xl font-bold">이름</div>
-              <div className="text-base">이정민</div>
-            </div>
-          </div>
-          <div className="flex w-full items-center justify-center space-x-5 lg:w-1/2">
-            <AiFillPhone size={40} />
-            <div className=" w-2/4 space-y-2 md:w-1/3">
-              <div className="text-2xl font-bold ">연락처</div>
-              {/* 태블릿 버전 부터 출력 */}
-              <div className="hidden items-center space-x-2 sm:flex">
-                <span className="sm: text-base">010-4998-8965</span>
-                <span>
-                  <IoCopy
-                    onClick={() => handleCopyClipBoard("010-4998-8965")}
-                    className="cursor-pointer"
-                  />
-                </span>
-              </div>
-              {/* 모바일 버전에만 출력 */}
-              <div className="w-full space-y-2 sm:hidden">
-                <Link href={"tel:010-4998-8965"}>
-                  <span className="text-base">010-4998-8965</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="flex w-full items-center justify-center space-x-5 lg:w-1/2 ">
-            <IoMdMail size={40} />
-            <div className="w-2/4 space-y-2 md:w-1/3 ">
-              <div className="text-2xl font-bold">이메일</div>
-              <div className="flex items-center space-x-2">
-                <span className="text-base">whljm1003@gmail.com</span>
-                <span>
-                  <IoCopy
-                    onClick={() => handleCopyClipBoard("whljm1003@gmail.com")}
-                    className="cursor-pointer"
-                  />
-                </span>
+        <div className="w-full grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-10 mt-8 lg:mt-16 px-4 lg:px-0">
+          {AboutList.map((item) => (
+            <div key={item.name} className="flex items-center">
+              <label className="mr-5">{item.icon}</label>
+              <div className="flex flex-col gap-2">
+                <span className="text-2xl font-bold">{item.label}</span>
+                <div className="flex items-center space-x-2">
+                  {item.Link ? (
+                    <Link
+                      href={item.Link}
+                      target="_blank"
+                      className=" cursor-pointer"
+                    >
+                      <span className="text-base">{item.Link}</span>
+                    </Link>
+                  ) : (
+                    <span className="text-base">{item.name}</span>
+                  )}
+                  {item.isCopy ? (
+                    <span>
+                      <IoCopy
+                        onClick={() => handleCopyClipBoard(item.name)}
+                        className="cursor-pointer"
+                      />
+                    </span>
+                  ) : null}
+                </div>
               </div>
             </div>
-          </div>
-          <div className="flex w-full items-center justify-center space-x-5 lg:w-1/2 ">
-            <AiFillGithub size={40} />
-            <div className="w-2/4 md:w-1/3 ">
-              <div className="mb-2 text-2xl font-bold">Github</div>
-              <Link href="https://github.com/whljm1003">
-                <span className="text-base">https://github.com/whljm1003</span>
-              </Link>
-            </div>
-          </div>
+          ))}
         </div>
       </motion.div>
     </div>

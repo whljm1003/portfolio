@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaWindowClose } from "react-icons/fa";
-import { Media, VideoType } from "@/assets/careerData";
+import { Media, VideoType } from "@/assets/stevelabsData";
 
 type MediaModalProps = {
   media: Media | null;

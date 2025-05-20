@@ -1,24 +1,16 @@
-"use client";
 import Image from "next/image";
 import { FaLink, FaTools } from "react-icons/fa";
 import { MdPeopleAlt, MdDescription } from "react-icons/md";
-// import { projects } from "../assets/projectData";
-// frmaer-motion
 import { motion } from "framer-motion";
-import { variants, sliceUp } from "./motion";
-// Import Swiper React components
+import { variants, sliceUp } from "../lib/motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 import Link from "next/link";
 import { GiRollingDices } from "react-icons/gi";
 import { ItabRef } from "./header";
 import { projects } from "@/assets/projectData";
 
-const Project: React.FC<ItabRef> = ({ tabRef }) => {
+export default function Project({ tabRef }: ItabRef) {
   return (
     <section
       ref={(el) => {
@@ -35,7 +27,7 @@ const Project: React.FC<ItabRef> = ({ tabRef }) => {
       >
         <div className="flex items-center justify-center text-zinc-100">
           <GiRollingDices size={34} />
-          <h1 className="mr-9 mb-10 border-b-2 text-4xl font-bold leading-[1.5]">
+          <h1 className="mr-9 mb-10 border-b-2 text-5xl font-bold leading-[1.5]">
             PROJECTS
           </h1>
         </div>
@@ -76,10 +68,10 @@ const Project: React.FC<ItabRef> = ({ tabRef }) => {
                           className="relative m-auto h-[90%] lg:w-[90%] "
                         >
                           <Image
-                            // priority={true}
                             src={img.url}
                             alt={img.name}
                             fill
+                            sizes="(max-width: 768px) 100vw, 90vw"
                           />
                         </div>
                       </SwiperSlide>
@@ -149,6 +141,4 @@ const Project: React.FC<ItabRef> = ({ tabRef }) => {
       </motion.div>
     </section>
   );
-};
-
-export default Project;
+}
