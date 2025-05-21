@@ -27,7 +27,7 @@ export default function Career({ tabRef }: ItabRef) {
             </h1>
           </div>
 
-          <section className="flex flex-col gap-10 lg:gap-40">
+          <section className="flex flex-col gap-10 lg:gap-20">
             {/* 스티브랩스 */}
             <Stevelabs />
             {/* 원티드 */}

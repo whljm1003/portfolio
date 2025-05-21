@@ -2,7 +2,8 @@
 import { FC, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { motion } from "framer-motion";
-const variousMenu = ["About", "Skills", "Career", "Project"];
+const variousMenu = ["About", "Skills", "Career", "Education"];
+// const variousMenu = ["About", "Skills", "Career", "Project"];
 
 export interface ItabRef {
   tabRef: Icurrent;

@@ -3,11 +3,12 @@ import React, { useEffect, useRef, useState } from "react";
 import About from "../components/about";
 import Skills from "../components/skills";
 import Career from "../components/career";
-import Projects from "../components/projects";
+// import Projects from "../components/projects";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import { useScroll } from "framer-motion";
 import Introduction from "./Introduction";
+import Education from "./education";
 
 export default function Home() {
   const [yProgress, setYProgress] = useState<number>(0);
@@ -30,7 +31,8 @@ export default function Home() {
         <About tabRef={tabRef} />
         <Skills tabRef={tabRef} />
         <Career tabRef={tabRef} />
-        <Projects tabRef={tabRef} />
+        {/* <Projects tabRef={tabRef} /> */}
+        <Education tabRef={tabRef} />
       </div>
       <Footer />
     </div>
