@@ -10,7 +10,7 @@ import {
 } from "../assets/skillsData";
 import { GiRollingDices } from "react-icons/gi";
 import { motion } from "framer-motion";
-import { variants, sliceLeft, sliceUp } from "../lib/motion";
+import { variants, sliceUp } from "../lib/motion";
 import { ItabRef } from "./header";
 
 const Skills = [
@@ -49,6 +49,7 @@ const About: React.FC<ItabRef> = ({ tabRef }) => {
         initial="start"
         whileInView="end"
         viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.1 }}
       >
         <div className="justify-center py-5 m-auto my-16 flex w-full max-w-5xl flex-col items-center px-5 lg:px-0 *:text-white">
           <div className="flex items-center justify-center">
@@ -62,6 +63,7 @@ const About: React.FC<ItabRef> = ({ tabRef }) => {
               <motion.div
                 key={skill.name}
                 variants={sliceUp}
+                transition={{ duration: 0.1 }}
                 className="flex lg:items-center flex-col lg:flex-row"
               >
                 <strong className="flex items-center text-xl mb-4 lg:mb-0 kg:text-2xl font-bold w-[150px]">
