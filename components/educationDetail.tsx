@@ -49,10 +49,10 @@ export default function EducationDetail({ data }: Props) {
             clickable: true,
           }}
           modules={[Parallax, Pagination, Navigation]}
-          spaceBetween={20}
-          className="h-[35rem] w-[20rem] lg:w-[30rem] gap-10"
+          spaceBetween={30}
+          className="w-[90vw] max-w-[500px] h-[500px]"
         >
-          <SwiperSlide className="flex items-center rounded-2xl bg-white p-4 odd:bg-[#ffffff] even:bg-[#5352ed] even:text-slate-100">
+          <SwiperSlide className="flex items-center rounded-2xl px-5 bg-white p-4 odd:bg-[#ffffff] even:bg-[#5352ed] even:text-slate-100">
             <div>
               <h3
                 className="mt-5 text-xl font-bold group-odd:text-gray-600 group-even:text-white"

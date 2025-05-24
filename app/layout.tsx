@@ -1,6 +1,7 @@
 import { Viewport } from "next";
 import "../styles/globals.css";
 import "swiper/css";
+import { Head } from "next/document";
 
 export const metadata = {
   title: "이정민 포트폴리오",
@@ -71,8 +72,9 @@ export const metadata = {
 
 export const viewport: Viewport = {
   width: "device-width",
-  initialScale: 1,
   themeColor: "#ffffff",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({

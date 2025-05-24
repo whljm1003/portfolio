@@ -29,7 +29,10 @@ export default function Wanted() {
 
   return (
     <div className="flex flex-col items-center lg:flex-row lg:items-start">
-      <motion.div variants={sliceLeft} className="h-full lg:w-1/3 lg:pr-12">
+      <motion.div
+        variants={sliceLeft}
+        className="h-full lg:pr-12 pt-10 lg:pt-20"
+      >
         <div className="border-1 rounded-ful relative my-10 h-48 w-48 lg:my-0">
           <Image
             src={wantedLogo}
@@ -43,7 +46,7 @@ export default function Wanted() {
       </motion.div>
       <motion.div
         variants={sliceRight}
-        className=" overflow-hidden lg:overflow-visible lg:border-l-2 lg:pl-12"
+        className=" overflow-hidden lg:overflow-visible lg:border-l-2 lg:pl-12 pt-10 lg:pt-20"
       >
         <div className="px-5 lg:px-0">
           <h1 className="py-2 text-2xl font-bold">
@@ -78,7 +81,7 @@ export default function Wanted() {
             }}
             modules={[Autoplay, Pagination, Navigation]}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
-            className="w-[90vw] max-w-[640px]"
+            className="w-[90vw] max-w-[500px]"
             breakpoints={{
               320: {
                 slidesPerView: 1,

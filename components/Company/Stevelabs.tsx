@@ -30,7 +30,7 @@ export default function Stevelabs() {
   return (
     <div className="flex flex-col items-center lg:flex-row lg:items-start">
       {/* {isDetail && <CareerDetail handleCloseModal={() => setIsDetail(false)} />} */}
-      <motion.div variants={sliceLeft} className="h-full lg:w-1/3 lg:pr-12">
+      <motion.div variants={sliceLeft} className="h-full lg:pr-12">
         <div className="border-1 rounded-ful relative my-10 h-48 w-48 lg:my-0">
           <Image
             src={stevelabsLogo}
@@ -54,8 +54,8 @@ export default function Stevelabs() {
           </h2>
           <ul className="py-4 px-4 lg:pl-4 lg:pr-0 font-semibold whitespace-pre-wrap flex flex-col gap-1 list-disc">
             <li>
-              Next.js (React) 기반 커머스, 의료, 금융, 역경매 등 총 8개
-              프로젝트의 개발 참여
+              Next.js 기반 커머스, 의료, 금융, 역경매 등 총 8개 프로젝트의 개발
+              참여
             </li>
             <li>
               소셜 로그인, 본인인증, 전자계약, 결제 시스템 등 외부 API 연동 경험
@@ -90,7 +90,7 @@ export default function Stevelabs() {
             }}
             modules={[Autoplay, Pagination, Navigation]}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
-            className="w-[90vw] max-w-[640px]"
+            className="w-[90vw] max-w-[500px]"
             breakpoints={{
               320: {
                 slidesPerView: 1,
@@ -109,7 +109,7 @@ export default function Stevelabs() {
             {stevelabsData.map((data) => (
               <SwiperSlide
                 key={data.title}
-                className="flex items-center rounded-2xl px-5 bg-white p-4 odd:bg-[#ffffff] even:bg-[#5352ed] even:text-slate-100"
+                className="flex items-center h-full rounded-2xl px-5 bg-white p-4 odd:bg-[#ffffff] even:bg-[#5352ed] even:text-slate-100"
               >
                 <div className="">
                   <h2 className="py-3 text-2xl font-bold group-odd:text-gray-600 group-even:text-white">
