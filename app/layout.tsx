@@ -48,7 +48,7 @@ export const metadata = {
   },
   verification: {
     google: "Urb-UAfsYQ7F8GUktYxf0iccYuqK6dTOu_bnIUNdFc0",
-    naver: "naver-site-verification-code",
+    naver: "e0fc47427133c069fe2d0d678d59f55cbd73b4e4",
   },
   category: "portfolio",
   classification: "personal website",
