@@ -47,7 +47,7 @@ export const metadata = {
     canonical: "https://portfolio-whljm1003.vercel.app/",
   },
   verification: {
-    google: "google-site-verification-code",
+    google: "Urb-UAfsYQ7F8GUktYxf0iccYuqK6dTOu_bnIUNdFc0",
     naver: "naver-site-verification-code",
   },
   category: "portfolio",
