@@ -4,7 +4,7 @@ import {
   careers,
   education,
   featuredProjects,
-  portfolioImpactMetrics,
+  experienceMetrics,
   profile,
   projects,
 } from "@/assets/portfolio";
@@ -17,7 +17,7 @@ import HeroTitle from "./portfolio/HeroTitle";
 import HeroScene from "./portfolio/HeroScene";
 import MagneticLink from "./portfolio/MagneticLink";
 import ImpactScene from "./portfolio/ImpactScene";
-import ImpactMetrics from "./portfolio/ImpactMetrics";
+import ExperienceMetrics from "./portfolio/ExperienceMetrics";
 import CapabilityScene from "./portfolio/CapabilityScene";
 import Reveal from "./portfolio/Reveal";
 
@@ -67,7 +67,7 @@ export default function Home() {
           </div>
         </HeroScene>
         <ImpactScene>
-          <ImpactMetrics metrics={portfolioImpactMetrics} />
+          <ExperienceMetrics metrics={experienceMetrics} />
         </ImpactScene>
         <CapabilityScene
           artworks={[

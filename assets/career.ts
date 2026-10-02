@@ -172,7 +172,7 @@ export type StevelabsProject = {
 export const stevelabsData: StevelabsProject[] = [
   {
     id: "career-project-9",
-    title: "</> 온라인 편집샵 플랫폼",
+    title: "</> 쇼핑몰 서비스",
     period: "2024.06 - 2024.10",
     role: "파트너스·본사 관리자 프론트엔드 및 관리자 API",
     summary: "쇼핑몰 관리자 화면과 상품·옵션·할인·결제 흐름 개발",
@@ -205,7 +205,7 @@ export const stevelabsData: StevelabsProject[] = [
   },
   {
     id: "career-project-10",
-    title: "</> Flying Doctors",
+    title: "</> 해외 의료 지원 서비스",
     period: "2024년",
     role: "관리자 웹 고도화·운영 이슈 대응",
     summary: "해외 의료 지원 서비스의 관리자 채팅·위치·보안 정보 화면 개발",
@@ -233,7 +233,7 @@ export const stevelabsData: StevelabsProject[] = [
   },
   {
     id: "career-project-11",
-    title: "</> 골드러시",
+    title: "</> 금 거래 서비스",
     period: "2024.05 - 2024.06",
     role: "기획 참여·프론트엔드 개발",
     summary: "실물 금 판매 서비스의 가격 정책·WebView·외부 API 연동",
@@ -262,7 +262,7 @@ export const stevelabsData: StevelabsProject[] = [
   },
   {
     id: "career-project-12",
-    title: "</> 미술로 생각하기",
+    title: "</> 미술학원 관리 서비스",
     period: "2023.11 - 2024.03",
     role: "관리자 프론트엔드·운영 대응",
     summary: "유아 미술학원 본사·가맹점의 회원·수업·결제 관리 화면 개발",
@@ -294,7 +294,7 @@ export const stevelabsData: StevelabsProject[] = [
   },
   {
     id: "career-project-13",
-    title: "</> 일로 (illo)",
+    title: "</> 스타일 컨설팅 서비스",
     period: "2023.10 - 2023.11",
     role: "사용자 웹앱 프론트엔드",
     summary: "스타일 컨설팅 서비스의 공통 UI·무한 스크롤·예약·결제 개발",
@@ -323,7 +323,7 @@ export const stevelabsData: StevelabsProject[] = [
   },
   {
     id: "career-project-14",
-    title: "</> 유전자 검사 보고서 생성 플랫폼",
+    title: "</> 유전자 검사 보고서 서비스",
     period: "2023.09 시작",
     role: "사용자·관리자 프론트엔드",
     summary: "유전자 검사 보고서·동의서 PDF와 웹 서명·관리 화면 개발",
@@ -352,7 +352,7 @@ export const stevelabsData: StevelabsProject[] = [
   },
   {
     id: "career-project-15",
-    title: "</> 자재바다",
+    title: "</> 목재·자재 쇼핑몰 서비스",
     period: "2023.03 - 2023.05",
     role: "기존 프론트엔드 유지보수·고도화",
     summary: "PHP 쇼핑몰의 장바구니·결제 화면 및 계산 로직 개선",
@@ -372,7 +372,7 @@ export const stevelabsData: StevelabsProject[] = [
   },
   {
     id: "career-project-16",
-    title: "</> 엔티즌",
+    title: "</> 충전 사업 역경매 서비스",
     period: "2022.09 - 2023.02",
     role: "서비스 프론트엔드",
     summary: "충전 사업 역경매의 반응형 화면·견적·실사·전자 계약 연동",

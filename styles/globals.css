@@ -1755,6 +1755,11 @@ svg {
 .impact-section .impact-metric-comparison dd {
   color: var(--paper-light);
 }
+.impact-section .experience-facts dd {
+  font-size: 14px;
+  line-height: 1.7;
+  word-break: keep-all;
+}
 .impact-section .impact-measurement summary {
   text-decoration-color: var(--olive-light);
 }
@@ -2227,7 +2232,7 @@ svg {
   container: portfolio-main / inline-size;
 }
 .portfolio-workspace[data-detail-open="true"] {
-  grid-template-columns: minmax(0, 1fr) clamp(460px, 32vw, 600px);
+  grid-template-columns: minmax(0, 1fr) clamp(360px, 32vw, 600px);
   gap: 24px;
   padding-right: 24px;
 }
@@ -2389,7 +2394,7 @@ svg {
     grid-template-columns: 1fr;
   }
 }
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
   .portfolio-workspace[data-detail-open="true"] {
     grid-template-columns: minmax(0, 1fr);
     gap: 48px;

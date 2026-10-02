@@ -35,24 +35,22 @@ export default function ImpactScene({ children }: { children: ReactNode }) {
         IMPACT
       </motion.span>
       <div className="impact-heading">
-        <p className="chapter-label">성과</p>
+        <p className="chapter-label">개발 경험</p>
         <h2 id="impact-title">
-          경험을 개선하고,
+          웹에서 앱까지,
           <br />
-          <span>결과로 연결합니다.</span>
+          <span>개발 범위를 넓혔습니다.</span>
         </h2>
         <p>
-          사용자 경험, 서비스 안정성, 개발 생산성.
+          여러 도메인의 웹 개발과 운영 앱의 유지보수.
           <br />
-          제품을 더 좋게 만드는 세 가지 관점입니다.
+          실제 작업 기록으로 확인할 수 있는 개발 경험입니다.
         </p>
       </div>
       <motion.div className="impact-board" style={reduced ? { y: 0 } : { y }}>
         {children}
       </motion.div>
-      <p className="impact-note">
-        성과 수치는 측정 근거를 확인한 뒤 공개합니다.
-      </p>
+      <p className="impact-note">참여 프로젝트 수와 코드 변경 범위입니다.</p>
     </section>
   );
 }

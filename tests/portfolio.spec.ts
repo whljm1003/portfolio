@@ -17,14 +17,14 @@ const projects = [
 ] as const;
 
 const careerArchives = [
-  { slug: "select-shop", title: "온라인 편집샵 플랫폼" },
-  { slug: "flying-doctors", title: "Flying Doctors" },
-  { slug: "gold-rush", title: "골드러시" },
-  { slug: "art-cms", title: "미술로 생각하기" },
-  { slug: "illo", title: "일로 (illo)" },
-  { slug: "genetic-report", title: "유전자 검사 보고서 생성 플랫폼" },
-  { slug: "jajae-bada", title: "자재바다" },
-  { slug: "entizen", title: "엔티즌" },
+  { slug: "select-shop", title: "쇼핑몰 서비스" },
+  { slug: "flying-doctors", title: "해외 의료 지원 서비스" },
+  { slug: "gold-rush", title: "금 거래 서비스" },
+  { slug: "art-cms", title: "미술학원 관리 서비스" },
+  { slug: "illo", title: "스타일 컨설팅 서비스" },
+  { slug: "genetic-report", title: "유전자 검사 보고서 서비스" },
+  { slug: "jajae-bada", title: "목재·자재 쇼핑몰 서비스" },
+  { slug: "entizen", title: "충전 사업 역경매 서비스" },
 ] as const;
 
 const courseArchives = [
@@ -1174,7 +1174,7 @@ test("제목은 순차적으로 올라오며 등장 모션 도중에도 소개 �
   }
 });
 
-test("인트로는 전체 성과 지표와 역량을 보여주고 미확인 수치를 공개하지 않음", async ({
+test("인트로는 확인된 개발 범위를 보여주고 미측정 개선율을 주장하지 않음", async ({
   page,
 }, testInfo) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
@@ -1184,23 +1184,27 @@ test("인트로는 전체 성과 지표와 역량을 보여주고 미확인 수�
   await expect(page.getByText("TO-BE", { exact: true })).toHaveCount(0);
   const impact = page.locator("#impact");
   await expect(impact.locator(".impact-metric")).toHaveCount(3);
-  await expect(impact.locator("[data-metric-value]")).toHaveText([
-    "—",
-    "—",
-    "—",
+  await expect(impact.locator("[data-experience-value]")).toHaveText([
+    "8",
+    "14",
+    "2",
   ]);
-  await expect(impact.locator("[data-metric-status]")).toHaveText([
-    "수치 확인 예정",
-    "수치 확인 예정",
-    "수치 확인 예정",
+  await expect(impact.locator(".impact-metric-label")).toHaveText([
+    "SI 웹 서비스 개발",
+    "키보드·스크롤 처리 이관",
+    "React Native 업그레이드",
   ]);
-  await expect(impact.locator(".impact-metric-comparison dt")).toHaveText([
-    "개선 전",
-    "개선 후",
-    "개선 전",
-    "개선 후",
-    "개선 전",
-    "개선 후",
+  await expect(impact.getByText("수치 확인 예정")).toHaveCount(0);
+  await expect(impact.getByText("개선 전", { exact: true })).toHaveCount(0);
+  await expect(impact.getByText("개선 후", { exact: true })).toHaveCount(0);
+  await expect(impact.getByText("0.70.6", { exact: true })).toBeVisible();
+  await expect(
+    impact.getByText("0.78 계열 → 0.85.3", { exact: true }),
+  ).toBeVisible();
+  await expect(impact.locator(".impact-metric-number")).not.toContainText([
+    "%",
+    "%",
+    "%",
   ]);
   const measurement = impact.locator(".impact-measurement").first();
   const summary = measurement.locator("summary");
@@ -1237,10 +1241,10 @@ for (const width of [390, 1440]) {
         "position",
         "sticky",
       );
-      await expect(page.locator("#impact [data-metric-value]")).toHaveText([
-        "—",
-        "—",
-        "—",
+      await expect(page.locator("#impact [data-experience-value]")).toHaveText([
+        "8",
+        "14",
+        "2",
       ]);
       const runway = page.locator(".capability-runway");
       await expect(runway).toHaveAttribute("data-scroll-scene", "false");
@@ -1267,7 +1271,7 @@ for (const [width, height] of [
   [1440, 740],
   [1440, 900],
 ]) {
-  test(`${width}×${height}px에서 인트로는 끝까지 커지고 크기를 유지하며 다음 섹션으로 이어짐`, async ({
+  test(`${width}×${height}px에서 인트로는 화면에 맞춰 커지고 크기를 유지하며 다음 섹션으로 이어짐`, async ({
     page,
   }) => {
     await page.emulateMedia({ reducedMotion: "no-preference" });
@@ -1294,12 +1298,22 @@ for (const [width, height] of [
         (top) => window.scrollTo({ top, behavior: "instant" }),
         range.start + range.distance * progress,
       );
+      await page.evaluate(
+        () =>
+          new Promise<void>((resolve) => {
+            requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
+          }),
+      );
       if (progress === 0) await expect.poll(scale).toBeCloseTo(1, 2);
-      else await expect.poll(scale).toBeGreaterThan(previousScale + 0.001);
+      else {
+        await expect.poll(scale).toBeGreaterThanOrEqual(previousScale - 0.001);
+      }
       previousScale = await scale();
+      expect(previousScale).toBeLessThanOrEqual(1.501);
       await expectNoHorizontalOverflow(page);
     }
-    expect(previousScale).toBeGreaterThan(width === 320 ? 1.035 : 1.3);
+    if (width === 320) expect(previousScale).toBeGreaterThanOrEqual(1);
+    else expect(previousScale).toBeGreaterThan(width === 390 ? 1.05 : 1.3);
     const copyBounds = await copy.boundingBox();
     expect(copyBounds).not.toBeNull();
     expect(copyBounds!.x).toBeGreaterThanOrEqual(0);

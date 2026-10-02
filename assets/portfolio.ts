@@ -54,6 +54,65 @@ export interface PortfolioProject {
   links: { label: string; href: string }[];
 }
 
+export interface ExperienceMetric {
+  id: string;
+  label: string;
+  value: number;
+  unit: string;
+  scope: string;
+  contribution: string;
+  facts: { label: string; value: string }[];
+  evidence: string;
+}
+
+export const experienceMetrics: ExperienceMetric[] = [
+  {
+    id: "si-projects",
+    label: "SI 웹 서비스 개발",
+    value: stevelabsData.length,
+    unit: "개 프로젝트",
+    scope: "커머스·의료·금융 등 여러 도메인",
+    contribution:
+      "사용자·관리자 화면과 인증·결제·전자 계약 API를 연동하고, 일부 프로젝트에서는 관리자 API 개발을 병행했습니다.",
+    facts: [
+      { label: "재직 기간", value: "2022.09 - 2024.10" },
+      { label: "주요 기술", value: "React · Next.js" },
+    ],
+    evidence:
+      "스티브랩스 경력 자료에 기록된 프로젝트 8개입니다. 프로젝트별 담당 기능은 경력 섹션과 각 상세 자료에서 확인할 수 있습니다.",
+  },
+  {
+    id: "keyboard-migration",
+    label: "키보드·스크롤 처리 이관",
+    value: 14,
+    unit: "곳",
+    scope: "React Native 앱의 스크롤 영역",
+    contribution:
+      "keyboard-controller로 입력 화면의 키보드·스크롤 처리를 이관하고, Android WebView 종료 시 입력 모드를 복원하도록 조정했습니다.",
+    facts: [
+      { label: "이관 대상", value: "앱 스크롤 영역" },
+      { label: "함께 보완", value: "WebView 입력 모드" },
+    ],
+    evidence:
+      "WebView·키보드 개발 기록에서 확인한 스크롤 영역 14곳의 변경 범위입니다. 사용자 오류 감소율이나 성능 개선율을 뜻하지 않습니다.",
+  },
+  {
+    id: "rn-upgrades",
+    label: "React Native 업그레이드",
+    value: 2,
+    unit: "단계",
+    scope: "0.78 계열 · 0.85.3으로 전환",
+    contribution:
+      "약 3년간 갱신되지 않은 앱의 RN 전환에 기여하며 iOS·Android 빌드 설정과 Reanimated·바텀시트 호환성을 조정했습니다.",
+    facts: [
+      { label: "출발 버전", value: "0.70.6" },
+      { label: "전환 버전", value: "0.78 계열 → 0.85.3" },
+    ],
+    evidence:
+      "0.78 계열 전환은 2025.12, 0.85.3 전환은 2026.06의 코드 변경 기록입니다. 스토어 출시 횟수나 본인의 단독 수행을 뜻하지 않습니다.",
+  },
+];
+
 export const profile = {
   name: "이정민",
   nameEn: "DEAN",
@@ -83,66 +142,6 @@ export const profile = {
     "배포 이후에도 실패를 확인하고 다음 수정으로 연결합니다.",
   ],
 };
-
-// 수치와 측정 근거를 확인한 뒤 verified로 변경한다.
-export const portfolioImpactMetrics: ImpactMetric[] = [
-  {
-    id: "flow-completion",
-    label: "사용 흐름 완료율",
-    before: null,
-    after: null,
-    unit: "%",
-    change: null,
-    changeUnit: "%p",
-    changeLabel: "완료율 변화",
-    status: "pending",
-    measurement: {
-      criterion:
-        "동일한 사용자 흐름·플랫폼의 시작 대비 완료 비율을 개선 전후 비교",
-      period: null,
-      source: null,
-    },
-    contribution:
-      "상태·인증·플랫폼의 경계를 살펴 사용자가 멈추는 흐름을 개선했습니다.",
-  },
-  {
-    id: "recurring-errors",
-    label: "반복 오류 발생률",
-    before: null,
-    after: null,
-    unit: "%",
-    change: null,
-    changeUnit: "%",
-    changeLabel: "오류 감소율",
-    status: "pending",
-    measurement: {
-      criterion: "같은 오류 유형의 세션 대비 발생률을 개선 전후 동일 기간 비교",
-      period: null,
-      source: null,
-    },
-    contribution:
-      "사용자 오류를 수정하고 회귀 테스트·오류 분석 정보 보강에 참여했습니다.",
-  },
-  {
-    id: "delivery-time",
-    label: "배포 소요 시간",
-    before: null,
-    after: null,
-    unit: "분",
-    change: null,
-    changeUnit: "%",
-    changeLabel: "배포 시간 단축률",
-    status: "pending",
-    measurement: {
-      criterion:
-        "동일 환경에서 빌드 시작부터 업로드 완료까지 걸린 시간의 중앙값 비교",
-      period: null,
-      source: null,
-    },
-    contribution:
-      "실행 환경·서명 설정과 빌드 절차를 정리하는 작업에 참여했습니다.",
-  },
-];
 
 const officenerImage: ProjectImage = {
   src: "/image/portfolio-redesign/officener-app.png",

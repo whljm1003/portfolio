@@ -31,7 +31,7 @@ const detailTransition = {
   duration: 0.36,
   ease: [0.22, 1, 0.36, 1],
 } as const;
-const mobileQuery = "(max-width: 1279px)";
+const mobileQuery = "(max-width: 1023px)";
 
 function settleLayout(
   main: HTMLElement,
