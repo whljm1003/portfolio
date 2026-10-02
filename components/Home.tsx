@@ -28,14 +28,14 @@ const principles = [
       "로그아웃이 멈추면 SDK 응답을, 다운로드가 실패하면 네이티브 파일 경로까지 확인합니다. 화면 밖의 원인도 따라갑니다.",
   },
   {
-    title: "바뀌는 경계를 함께 검증합니다.",
+    title: "웹과 앱의 경계를 다룹니다.",
     description:
-      "웹과 앱, JavaScript와 네이티브, 바이너리와 OTA. 한쪽의 변경이 다른 쪽에 미치는 영향을 살핍니다.",
+      "WebView의 뒤로가기 요청·응답과 화면 종료를 연결합니다. 키보드·스크롤과 입력 모드도 화면의 생명주기에 맞춰 정리합니다.",
   },
   {
     title: "출시 다음 날도 생각합니다.",
     description:
-      "버전과 배포 절차를 정리하고, Sentry에 남는 오류를 다음 수정으로 연결합니다. 반복되는 일은 코드와 문서로 남깁니다.",
+      "기능 개발 이후의 오류 수정과 유지보수를 이어갑니다. AI 도구를 구현·테스트 작업의 보조로 활용하고, 회귀 확인과 빌드·오류 분석 수단을 보강하는 작업에 참여합니다.",
   },
 ];
 
@@ -53,9 +53,9 @@ export default function Home() {
           <p className="hero-description">
             프론트엔드 개발자 이정민입니다.
             <br />
-            사용자 경험과 제품의 완성도를 높이고,
+            React·Next.js 웹과 React Native 앱을 개발하고,
             <br />
-            제품을 꾸준히 개선합니다.
+            운영 중인 서비스를 꾸준히 개선합니다.
           </p>
           <div className="hero-actions">
             <MagneticLink href="/#work" className="button button--dark">
@@ -141,11 +141,7 @@ export default function Home() {
                 <br />
                 출시 이후의 안정성까지.
               </p>
-              <p className="about-description">
-                {profile.intro} 커머스, 의료, 금융 등 여러 서비스에서 쌓은 웹
-                개발 경험을 바탕으로, 지금은 오피스너에서 웹과 네이티브 앱의
-                경계를 함께 다루고 있습니다.
-              </p>
+              <p className="about-description">{profile.intro}</p>
               <div className="principles">
                 {principles.map((principle) => (
                   <div className="principle" key={principle.title}>
@@ -154,6 +150,18 @@ export default function Home() {
                       <p>{principle.description}</p>
                     </div>
                   </div>
+                ))}
+              </div>
+              <div className="career-projects" aria-label="지원 문서">
+                {profile.documents.map((document) => (
+                  <a
+                    key={document.href}
+                    href={document.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {document.label}
+                  </a>
                 ))}
               </div>
             </div>
@@ -167,15 +175,18 @@ export default function Home() {
                 <span>TypeScript</span>
                 <span>React Query</span>
                 <span>Zustand</span>
+                <span>React Hook Form / Zod</span>
               </div>
             </div>
             <div className="tech-row">
-              <h3>업데이트·운영</h3>
+              <h3>앱·운영 개선 참여</h3>
               <div className="tech-list">
                 <span>OTA / RevoPush</span>
                 <span>fastlane</span>
                 <span>Sentry</span>
                 <span>iOS / Android</span>
+                <span>WebView</span>
+                <span>Jest / E2E</span>
               </div>
             </div>
             <div className="tech-row">

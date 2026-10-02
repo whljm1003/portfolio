@@ -61,7 +61,22 @@ export const profile = {
   email: "whljm1003@gmail.com",
   github: "https://github.com/whljm1003",
   blog: "https://velog.io/@whljm1003",
-  intro: "사용자 경험을 구현하고, 복잡한 흐름을 이해해 제품을 개선합니다.",
+  intro:
+    "React·Next.js로 커머스·의료·금융 분야의 웹 서비스를 개발했습니다. 현재는 오피스너의 이용자·관리자 웹과 React Native 앱을 개발하며, 기능 출시 이후의 오류 수정과 유지보수를 이어가고 있습니다.",
+  documents: [
+    {
+      label: "이력서",
+      href: "https://app.notion.com/p/whljm1003/3ed9bb465506813ea246d8dc2c8836d7",
+    },
+    {
+      label: "경력기술서",
+      href: "https://app.notion.com/p/whljm1003/3ed9bb465506812993fcf49eed118b99",
+    },
+    {
+      label: "Notion 포트폴리오",
+      href: "https://app.notion.com/p/whljm1003/3ed9bb46550681d398e0d0f945fc8a34",
+    },
+  ],
   principles: [
     "사용자가 멈춘 지점에서 원인을 찾습니다.",
     "웹과 네이티브, 상태와 네트워크의 경계를 함께 살핍니다.",
@@ -82,11 +97,13 @@ export const portfolioImpactMetrics: ImpactMetric[] = [
     changeLabel: "완료율 변화",
     status: "pending",
     measurement: {
-      criterion: "동일한 사용자 흐름·플랫폼의 시작 대비 완료 비율을 개선 전후 비교",
+      criterion:
+        "동일한 사용자 흐름·플랫폼의 시작 대비 완료 비율을 개선 전후 비교",
       period: null,
       source: null,
     },
-    contribution: "상태·인증·플랫폼의 경계를 살펴 사용자가 멈추는 흐름을 개선했습니다.",
+    contribution:
+      "상태·인증·플랫폼의 경계를 살펴 사용자가 멈추는 흐름을 개선했습니다.",
   },
   {
     id: "recurring-errors",
@@ -103,7 +120,8 @@ export const portfolioImpactMetrics: ImpactMetric[] = [
       period: null,
       source: null,
     },
-    contribution: "오류의 원인을 추적하고 관측과 회귀 검증을 다음 수정에 연결했습니다.",
+    contribution:
+      "사용자 오류를 수정하고 회귀 테스트·오류 분석 정보 보강에 참여했습니다.",
   },
   {
     id: "delivery-time",
@@ -116,11 +134,13 @@ export const portfolioImpactMetrics: ImpactMetric[] = [
     changeLabel: "배포 시간 단축률",
     status: "pending",
     measurement: {
-      criterion: "동일 환경에서 빌드 시작부터 업로드 완료까지 걸린 시간의 중앙값 비교",
+      criterion:
+        "동일 환경에서 빌드 시작부터 업로드 완료까지 걸린 시간의 중앙값 비교",
       period: null,
       source: null,
     },
-    contribution: "버전·실행 환경·서명을 정리해 반복 가능한 릴리즈 절차를 만들었습니다.",
+    contribution:
+      "실행 환경·서명 설정과 빌드 절차를 정리하는 작업에 참여했습니다.",
   },
 ];
 
@@ -140,7 +160,7 @@ export const featuredProjects: PortfolioProject[] = [
     category: "app",
     eyebrow: "이용자 앱 · 문제 해결",
     summary:
-      "로그아웃, 파일 다운로드, 화면 진입과 캐시까지. 이용자가 실제로 마주치는 앱의 문제를 해결했습니다.",
+      "WebView 뒤로가기와 키보드·스크롤을 보완하고, 로그아웃·다운로드·캐시 오류를 수정했습니다.",
     period: "2025.06 - 2026.09 · Git 작업 기록 기준",
     role: "React Native 앱 개발 · 기능 개선 및 오류 수정",
     stack: [
@@ -149,23 +169,29 @@ export const featuredProjects: PortfolioProject[] = [
       "React Query",
       "Zustand",
       "React Navigation",
+      "WebView",
+      "keyboard-controller",
     ],
     problem:
-      "소셜 SDK의 응답이 끝나지 않아 로그아웃이 멈추거나, 오래된 첨부파일 이름 때문에 Android 다운로드 중 앱이 종료되는 문제가 있었습니다. 건물 전환과 푸시 진입 때 이전 상태가 남는 문제도 함께 살펴야 했습니다.",
+      "웹 기반 예약 화면에서 Android 뒤로가기를 웹이 처리할지, 네이티브 화면을 닫을지 구분해야 했습니다. 키보드 라이브러리 변경 이후에는 입력창 노출·스크롤 여백과 WebView 입력 모드도 함께 조정해야 했습니다. 이와 함께 소셜 SDK 대기로 멈추는 로그아웃, 첨부파일 이름 인코딩에 따른 Android 다운로드 종료, 건물 전환 후 남는 이전 데이터를 수정했습니다.",
     approach: [
+      "앱의 뒤로가기 요청에 대한 웹 처리 응답을 확인하고, 응답이 없을 때의 네이티브 이동과 화면 종료 시 타이머 정리를 보완했습니다.",
+      "14곳의 스크롤 영역을 keyboard-controller로 이관하고, Android WebView 진입 시 적용한 입력 모드를 화면 종료 시 복원하도록 조정했습니다.",
       "로그아웃 흐름에서 화면 전환을 막는 외부 SDK 호출을 분리하고, 병렬 처리와 개별 타임아웃을 적용했습니다.",
       "다운로드 오류를 파일명의 퍼센트 인코딩·문자 깨짐과 네이티브 저장 경로 처리까지 추적했습니다.",
       "데이터의 최신성이 필요한 화면과 일반 화면을 구분하고, 건물 전환·푸시·딥링크 진입 시 캐시 갱신 조건을 정리했습니다.",
     ],
     contributions: [
+      "WebView 뒤로가기 요청·응답 연결, 응답 대기 타이머 및 화면 종료 처리 보완",
+      "14곳의 키보드·스크롤 처리 이관과 Android WebView 입력 모드 복원",
       "소셜 세션 정리에 타임아웃을 적용해 SDK 대기가 로그아웃 완료를 막는 문제 수정",
       "첨부파일 이름 복원·검증과 회귀 테스트를 추가해 Android 다운로드 중 종료 문제 수정",
       "React Query staleTime과 건물 전환·푸시 진입 캐시 무효화 정책 정리",
       "화면 지연 로딩과 도메인별 라우트·파라미터 타입 분리",
-      "공지사항·자료실·홈 메뉴·공용 컴포넌트 테스트와 접근성 식별자 보완",
+      "컴포넌트·훅 회귀 테스트와 E2E 화면 식별자·접근성 보완 작업 참여",
     ],
     outcome:
-      "앱에서 발생한 오류를 네트워크·파일명·캐시·라우트 단위로 나누어 수정하고, 다시 확인할 수 있는 테스트를 보완했습니다.",
+      "웹의 뒤로가기 처리 여부에 따라 앱 이동을 나누고, 화면 종료 후 타이머와 입력 설정이 남지 않도록 정리했습니다. 로그아웃은 SDK별 대기 상한 이후 이어지도록 수정했으며, 파일명·캐시 오류 수정과 회귀 테스트 보강에도 참여했습니다.",
     impactMetrics: [
       {
         id: "logout-duration",
@@ -178,11 +204,13 @@ export const featuredProjects: PortfolioProject[] = [
         changeLabel: "대기 시간 단축률",
         status: "pending",
         measurement: {
-          criterion: "동일 SDK 지연 조건에서 로그아웃 요청부터 화면 전환까지 걸린 시간 비교",
+          criterion:
+            "동일 SDK 지연 조건에서 로그아웃 요청부터 화면 전환까지 걸린 시간 비교",
           period: null,
           source: null,
         },
-        contribution: "소셜 SDK 호출을 병렬로 처리하고 각각 타임아웃을 적용했습니다.",
+        contribution:
+          "소셜 SDK 호출을 병렬로 처리하고 각각 타임아웃을 적용했습니다.",
       },
     ],
     transformation: {
@@ -200,7 +228,12 @@ export const featuredProjects: PortfolioProject[] = [
         "소셜 세션 정리를 병렬로 실행하고 SDK 호출마다 개별 타임아웃을 적용했습니다.",
     },
     images: [officenerImage],
-    links: [],
+    links: [
+      {
+        label: "WebView·키보드 상세 기록",
+        href: "https://app.notion.com/p/whljm1003/3ed9bb465506817f810ff529aaff3d92",
+      },
+    ],
   },
   {
     slug: "officener-web",
@@ -208,33 +241,40 @@ export const featuredProjects: PortfolioProject[] = [
     category: "web",
     eyebrow: "웹 · 앱과 이어지는 흐름",
     summary:
-      "방문자 예약부터 앱 연결까지. 데스크톱·모바일·웹뷰에서 서비스 흐름이 이어지도록 개발했습니다.",
+      "방문자 예약의 다단계 입력·검증과 API 연동을 구현하고, 예약 완료 이후의 웹·앱 이동을 연결했습니다.",
     period: "2025.06 - 2026.09 · Git 작업 기록 기준",
-    role: "이용자 웹 개발 · 반응형 화면 및 플랫폼 전환",
+    role: "이용자·관리자 웹 개발 · 다단계 폼 및 WebView 대응",
     stack: [
       "React",
-      "TypeScript",
       "Next.js",
+      "TypeScript",
+      "Zustand",
+      "React Hook Form",
+      "Zod",
       "Vite",
       "React Router",
       "React Query",
     ],
     problem:
-      "방문자 예약은 데스크톱과 모바일 웹뷰를 모두 지원해야 했습니다. 알림 링크에서 앱·스토어로 이동했다 돌아왔을 때 로딩만 남는 문제와, 만료된 세션이 로그인 리다이렉트를 반복하는 문제도 있었습니다.",
+      "방문자 예약은 약관 동의, 방문 정보 입력, 초대장 확인·발송으로 이어지는 다단계 기능입니다. 단계 간 입력값을 공유하면서 필수값·형식·중복 방문자를 확인해야 했습니다. 같은 폼이 데스크톱과 앱 WebView에서 동작하고, 예약 완료 후에는 브라우저 라우팅과 앱 화면 스택 정리를 각각 연결해야 했습니다.",
     approach: [
-      "예약 입력·방문자 추가·초대장을 단계별 화면으로 구성하고, 데스크톱과 웹뷰의 입력·뒤로가기 동작을 조정했습니다.",
-      "앱 실행을 시도한 뒤 안내 상태로 전환하고 앱 열기·설치하기를 직접 선택할 수 있도록 연결했습니다.",
-      "인증 상태·라우팅·렌더링의 경계를 확인하면서 Next.js·React 업그레이드와 이후 Vite·React Router 전환을 진행했습니다.",
+      "Zustand로 단계 간 방문 정보·방문자 목록을 공유하고, 입력 항목별 오류는 해당 화면에서 관리했습니다. 다음 단계로 이동하기 전에 누락 항목을 확인했습니다.",
+      "React Hook Form·Zod로 이름·소속·휴대폰 번호를 검증하고, 번호의 숫자 이외 문자를 제거하며 이미 등록된 번호에는 중복 안내를 표시했습니다.",
+      "방문자 추가 폼을 재사용하면서 모바일에서는 Drawer, 데스크톱에서는 Popover로 표시했습니다. 진행 표시와 하단 버튼도 화면 크기에 맞춰 조정했습니다.",
+      "공통 이동 훅에서 브라우저 라우팅과 WebView 메시지를 분기하고, 예약 완료 시 앱의 신청 단계 스택 정리와 상세 진입을 요청했습니다.",
     ],
     contributions: [
-      "방문자 예약의 단계별 UI와 API 연동, 데스크톱·모바일 웹뷰 반응형 구현",
+      "방문자 예약의 신청·목록·상세·추가·취소 화면 및 API 연동",
+      "단계 간 입력 상태 공유, 필수값·길이·번호 형식·중복 검증",
+      "모바일·데스크톱 폼 로직 재사용과 예약 완료 후 웹·앱 이동 연결",
+      "광고 신청·결제 내역·부분 환불 및 관리자 초기 설정 화면 개발·개선",
       "앱 연결 실패·스토어 복귀 후 안내 화면과 재시도 버튼 처리",
       "만료된 인증 쿠키 정리 경로를 추가해 로그인 리다이렉트 반복 문제 수정",
       "Next.js·React 업그레이드에 따른 렌더링·타입·공통 UI 호환성 보완",
       "이용자 웹의 Vite·React Router 전환과 서버 API 연결 구조 정리",
     ],
     outcome:
-      "웹의 예약 흐름과 앱 연결 상태를 함께 다루고, 플랫폼 변경 과정에서 인증·라우팅·화면 렌더링이 이어지도록 구조를 정리했습니다.",
+      "단계 사이에서 입력값을 유지하고 누락·형식 오류·중복 번호를 안내하는 신청 흐름을 구성했습니다. 모바일과 데스크톱에서 폼 로직을 공유하며 표시 방식을 달리하고, 예약 완료 이후의 브라우저·앱 이동을 연결했습니다.",
     impactMetrics: [
       {
         id: "app-link-completion",
@@ -247,11 +287,13 @@ export const featuredProjects: PortfolioProject[] = [
         changeLabel: "완료율 변화",
         status: "pending",
         measurement: {
-          criterion: "앱 연결 시도 대비 앱 진입 완료 비율을 동일 플랫폼·설치 조건에서 비교",
+          criterion:
+            "앱 연결 시도 대비 앱 진입 완료 비율을 동일 플랫폼·설치 조건에서 비교",
           period: null,
           source: null,
         },
-        contribution: "자동 실행 이후 안내 상태와 앱 열기·설치하기 선택을 연결했습니다.",
+        contribution:
+          "자동 실행 이후 안내 상태와 앱 열기·설치하기 선택을 연결했습니다.",
       },
     ],
     transformation: {
@@ -270,7 +312,12 @@ export const featuredProjects: PortfolioProject[] = [
     },
     images: [],
     diagram: "web",
-    links: [],
+    links: [
+      {
+        label: "방문자 예약 상세 기록",
+        href: "https://app.notion.com/p/whljm1003/3ed9bb465506814ea075fc78eadd0b68",
+      },
+    ],
   },
   {
     slug: "app-updates",
@@ -278,11 +325,14 @@ export const featuredProjects: PortfolioProject[] = [
     category: "operations",
     eyebrow: "앱 · 버전과 OTA",
     summary:
-      "React Native 업그레이드와 OTA 업데이트의 대상·적용 시점을 함께 관리했습니다.",
+      "약 3년간 갱신되지 않은 RN 0.70.6 앱의 0.78 계열·0.85.3 전환에 기여하고, 네이티브 빌드와 화면 호환성을 조정했습니다.",
     period: "2025.12 - 2026.09 · Git 작업 기록 기준",
-    role: "앱 버전 업그레이드 · OTA 적용 정책 및 검증",
+    role: "React Native 업그레이드 · 네이티브 호환성 대응 / OTA 개선 참여",
     stack: [
       "React Native",
+      "CocoaPods",
+      "Gradle",
+      "Reanimated",
       "RevoPush",
       "CodePush",
       "Swift",
@@ -290,21 +340,21 @@ export const featuredProjects: PortfolioProject[] = [
       "Node.js",
     ],
     problem:
-      "React Native 버전 변경은 JavaScript 의존성뿐 아니라 iOS·Android 빌드 체인과 네이티브 라이브러리 호환성에도 영향을 줍니다. 스토어 바이너리와 OTA 대상 버전이 어긋나면 업데이트가 전달되지 않거나 잘못된 번들이 적용될 수 있었습니다.",
+      "RN 0.70.6 앱은 약 3년간 업그레이드되지 않아 프레임워크와 네이티브 의존성의 버전 차이가 누적되어 있었습니다. 버전 갱신 시 iOS·Android 빌드 설정과 Firebase·Reanimated·바텀시트 등 연동 라이브러리, 기존 화면 동작을 함께 맞춰야 했습니다. OTA도 변경된 바이너리 버전에 맞는 대상으로 전달하도록 점검해야 했습니다.",
     approach: [
-      "JavaScript 도구·네이티브 빌드·바텀시트·키보드 등 변경이 영향을 주는 경계를 함께 점검했습니다.",
-      "OTA의 대상 바이너리 버전을 빌드 설정에서 읽도록 하고, 플랫폼 간 버전 일치와 릴리즈 타깃을 검증하는 스크립트를 추가했습니다.",
-      "일반 업데이트와 필수 업데이트의 적용 시점을 구분하고, 업데이트 대기가 스플래시를 무기한 붙잡지 않도록 상한을 두었습니다.",
+      "RN 0.70.6에서 0.78 계열을 거쳐 0.85.3으로 전환하며 JavaScript 패키지와 네이티브 프로젝트 설정을 함께 조정했습니다.",
+      "iOS CocoaPods·Firebase 모듈 설정·AppDelegate와 Android Gradle·Kotlin·SDK·모듈 연결 구성을 새 버전에 맞췄습니다.",
+      "Reanimated·캐러셀·바텀시트 API 변경에 대응하고, 바텀시트 ref 준비와 닫힘·재열림 타이밍을 보완했습니다.",
+      "OTA 대상 버전 추출·플랫폼 일치 점검과 일반·필수 업데이트 적용 시점, 스플래시 대기 상한 정비에도 참여했습니다.",
     ],
     contributions: [
-      "이용자 앱 React Native 0.78 계열에서 0.85.3으로 업그레이드 및 iOS·Android 빌드 체인 대응",
-      "관리자 앱 React Native 업그레이드와 환경별 CodePush 배포 설정 정리",
-      "OTA 대상 버전 자동 추출·플랫폼 버전 확인·배포 후 타깃 검증 스크립트 작성",
-      "앱 시작·재개 시 업데이트 적용 정책과 스플래시 대기 상한 정리",
-      "롤백된 번들의 반복 재설치를 유발할 수 있는 설정 제거",
+      "이용자 앱 RN 0.70.6 → 0.78 계열 → 0.85.3 전환과 iOS·Android 빌드 설정 조정",
+      "Reanimated·바텀시트·캐러셀 호환성 및 화면 표시 타이밍 보완",
+      "관리자 앱 RN 업그레이드와 환경별 CodePush 설정 정비 참여",
+      "OTA 대상 버전·플랫폼 일치 점검과 앱 시작·재개 시 적용 정책 정비 참여",
     ],
     outcome:
-      "바이너리 업그레이드와 OTA 전달 대상을 연결해 관리하고, 업데이트 적용·검증 절차를 코드와 문서로 남겼습니다.",
+      "의존성과 iOS·Android 구성을 RN 0.85.3 기준으로 갱신하고, 변경된 라이브러리 API에 맞춰 기존 화면 처리를 수정했습니다. OTA 개선 작업에서는 업데이트 대상과 적용 시점을 확인하는 수단을 보강하는 데 참여했습니다.",
     impactMetrics: [
       {
         id: "ota-update-success",
@@ -317,11 +367,13 @@ export const featuredProjects: PortfolioProject[] = [
         changeLabel: "성공률 변화",
         status: "pending",
         measurement: {
-          criterion: "동일 대상 바이너리에서 업데이트 시도 대비 정상 적용·부팅 완료 비율 비교",
+          criterion:
+            "동일 대상 바이너리에서 업데이트 시도 대비 정상 적용·부팅 완료 비율 비교",
           period: null,
           source: null,
         },
-        contribution: "대상 버전을 자동 추출하고 플랫폼 간 일치 여부와 배포 타깃을 검증했습니다.",
+        contribution:
+          "OTA 대상 버전 추출·플랫폼 일치 점검과 배포 대상 검증 개선에 참여했습니다.",
       },
     ],
     transformation: {
@@ -340,34 +392,37 @@ export const featuredProjects: PortfolioProject[] = [
     },
     images: [],
     diagram: "updates",
-    links: [],
+    links: [
+      {
+        label: "React Native 업그레이드 상세 기록",
+        href: "https://app.notion.com/p/whljm1003/3ed9bb46550681558393c60c9e60539b",
+      },
+    ],
   },
   {
     slug: "app-release",
     title: "앱 빌드와 배포",
     category: "operations",
-    eyebrow: "운영 · fastlane",
+    eyebrow: "운영 개선 참여 · fastlane",
     summary:
-      "fastlane의 실행 환경·서명·빌드 설정을 정리하고, TestFlight까지 이어지는 배포 절차를 보완했습니다.",
+      "fastlane의 실행 의존성·서명 설정과 환경 입력 검증, 빌드 절차 문서를 보완하는 작업에 참여했습니다.",
     period: "2026.09 · Git 작업 기록 기준",
-    role: "fastlane iOS 빌드·배포 수정 및 운영 문서화",
+    role: "fastlane 빌드 실행·서명 설정 및 절차 정비 참여",
     stack: ["fastlane", "Ruby", "CocoaPods", "Xcode", "TestFlight"],
     problem:
       "fastlane 레인이 준비되어 있어도 실행 환경과 잠금 파일이 맞지 않아 실제 빌드·업로드가 진행되지 않았습니다. 아카이브의 서명 설정과 환경 파일 처리도 배포를 막는 원인이었습니다.",
     approach: [
-      "fastlane을 Gemfile에 포함하고 빌드·배포 스크립트가 같은 Ruby 의존성을 사용하도록 실행 경로를 통일했습니다.",
-      "앱 타깃의 아카이브 서명만 조정하고, 성공·실패 이후 기존 프로젝트 설정으로 돌아오도록 복원 처리를 두었습니다.",
-      "환경 파일의 개행·형식을 검증하고, 실제 실행 절차와 확인 지점을 운영 문서에 정리했습니다.",
+      "개선 작업에서 Gemfile·잠금 파일과 bundle exec 실행을 맞춰, 빌드·배포 스크립트가 같은 Ruby 의존성을 사용하도록 정리했습니다.",
+      "앱 타깃의 아카이브 서명을 조정하고 성공·실패 이후 원래 프로젝트 설정으로 돌아오도록 복원 절차를 보완했습니다.",
+      "환경 파일의 개행·형식을 검증하고 실행 순서와 확인 지점을 문서로 남기는 작업에 참여했습니다.",
     ],
     contributions: [
-      "fastlane 실행을 bundle exec 기준으로 통일하고 Ruby·CocoaPods 잠금 파일 불일치 수정",
-      "iOS 앱 타깃에 match 프로파일을 적용하는 아카이브 서명 처리 수정",
-      "서명 설정 변경 전 백업과 빌드 후 원복 처리 추가",
-      "환경 파일 형식 검증과 빌드·배포 운영 문서 작성",
-      "개발 환경 iOS 빌드·TestFlight 업로드 경로 검증",
+      "Ruby·CocoaPods 의존성 및 fastlane 실행 방식 정비 참여",
+      "iOS 아카이브 서명과 설정 백업·복원 처리 보완 참여",
+      "환경 입력 검증과 빌드·배포 절차 문서 정비 참여",
     ],
     outcome:
-      "작성되어 있던 배포 레인을 실제 실행 가능한 경로로 정리했고, 다음 릴리즈에서 참고할 빌드·서명·업로드 절차를 문서화했습니다.",
+      "기존 배포 레인의 실행 의존성과 서명·입력값을 점검하는 수단을 보강했습니다. 빌드·서명·업로드 순서를 문서로 정리하는 작업에 참여했습니다.",
     impactMetrics: [
       {
         id: "release-duration",
@@ -380,11 +435,13 @@ export const featuredProjects: PortfolioProject[] = [
         changeLabel: "배포 시간 단축률",
         status: "pending",
         measurement: {
-          criterion: "동일한 iOS 환경에서 빌드 시작부터 TestFlight 업로드 완료까지의 중앙값 비교",
+          criterion:
+            "동일한 iOS 환경에서 빌드 시작부터 TestFlight 업로드 완료까지의 중앙값 비교",
           period: null,
           source: null,
         },
-        contribution: "실행 환경을 통일하고 아카이브 서명의 백업·복원 절차를 보완했습니다.",
+        contribution:
+          "fastlane 실행 환경과 아카이브 서명의 백업·복원 절차 정비에 참여했습니다.",
       },
     ],
     transformation: {
@@ -403,34 +460,37 @@ export const featuredProjects: PortfolioProject[] = [
     },
     images: [],
     diagram: "release",
-    links: [],
+    links: [
+      {
+        label: "테스트·빌드·오류 분석 참여 기록",
+        href: "https://app.notion.com/p/whljm1003/3ed9bb46550681b7863efadea001c647",
+      },
+    ],
   },
   {
     slug: "app-observability",
     title: "앱 오류 관측",
     category: "operations",
-    eyebrow: "운영 · Sentry",
+    eyebrow: "운영 개선 참여 · Sentry",
     summary:
-      "소스맵 업로드를 복구하고, OTA 롤백과 부팅 미완료를 다음 실행에서 확인하도록 관측을 보완했습니다.",
+      "Sentry 소스맵 업로드 설정과 실행 번들·OTA 상태, 롤백·부팅 미완료 분석 정보를 보완하는 작업에 참여했습니다.",
     period: "2026.08 · Git 작업 기록 기준",
-    role: "Sentry 소스맵 정비 · OTA 실패 관측 및 오탐 수정",
+    role: "Sentry 소스맵·실행 번들 및 OTA 오류 분석 정보 정비 참여",
     stack: ["Sentry", "React Native", "RevoPush", "AsyncStorage", "TypeScript"],
     problem:
       "소스맵 업로드의 프로젝트 설정이 잘못되어 오류 원본 위치 확인에 필요한 자료가 전달되지 않았습니다. OTA 번들로 앱이 정상 시작하지 못한 경우에는 실패한 실행 안에서 오류를 보고하기 어려웠습니다.",
     approach: [
-      "iOS·Android 소스맵 업로드 대상 설정을 교정하고, 실행 중인 바이너리 버전·OTA 라벨·패키지 정보를 별도 컨텍스트로 기록했습니다.",
-      "부팅 시작 표식을 저장하고 첫 라우트가 준비되면 지우며, 다음 실행에 표식이 남아 있을 때 이전 부팅의 미완료 신호를 보고하도록 했습니다.",
-      "정상 부팅 완료와 비동기 표식 저장이 엇갈리는 경우를 다시 추적해 오탐을 수정했습니다.",
+      "소스맵 업로드 대상을 교정하고 바이너리 버전·OTA 라벨·패키지 정보를 오류 컨텍스트에 연결하는 작업에 참여했습니다.",
+      "부팅 시작 표식을 저장하고 첫 라우트 준비 후 지우며, 다음 실행에서 남은 표식을 조사하는 관측 절차를 보완했습니다.",
+      "정상 부팅 완료와 비동기 표식 저장의 순서가 엇갈려 생기는 오탐을 보완하는 작업에도 참여했습니다.",
     ],
     contributions: [
-      "iOS·Android Sentry 소스맵 업로드 프로젝트 오설정 수정",
-      "OTA 롤백·동기화 실패·장시간 대기·대상 버전 불일치 이벤트 분리",
-      "실행 중인 OTA 번들의 라벨·해시·바이너리 버전을 Sentry 컨텍스트에 연결",
-      "부팅 표식 저장·소비·완료 처리를 추가하고 정상 부팅 오탐을 유발한 비동기 경합 수정",
-      "관측 코드 실패가 앱 부팅·업데이트를 막지 않도록 예외 경계 분리",
+      "iOS·Android Sentry 소스맵 업로드 설정 정비 참여",
+      "실행 번들·OTA 버전과 롤백·동기화 상태 분석 정보 보강 참여",
+      "부팅 미완료 표식과 정상 부팅 오탐 처리 보완 참여",
     ],
     outcome:
-      "OTA 실패를 복구된 다음 실행에서 조사할 수 있는 단서를 남겼습니다. 부팅 미완료 신호는 실패 원인을 단정하지 않고 버전·번들 정보와 함께 확인하도록 구성했습니다.",
+      "오류 발생 당시의 버전·번들·OTA 상태를 함께 조사할 수 있는 정보를 보강하는 데 참여했습니다. 부팅 미완료 표식은 이전 실행을 조사하는 단서이며, 표식만으로 OTA 실패를 확정하지 않습니다.",
     impactMetrics: [
       {
         id: "source-location-coverage",
@@ -443,11 +503,13 @@ export const featuredProjects: PortfolioProject[] = [
         changeLabel: "확인 가능 비율 변화",
         status: "pending",
         measurement: {
-          criterion: "동일 릴리즈 오류 중 원본 코드 위치까지 해석 가능한 이벤트의 비율 비교",
+          criterion:
+            "동일 릴리즈 오류 중 원본 코드 위치까지 해석 가능한 이벤트의 비율 비교",
           period: null,
           source: null,
         },
-        contribution: "플랫폼별 Sentry 소스맵 업로드 대상을 교정하고 버전·번들 정보를 연결했습니다.",
+        contribution:
+          "Sentry 소스맵 업로드 설정과 버전·번들 분석 정보 보강에 참여했습니다.",
       },
     ],
     transformation: {
@@ -466,7 +528,12 @@ export const featuredProjects: PortfolioProject[] = [
     },
     images: [],
     diagram: "observability",
-    links: [],
+    links: [
+      {
+        label: "테스트·빌드·오류 분석 참여 기록",
+        href: "https://app.notion.com/p/whljm1003/3ed9bb46550681b7863efadea001c647",
+      },
+    ],
   },
 ];
 
@@ -489,15 +556,14 @@ const stevelabsArchives: PortfolioProject[] = stevelabsData.map(
     eyebrow: "스티브랩스 · 경력 아카이브",
     summary: project.summary,
     period: project.period,
-    role: "프론트엔드 개발 · 담당 기능 구현",
+    role: project.role,
     stack: project.skills,
     problem: project.description,
     approach: project.works,
     contributions: project.works,
-    outcome:
-      "기존 경력 자료에 기록된 담당 기능을 구현했습니다. 자세한 프로젝트 내용은 관련 문서에서 확인할 수 있습니다.",
+    outcome: project.outcome,
     images: [],
-    links: [{ label: "기존 프로젝트 문서", href: project.links.notion }],
+    links: [{ label: "프로젝트 상세 자료", href: project.links.notion }],
   }),
 );
 
@@ -545,26 +611,29 @@ export const projects: PortfolioProject[] = [
 export const careers = [
   {
     company: "오피스너",
-    period: "작업 기록 2025.06 - 2026.09",
-    role: "웹·앱 개발 및 운영 개선",
+    period: "2025.06 - 현재",
+    role: "(주)두꺼비세상 · 오피스너 사업부 / 프론트엔드 개발",
     summary:
-      "이용자 웹·앱과 관리자 서비스 개발. 표시한 기간은 dean@officener.kr 작성 Git 작업 기록 기준이며 재직 기간을 뜻하지 않습니다.",
+      "상업용 부동산의 이용자·건물 관리자를 위한 종합 관리 솔루션을 개발합니다. SI 웹 개발 경험을 바탕으로 React Native 앱 개발까지 담당하며, 기능 개발 이후의 오류 수정과 유지보수를 이어가고 있습니다.",
     highlights: [
-      "이용자 앱의 기능·상태·네이티브 경계 오류 수정",
-      "React Native 업그레이드와 OTA 업데이트 관리",
-      "fastlane 빌드·배포 경로 정리와 Sentry 관측 보완",
+      "방문자 예약의 다단계 폼·검증·API 연동과 광고 신청·결제·부분 환불 화면 개발",
+      "약 3년간 갱신되지 않은 RN 0.70.6 앱의 0.78 계열·0.85.3 전환 및 네이티브 호환성 대응",
+      "WebView 뒤로가기 요청·응답과 14곳의 키보드·스크롤 처리 보완",
+      "컴포넌트·훅·E2E 테스트, fastlane 실행·서명, Sentry 오류 분석 정보 정비 참여",
     ],
     projectSlugs: featuredProjects.map(({ slug }) => slug),
   },
   {
     company: "(주)스티브랩스",
-    period: "2022.09 - 2024.11",
+    period: "2022.09 - 2024.10",
     role: "개발팀 · 프론트엔드 개발자",
-    summary: "커머스·의료·금융·역경매 등 웹 프로젝트 개발에 참여했습니다.",
+    summary:
+      "고객사 요구사항에 맞춘 SI 프로젝트에서 사용자·관리자 웹과 외부 API 연동을 개발했습니다. 커머스·의료·금융·교육 CMS·역경매 등 8개 프로젝트에 참여했습니다.",
     highlights: [
-      "Next.js 기반 사용자·관리자 화면 개발",
+      "React·Next.js 사용자·관리자 화면과 공통 테이블·필터·폼 검증 구현",
       "소셜 로그인·본인 인증·전자 계약·결제 API 연동",
-      "NestJS·Prisma 기반 관리자 API 구현 및 사내 일정 관리",
+      "NestJS·Prisma 관리자 API 개발 병행, 상품 등록 트랜잭션·옵션 논리 삭제 적용",
+      "고객사 요구사항·개발 일정·이슈 조율",
     ],
     projectSlugs: stevelabsSlugs,
   },
@@ -580,8 +649,8 @@ export const education = [
     projectSlugs: wantedSlugs,
   },
   {
-    title: "코드스테이츠 프론트엔드 코스",
-    period: "2020.06 - 2021.06",
+    title: "코드스테이츠 SW 파트타임 부트캠프 4기",
+    period: "수료",
     summary:
       "웹 개발 기초부터 React, Node.js·데이터베이스, Git 협업과 팀 프로젝트를 학습했습니다.",
     skills: [

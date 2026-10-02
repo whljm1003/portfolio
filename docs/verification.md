@@ -114,3 +114,16 @@ Chromium 1440×1000·1920×1080에서는 본문 scaleX/Y가 전 프레임1, 카�
 - 로컬 미리보기: `http://localhost:3100`
 
 자동 접근성 검사는 명시한 화면·상태·규칙의 범위에서 수행했다. 별도의 보조 기술 사용자 평가와 실사용 성능 측정은 이번 완료 기준에 포함하지 않았다.
+
+## Notion 콘텐츠 반영 검증 (2026-10-02)
+
+현재 `feat/portfolio-redesign-motion-polish` 브랜치에서 소개·경력·기술·대표 사례와 SI 8개 프로젝트의 역할·구현 결과를 반영했다. 기존 5개 대표 사례의 경로·이미지·레이아웃·모션을 유지하고 새 지원 문서와 상세 기록 링크를 연결했다. 미확인 수치와 역할·검증·기간은 `docs/content-checklist.md`에 남겼다.
+
+- `pnpm lint`, `pnpm typecheck`, `pnpm build`: 통과. 프로덕션 빌드의 정적 페이지 48개 생성 완료.
+- `pnpm exec prettier --check assets/portfolio.ts assets/career.ts components/Home.tsx components/portfolio/CapabilityScene.tsx docs/content-evidence.md docs/content-checklist.md`: 통과.
+- 프로덕션 서버의 Chromium 검사 29개: 16.0초, 모두 통과. `PLAYWRIGHT_SERVER_COMMAND='pnpm start --port 3100' pnpm test -g '이미지·너비·화면|기존 사례의 상세|사례를 메인 옆|필터가 선택|자동 접근성|미확인 수치'` 실행.
+- 확인 범위: 360·390·768·1440px 메인·대표 상세의 이미지·너비, 경력·코스 상세 16개, 대표 상세 이동 5개, 필터, 미확인 수치 비공개, 390·1440px 자동 접근성.
+- 실제 캡처 검토: 390px 메인·소개·지원 문서 링크와 기술 목록, 1440px 방문자 예약 상세의 제목·본문·도식·관련 링크를 확인했다. 내용 증가에 따른 잘림·겹침은 발견하지 않았다.
+- 캡처는 시스템 임시 디렉터리 `dean-portfolio-playwright/results/`에 있으며, 모바일 확대 검토 이미지는 `/tmp/dean-content-390-hero.png`, `/tmp/dean-content-390-about.png`에 보관했다.
+- 이번 검증은 콘텐츠 변경 범위의 Chromium 검사다. 전체 87개 및 Firefox·WebKit의 이전 결과는 위의 과거 기록이며 이번에 재실행한 결과가 아니다.
+- 빌드로 갱신된 사이트맵은 주소 변경 없이 생성 시각만 달라져 기존 파일로 복원했다. 작업 전부터 존재하던 루트 `CapabilityScene.tsx` 미추적 파일은 수정하지 않았다.

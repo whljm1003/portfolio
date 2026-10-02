@@ -17,7 +17,7 @@ const capabilities = [
     word: "INTERFACE",
     title: "사용자 경험을 완성합니다.",
     description:
-      "화면의 구성부터 입력, 상태, 다음 행동까지. React와 TypeScript로 사용자가 자연스럽게 이어갈 수 있는 흐름을 만듭니다.",
+      "방문자 예약의 다단계 입력과 검증을 구성합니다. 폼 로직을 공유하며 모바일·데스크톱 UI와 웹·앱 이동을 연결합니다.",
     skills: ["React", "Next.js", "TypeScript"],
     slug: "officener-web",
     tone: "olive",
@@ -26,7 +26,7 @@ const capabilities = [
     word: "SYSTEM",
     title: "복잡한 흐름을 정리합니다.",
     description:
-      "인증과 캐시, 웹과 네이티브의 경계에서 원인을 찾습니다. 반복되는 문제를 구조와 테스트로 풀어냅니다.",
+      "WebView의 뒤로가기 요청·응답과 키보드·스크롤을 다룹니다. 로그아웃·다운로드·캐시 오류도 원인을 따라 수정합니다.",
     skills: ["React Query", "React Native", "테스트"],
     slug: "officener-app",
     tone: "paper",
@@ -35,7 +35,7 @@ const capabilities = [
     word: "DELIVERY",
     title: "출시 이후까지 이어갑니다.",
     description:
-      "버전과 배포 절차를 정리하고, 오류를 다음 개선의 단서로 남깁니다. 제품이 계속 좋아질 수 있는 기반을 다집니다.",
+      "운영 앱의 RN 업그레이드에 기여하고, 테스트·빌드 절차와 Sentry 오류 분석 정보를 보강하는 작업에 참여합니다.",
     skills: ["fastlane", "OTA", "Sentry"],
     slug: "app-release",
     tone: "brick",
