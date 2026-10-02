@@ -1,59 +1,74 @@
-import { Viewport } from "next";
+import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import "../styles/globals.css";
-import "swiper/css";
 
-export const metadata = {
-  title: "이정민 포트폴리오",
-  description:
-    "프론트엔드 개발자 이정민의 포트폴리오입니다. 웹 개발 프로젝트와 기술 스택을 확인하실 수 있습니다.",
+const pretendard = localFont({
+  src: "../public/fonts/PretendardVariable.woff2",
+  variable: "--font-pretendard",
+  weight: "100 900",
+  display: "swap",
+});
+
+const barlow = localFont({
+  src: "../public/fonts/BarlowCondensed-Bold.ttf",
+  variable: "--font-barlow",
+  weight: "700",
+  display: "swap",
+});
+
+const siteUrl = "https://portfolio-whljm1003.vercel.app";
+const title = "DEAN · 이정민 | 프론트엔드 개발자";
+const description =
+  "프론트엔드 개발자 이정민입니다. React, Next.js, TypeScript를 활용한 웹 개발과 React Native 앱 개발 경험을 바탕으로 제품의 문제를 해결하고 사용자 경험을 개선한 과정을 소개합니다.";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: title,
+    template: "%s | DEAN · 이정민",
+  },
+  description,
   keywords: [
+    "이정민",
+    "DEAN",
+    "프론트엔드 개발자",
     "포트폴리오",
-    "프론트엔드",
-    "웹 개발",
+    "오피스너",
     "React",
     "Next.js",
-    "이정민",
+    "TypeScript",
+    "React Native",
+    "Fastlane",
+    "Sentry",
   ],
   authors: [{ name: "이정민" }],
   creator: "이정민",
   publisher: "이정민",
-  robots: "index, follow",
+  robots: { index: true, follow: true },
   openGraph: {
-    title: "이정민 포트폴리오",
-    description:
-      "프론트엔드 개발자 이정민의 포트폴리오입니다. 웹 개발 프로젝트와 기술 스택을 확인하실 수 있습니다.",
+    title,
+    description,
+    url: siteUrl,
     type: "website",
     locale: "ko_KR",
-    images: [
-      {
-        url: "/image/myFace.png",
-        width: 1200,
-        height: 630,
-        alt: "이정민 포트폴리오 대표 이미지",
-      },
-    ],
-    siteName: "이정민 포트폴리오",
+    siteName: "DEAN · 이정민",
   },
   twitter: {
     card: "summary_large_image",
-    title: "이정민 포트폴리오",
-    description:
-      "프론트엔드 개발자 이정민의 포트폴리오입니다. 웹 개발 프로젝트와 기술 스택을 확인하실 수 있습니다.",
-    images: ["/image/myFace.png"],
+    title,
+    description,
   },
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#ffffff",
-  alternates: {
-    canonical: "https://portfolio-whljm1003.vercel.app/",
-  },
+  alternates: { canonical: `${siteUrl}/` },
   verification: {
     google: "Urb-UAfsYQ7F8GUktYxf0iccYuqK6dTOu_bnIUNdFc0",
+    other: {
+      "naver-site-verification": "e0fc47427133c069fe2d0d678d59f55cbd73b4e4",
+    },
   },
   category: "portfolio",
-  classification: "personal website",
   icons: {
     icon: [
-      { url: "/favicon/favicon.ico" },
+      { url: "/favicon/favicon.ico", sizes: "16x16 32x32 48x48" },
       { url: "/favicon/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png" },
     ],
@@ -64,15 +79,14 @@ export const metadata = {
         type: "image/png",
       },
     ],
-    other: [{ rel: "manifest", url: "/favicon/site.webmanifest" }],
   },
+  manifest: "/favicon/site.webmanifest",
 };
 
 export const viewport: Viewport = {
   width: "device-width",
-  themeColor: "#ffffff",
   initialScale: 1,
-  maximumScale: 1,
+  themeColor: "#E8E4D9",
 };
 
 export default function RootLayout({
@@ -81,14 +95,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko">
-      <head>
-        <meta
-          name="naver-site-verification"
-          content="e0fc47427133c069fe2d0d678d59f55cbd73b4e4"
-        />
-      </head>
-      <body>{children}</body>
+    <html lang="ko" className={`${pretendard.variable} ${barlow.variable}`}>
+      <body>
+        <a className="skip-link" href="#main-content">
+          본문 바로가기
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

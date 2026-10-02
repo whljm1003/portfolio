@@ -1,31 +1,66 @@
-# 이정민 포트폴리오
+# DEAN · 이정민 포트폴리오
 
-- 프트폴리오 용도로 제작한 웹사이트입니다.
-- 사이트 용도에 맞게 저에 대한 이력이 나타나 있으며 기존에 사용하는 스택이 아닌 tailwind와 next.js를 활용하여 반응형과 서버사이드 렌더링에 대해 조금 더 학습할 수 있었습니다.
-  <br/>
-  <br/>
+프론트엔드 개발자 이정민의 제품 개발과 문제 해결 경험을 소개하는 한국어 포트폴리오입니다. 오피스너 웹·앱 개발, 버전 업데이트·OTA 관리, fastlane 빌드·배포와 Sentry 오류 관측 사례를 담았습니다.
 
-# 🔗&nbsp; 주요 링크
+Next.js 15·React 19·TypeScript·Tailwind CSS·Motion 13으로 제작하며, 메인과 사례 페이지는 빌드 시 정적으로 생성합니다. 외부 서비스의 실시간 조회 없이 로컬 콘텐츠·이미지·폰트를 사용합니다.
 
-- `배포` > <a href="https://portfolio-whljm1003.vercel.app">https://portfolio-whljm1003.vercel.app</a>
-  <br/>
-  <br/>
+## 화면과 상호작용
 
-# 👩🏼‍💻&nbsp; 사용 스택
+종이색·먹색·올리브·벽돌색을 사용하고, 구분선을 줄여 배경과 여백으로 섹션을 나눕니다. 큰 타이포그래피와 대비가 강한 성과 영역으로 프론트엔드 개발자의 전체 역량을 소개합니다. 메인에는 사용 흐름·오류·배포의 정량 성과 슬롯을, 대표 5개 상세에는 사례별 지표 슬롯을 제공합니다. 아직 확인하지 않은 수치는 `—`와 `수치 확인 예정`으로 표시합니다.
 
-<img src="https://img.shields.io/badge/HTML-E34F26?style=flat&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS-1572B6?style=flat&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/Typescript-3178C6?style=flat&logo=Typescript&logoColor=white"/> <img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/Next.js-000000?style=flat&logo=Next.js&logoColor=white"> <img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?style=flat&logo=Tailwind-CSS&logoColor=white"> <img src="https://img.shields.io/badge/Vercel-000000?style=flat&logo=Vercel&logoColor=white">
-<br/>
-<br/>
+제목의 마스크 등장과 인트로의 연속 확대, 성과 영역의 패럴랙스, 역량 패널의 가로 이동·확대·축소, 작업 카드의 입체 호버와 버튼의 포인터 반응에 모션을 적용합니다. 인트로는 스크롤에 따라 커진 뒤 마지막 크기를 유지하며 다음 섹션으로 이어집니다. 역량은 세로 스크롤에 따라 사용자 경험·시스템·출시 이후 개선의 세 장면으로 전환하며, 각 장면에 관련 도식과 이미지를 제공합니다. 필터는 카드 위치를 부드럽게 재배치하며, 상세는 짧은 이동으로 나타납니다. 초기 인트로 높이와 제목 등장은 첫 표시부터 맞춰 화면이 튀거나 제목이 재등장하지 않도록 했습니다. Motion과 CSS sticky를 사용하며, 시스템의 동작 줄이기 설정 또는 화면 높이 740px 미만에서는 인트로와 역량을 일반 본문으로 배치합니다. JavaScript 없이도 소개·성과 슬롯·전체 역량·독립 상세를 읽을 수 있습니다.
 
-# 🎁&nbsp; 포트폴리오 미리보기
+내비게이션에서 작업·성과·역량·소개·경력·연락으로 이동하고 현재 읽는 섹션을 확인할 수 있습니다. 역량 링크를 키보드로 탐색하면 해당 패널이 표시되며, 상세를 열어 메인이 좁아지거나 창 크기가 바뀌면 가로 이동 거리를 다시 계산합니다. 역량을 읽는 중 창 크기·동작 줄이기 설정이 바뀌어도 포커스 링크가 계속 보이도록 처리합니다. 다른 섹션으로 스크롤한 뒤에는 현재 읽는 위치를 유지합니다.
 
-<img width="1420" alt="portfolio-Main" src="https://user-images.githubusercontent.com/56882147/171024714-700550c9-cc5b-4359-befa-fb4879077de8.png">
-<br/>
-<br/>
-<img width="1419" alt="portfolio-Skills" src="https://user-images.githubusercontent.com/56882147/171024725-85fba4cc-08b7-4b7e-9579-708bb37b62c7.png">
-<br/>
-<br/>
-<img width="1419" alt="스크린샷 2022-05-30 오후 4 44 49" src="https://user-images.githubusercontent.com/56882147/171024742-79644687-a7a3-49eb-bfa7-0c00e2608b52.png">
-<br/>
-<br/>
-<img width="1424" alt="portfolio-Career" src="https://user-images.githubusercontent.com/56882147/171024702-2054e4a8-9a0f-44b7-b399-5122a5ab1371.png">
+홈에서 사례를 선택하면 오른쪽에 460~600px 너비의 상세 본문이 나타납니다. 1440px 화면에서는 메인에 약931px를 확보하며, 본문 전체를 확대·축소하지 않아 글자 비율과 선택한 카드 위치를 유지합니다. 1279px 이하에서는 상세를 메인 다음의 일반 본문으로 배치합니다. 창 너비가 바뀌어도 상세의 읽던 위치를 이어갑니다. `/work/[slug]` URL을 유지하며 직접 진입하거나 새로고침하면 독립 상세 페이지를 표시합니다.
+
+## 실행
+
+```sh
+pnpm install --frozen-lockfile
+pnpm dev
+```
+
+개발 서버는 `http://localhost:3000`에서 열립니다. 프로덕션 실행은 아래와 같습니다.
+
+```sh
+pnpm build
+pnpm start
+```
+
+## 검사
+
+```sh
+pnpm lint
+pnpm typecheck
+pnpm build
+pnpm test
+```
+
+브라우저 테스트는 기본적으로 3100 포트에서 개발 서버를 시작합니다. 이미 실행 중인 프로덕션 서버에서 검증하려면 `PLAYWRIGHT_BASE_URL`을 지정합니다.
+
+```sh
+PLAYWRIGHT_BASE_URL=http://127.0.0.1:3100 pnpm test
+```
+
+Chromium이 설치되지 않은 환경에서는 `pnpm exec playwright install chromium`을 먼저 실행합니다. 스크린샷·실패 추적·HTML 보고서는 운영체제 임시 디렉터리의 `dean-portfolio-playwright`에 저장됩니다.
+
+## 콘텐츠
+
+- `assets/portfolio.ts`: 프로필, 메인 정량 지표, 대표 5개와 경력·코스 프로젝트 16개, 경력·교육
+- `components/Home.tsx`: 메인 Server Component
+- `components/portfolio/`: 메뉴·필터·주소 복사, 정량 지표·모션·공통 상세 화면
+- `app/(home)/`: 메인 레이아웃과 인라인 상세용 parallel·intercepting routes
+- `app/work/[slug]/page.tsx`: 직접 진입용 정적 사례 상세 페이지
+- `styles/globals.css`: 디자인 토큰·반응형·동작 줄이기 설정
+- `docs/content-evidence.md`: 개인 기여·기간·이미지의 근거
+- `docs/portfolio-plan.md`: 구현 범위와 진행 기록
+- `docs/verification.md`: 최종 검사 결과
+
+오피스너 기간은 Git 작업 기록 기준이며 재직 기간이 아닙니다. 오피스너 이미지는 공개 소개 자료이고, 각 사례 도식은 구현 흐름을 설명합니다. 이전 프로젝트의 외부 배포 주소는 현재 운영 여부를 보장하지 않습니다.
+
+성과 슬롯의 현재 `before`·`after`·`change`는 모두 `null`, `status`는 `pending`입니다. 이력서와 측정 근거를 정리한 뒤 `assets/portfolio.ts`의 `portfolioImpactMetrics`와 각 대표 사례의 `impactMetrics`에 값을 입력합니다. 측정 기준·기간·출처와 개인 기여를 확인한 지표만 `verified`로 변경합니다. `pending` 상태에서는 값이 입력되어 있어도 숫자를 공개하지 않습니다. 자세한 입력 절차는 `docs/content-evidence.md`에 기록합니다.
+
+Pic a note·OMOMO·기존 개인 포트폴리오는 공개 목록과 상세 페이지에서 제외했습니다. 해당 원본 자료와 이미지는 저장소에 보존합니다.
+
+기존 사이트 주소는 [portfolio-whljm1003.vercel.app](https://portfolio-whljm1003.vercel.app)입니다. 리디자인과 모션 개선은 `feat/portfolio-redesign-motion-polish` 브랜치로 관리하며 운영 배포는 포함하지 않습니다.

@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
-
 // 원티드 프로젝트 타입
 export type WantedProject = {
   id: string;
@@ -15,7 +13,7 @@ export type WantedProject = {
 
 export const wantedData: WantedProject[] = [
   {
-    id: uuidv4(),
+    id: "career-project-1",
     title: "</> 리뷰 조회, 등록 모바일 반응형 웹페이지",
     remark: "개인 프로젝트",
     methods: [
@@ -36,7 +34,7 @@ export const wantedData: WantedProject[] = [
     },
   },
   {
-    id: uuidv4(),
+    id: "career-project-2",
     title: "</> 간병인 신청하기 모바일 웹페이지",
     remark: "팀 프로젝트 7명",
     methods: [
@@ -57,7 +55,7 @@ export const wantedData: WantedProject[] = [
     },
   },
   {
-    id: uuidv4(),
+    id: "career-project-3",
     title: "</> 쇼핑몰 의류 검색, 조회 웹페이지",
     remark: "팀 프로젝트 6명",
     methods: ["뷰어 페이지 UI 작업", "검색결과 로딩처리"],
@@ -74,7 +72,7 @@ export const wantedData: WantedProject[] = [
     },
   },
   {
-    id: uuidv4(),
+    id: "career-project-4",
     title: "</> 게임 전적 웹페이지",
     remark: "팀 프로젝트 6명",
     methods: [
@@ -95,7 +93,7 @@ export const wantedData: WantedProject[] = [
     },
   },
   {
-    id: uuidv4(),
+    id: "career-project-5",
     title: "</> 진단 검사 결과 페이지",
     remark: "팀 프로젝트 6명",
     methods: ["하단 bar chart 의 레이아웃 구현"],
@@ -107,7 +105,7 @@ export const wantedData: WantedProject[] = [
     },
   },
   {
-    id: uuidv4(),
+    id: "career-project-6",
     title: "</> 병명 검색 추천 페이지",
     remark: "팀 프로젝트 2명",
     methods: ["search UI 및 반응형 구현", "키보드 DropDown 기능 구현"],
@@ -124,7 +122,7 @@ export const wantedData: WantedProject[] = [
     },
   },
   {
-    id: uuidv4(),
+    id: "career-project-7",
     title: "</> 휴양림 조회/저장 웹페이지",
     remark: "팀 프로젝트 6명",
     methods: ["휴앙림 저장 폼(모달창)을 구현", "모달 저장,수정,삭제 기능"],
@@ -141,7 +139,7 @@ export const wantedData: WantedProject[] = [
     },
   },
   {
-    id: uuidv4(),
+    id: "career-project-8",
     title: "</> todoList 듀얼 셀렉터",
     remark: "팀 프로젝트 6명",
     methods: ["Drag and drop 기능 구현"],
@@ -171,7 +169,7 @@ export type StevelabsProject = {
 
 export const stevelabsData: StevelabsProject[] = [
   {
-    id: uuidv4(),
+    id: "career-project-9",
     title: "</> 온라인 편집샵 플랫폼",
     period: "2024.06 ~ 2024.10",
     summary: "다양한 브랜드 제품을 소개하는 온라인 쇼핑 플랫폼",
@@ -199,7 +197,7 @@ export const stevelabsData: StevelabsProject[] = [
     },
   },
   {
-    id: uuidv4(),
+    id: "career-project-10",
     title: "</> Flying Doctors",
     period: "2024.09 ~ 2024.10",
     summary: "24시간 실시간 해외 의료 지원 및 보안 플랫폼",
@@ -223,7 +221,7 @@ export const stevelabsData: StevelabsProject[] = [
     },
   },
   {
-    id: uuidv4(),
+    id: "career-project-11",
     title: "</> 골드러시",
     period: "2024.05 ~ 2024.06",
     summary: "실물 금 판매 및 목표 설정을 통한 재테크 플랫폼",
@@ -250,7 +248,7 @@ export const stevelabsData: StevelabsProject[] = [
     },
   },
   {
-    id: uuidv4(),
+    id: "career-project-12",
     title: "</> 미술로 생각하기",
     period: "2024.01 ~ 2024.04",
     summary: "유아 미술학원 CMS",
@@ -277,7 +275,7 @@ export const stevelabsData: StevelabsProject[] = [
     },
   },
   {
-    id: uuidv4(),
+    id: "career-project-13",
     title: "</> 일로 (illo)",
     period: "2023.11 ~ 2023.12",
     summary: "온라인 맞춤형 스타일 컨설팅 플랫폼",
@@ -297,7 +295,7 @@ export const stevelabsData: StevelabsProject[] = [
     },
   },
   {
-    id: uuidv4(),
+    id: "career-project-14",
     title: "</> 유전자 검사 보고서 생성 플랫폼",
     period: "2023.09 ~ 2023.10",
     summary: "병원 검진 결과를 PDF 보고서로 제공하는 유전자 분석 서비스",
@@ -324,7 +322,7 @@ export const stevelabsData: StevelabsProject[] = [
     },
   },
   {
-    id: uuidv4(),
+    id: "career-project-15",
     title: "</> 자재바다",
     period: "2023.03 ~ 2023.05",
     summary: "목재 및 자재 쇼핑몰 고도화 및 유지보수",
@@ -342,7 +340,7 @@ export const stevelabsData: StevelabsProject[] = [
   },
 
   {
-    id: uuidv4(),
+    id: "career-project-16",
     title: "</> 엔티즌",
     period: "2022.09 ~ 2023.02",
     summary: "구매자와 판매자 간 역경매 중개 플랫폼",
